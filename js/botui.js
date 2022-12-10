@@ -22,15 +22,15 @@
         var botui = new BotUI("hello-mashiro")
         botui.message.add({
             delay: 800,
-            content: "Hi, there👋"
+            content: "你好呀!👋"
         }).then(function () {
             botui.message.add({
                 delay: 1100,
-                content: "这里是 wallleap"
+                content: "这里是 "
             }).then(function () {
                 botui.message.add({
                     delay: 1100,
-                    content: "luwang的个人博客"
+                    content: "ccr39的个人博客"
                 }).then(function () {
                     botui.action.button({
                         delay: 1600,
@@ -65,32 +65,32 @@
             secondpart = function () {
                 botui.message.add({
                     delay: 1500,
-                    content: "博主喜欢看小说、阅读一些稀奇古怪的技术文章"
+                    content: "博主目前就读于衡水志臻清河校区。"
                 }).then(function () {
                     botui.message.add({
                         delay: 1500,
-                        content: "奈何太过沉迷于小说，以致技术上荒废"
+                        content: "喜欢ACG,看看动画、玩玩游戏、还有术力口。"
                     }).then(function () {
                         botui.message.add({
                             delay: 1200,
-                            content: "不过偶然接触到hexo，又激发了搭建博客的想法"
+                            content: "之前学过OI,但是高中不想学了"
                         }).then(function () {
                             botui.message.add({
                                 delay: 1500,
-                                content: "因此有了wallleap"
+                                content: "奈何学校管理太严格，每天都遭受着压榨。😟"
                             }).then(function () {
                                 botui.message.add({
                                     delay: 1500,
-                                    content: "现在主要记录一下以前学习的知识，以及分享一些想法"
+                                    content: "不过还好最近上网课，让我有时间瞎搞"
                                 }).then(function () {
                                     botui.message.add({
                                         delay: 1800,
-                                        content: "希望能将wallleap建设成一个强大的博客"
+                                        content: "因此有了LazyNest"
                                     }).then(function () {
                                         botui.action.button({
                                             delay: 1100,
                                             action: [{
-                                                text: "为什么叫wallleap呢？ 🤔",
+                                                text: "为什么叫LazyNest呢？ 🤔",
                                                 value: "why-wallleap"
                                             }]
                                         }).then(function (a) {
@@ -106,12 +106,12 @@
             thirdpart = function () {
                 botui.message.add({
                     delay: 1E3,
-                    content: "本想以自己的名字命名，可感觉太low，因此选取了lw字母，想到了wallleap--墙跃，希望遇到困难能够一跃而过"
+                    content: "字面意思LazyNest就是懒窝（没错，我很懒）"
                 }).then(function () {
                     botui.action.button({
                         delay: 1500,
                         action: [{
-                            text: "主题用的哪个呢？ 🤔",
+                            text: " 为什么叫CCR39呢？ 🤔",
                             value: "what-themes"
                         }]
                     }).then(function (a) {
@@ -122,16 +122,16 @@
             fourthpart = function () {
                 botui.message.add({
                     delay: 1E3,
-                    content: "主题用的Sakura "
+                    content: "和初音未来有关。(我是个葱厨)"
                 }).then(function () {
                     botui.message.add({
                         delay: 1100,
-                        content: "还在开发中，可以去支持一下作者哦！"
+                        content: "我真的很喜欢Miku"
                     }).then(function () {
                         botui.action.button({
                             delay: 1500,
                             action: [{
-                                text: "也想搭建一个博客怎么办",
+                                text: "博客用来干什么？ ",
                                 value: "how-blog"
                             }]
                         }).then(function (a) {
@@ -143,7 +143,7 @@
             fifthpart = function () {
                 botui.message.add({
                     delay: 1E3,
-                    content: "可以看一下博主的教程，我也会转载一下好的博文哦"
+                    content: "主要是为接下来学一些东西做准备。(当然要是我鸽了也很正常)"
                 }).then(function () {
                     botui.message.add({
                         delay: 1600,
