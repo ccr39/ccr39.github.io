@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">comment | CCR39のLazyNest</title>
+  <title itemprop="name">基础计数原理与排列组合 | CCR39のLazyNest</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/favicon.ico">
   
@@ -360,37 +360,87 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/azcw9-okqcu.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        留言板</h1>
-      </header>
-    </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      
-<div class="entry-content">
-  <div class="poem-wrap">
-    <div class="poem-border poem-left">
-    </div>
-    <div class="poem-border poem-right">
-    </div>
-    <h1>
-    念两句诗</h1>
-    <p id="poem">
-    前方还有很长的路要走，我们都加油吧，一言为定。
-    </p>
-    <p id="info">
-    ——《CLANNAD》</p>
-  </div>
-</div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://s2.loli.net/2022/12/11/UFI5osx4Cr2Wj3b.jpg);" src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/azcw9-okqcu.svg" data-src="https://s2.loli.net/2022/12/11/UFI5osx4Cr2Wj3b.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      基础计数原理与排列组合</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://ccr39.github.io/">
+            <img src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/custom/ccr39.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://ccr39.github.io/">ccr39</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-12-11<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="一、加法原理和乘法原理"><a href="#一、加法原理和乘法原理" class="headerlink" title="一、加法原理和乘法原理"></a>一、加法原理和乘法原理</h2><h3 id="1、定义："><a href="#1、定义：" class="headerlink" title="1、定义："></a>1、定义：</h3><h4 id="①加法原理："><a href="#①加法原理：" class="headerlink" title="①加法原理："></a>①加法原理：</h4><p>加法原理是分类计数原理，常用于排列组合中，具体是指：做一件事情，完成它有N类方式，第一类方式有$M_1$种方法，第二类方式有$M_2$种方法，……，第n类方式有Mn种方法，那么完成这件事情共有$M_1+M_2+……+M_n$种方法。</p>
+<p>口诀：类类独立</p>
+<h4 id="②乘法原理："><a href="#②乘法原理：" class="headerlink" title="②乘法原理："></a>②乘法原理：</h4><p>做一件事，完成它需要分成N个步骤，做第一步有$M_1$种不同的方法，做第二步有$M_2$种不同的方法，……，做第n步有$M_n$种不同的方法。那么完成这件事共有 $N&#x3D;M_1×M_2×M_3×…×M_n$ 种不同的方法。</p>
+<p>口诀：步步相关</p>
+<h3 id="2、例："><a href="#2、例：" class="headerlink" title="2、例："></a>2、例：</h3><p>（1）某中学八年级一班有12名男生，16名女生；二班有9名男生，17名女生。</p>
+<p>问：</p>
+<p>从这两个班的同学中，选择 1 名男生、1 名女生作为主持人。有几种选法?</p>
+<p>利用乘法原理，总方案数等于 总男生数  *  总女生数</p>
+<p>$ (12+9)* (16+17)&#x3D; 693 $</p>
+<h3 id="3、模运算"><a href="#3、模运算" class="headerlink" title="3、模运算"></a>3、模运算</h3><p>在得数较大时，要每进行一步计算就取余。</p>
+<p>模运算符合以下规律</p>
+<p>（1）$$ (a-b)\%p&#x3D;(a\%p-b\%p)\%p$$</p>
+<p>（2）$$ (a + b)\%p&#x3D;(a\%p+b\% p)\%p$$</p>
+<p>（3）$$(a*b)\%p&#x3D;(a\%p*b\%p)\%p$$</p>
+<p>（4）$$(a^b)\%p&#x3D;((a\%p)^b)\%p$$</p>
+<h2 id="二、排列与组合"><a href="#二、排列与组合" class="headerlink" title="二、排列与组合"></a>二、排列与组合</h2><h4 id="1、排列数"><a href="#1、排列数" class="headerlink" title="1、排列数"></a>1、排列数</h4><p>定义：从 n 个人里面选出 m 个人站成一排，方案数是： n ⋅ (n − 1) ⋯ (n − m + 1) &#x3D; $ \frac{ n ! }{ (n-m)! } $。我们将它称为排列数。</p>
+<p>排列数用 $A^m_n$ 表示“从 n 个元素里面取 m 个元素，排成一排的方案数”，也就是$ A^m_n $ &#x3D; $ \frac{ n ! }{ (n-m)! } $。</p>
+<h3 id="2、组合数"><a href="#2、组合数" class="headerlink" title="2、组合数"></a>2、组合数</h3><h4 id="1-定义："><a href="#1-定义：" class="headerlink" title="(1) 定义："></a>(1) 定义：</h4><p>用 $C^m_n$ 表示“从 n 个元素里面选出 m 个元素”的方案数,我们将它称为组合数。</p>
+<h4 id="2-公式"><a href="#2-公式" class="headerlink" title="(2) 公式:"></a>(2) 公式:</h4><p>组合数的递推公式，称为帕斯卡公式。</p>
+<p>$C^m_n$ &#x3D; $C^{m-1}_{n-1}$ + $C^{m-1}_n$</p>
+<p>$C^n_0$&#x3D;1 ; $C^n_n$&#x3D;1 ; $C^0_0$&#x3D;1<br>组合数的通项公式</p>
+<p>$C^m_n$ &#x3D; $\frac{A_n^m}{A_m^m}$ &#x3D; $\frac{n\cdot(n-1)\cdot\cdot\cdot(n-m+1)}{m(m-1)\cdot\cdot\cdot2\cdot1}$ &#x3D; $\frac{n!}{m!\cdot(n-m)!}$<br>互补性质</p>
+<p>$C_n^m&#x3D;C^{n-m}_n$</p>
+<h4 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="(3) 代码实现"></a>(3) 代码实现</h4><p>①通项公式</p>
+<pre><code class="cpp">long long fac(int n) 
+&#123; 
+    long long f=1;
+    for(int i=n;i&gt;0;i--)
+    f *= i;
+    return f;
+&#125;//求阶乘
+long long C(int n, int m) 
+&#123;
+    return fac(n)/(fac(n - m)*fac(m));
+&#125;
+</code></pre>
+<p>②递归公式</p>
+<pre><code class="cpp">for (int i=0;i&lt;=21;i++) 
+&#123;
+    C[i][0] = C[i][i] = 1;
+    for (int j=1;j&lt;i;j++) 
+        C[i][j]=C[i-1][j]+C[i-1][j-1] ; //递推
+&#125;
+</code></pre>
+<p>文章转载于<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ccr39/post-bi-ji-ji-chu-ji-shuo-yuan-li-yu-zu-ge-shuo">本人原博客</a></p>
 
 <link
     rel="stylesheet"
@@ -404,6 +454,12 @@
     init({
       el: '#waline',
       serverURL: 'https://waline-test-e00dlm6a7-ccr39.vercel.app/',
+       reaction: [
+    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',
+  ],
       emoji: [
         '//unpkg.com/@waline/emojis@1.1.0/bilibili',
         '//unpkg.com/@waline/emojis@1.1.0/weibo',
@@ -413,7 +469,69 @@
   </script>
 
 
-      <!-- .entry-content -->
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/%E8%B5%84%E6%BA%90/ACGN%E6%8F%92%E7%94%BB(%E4%B8%80)/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/azcw9-okqcu.svg" data-src="https://s2.loli.net/2022/12/11/qymGgap7EjB21I8.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.loli.net/2022/12/11/qymGgap7EjB21I8.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                ACGN插画(一)</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/%E6%8A%80%E6%9C%AF/hellow-world/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/azcw9-okqcu.svg" data-src="https://s2.loli.net/2022/12/11/ORc4oAXr2pmsL3T.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.loli.net/2022/12/11/ORc4oAXr2pmsL3T.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                hellow world</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
 <div id="vcomments"></div>
 <script>
@@ -432,43 +550,30 @@
 
 
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/custom/donate/AliPayQR.jpg"></li>
-              <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/custom/donate/WeChanQR.jpg"></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
-      <!-- #post-## -->
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/custom/ccr39.jpg" itemprop="image" alt="LazyNest" height="70" width="70"></a>
+          <a href="https://ccr39.github.io/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/ccr39/myfirstcnd/img/custom/ccr39.jpg" itemprop="image" alt="ccr39" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://ccr39.github.io" itemprop="url" rel="author">LazyNest</a>
+            <a href="https://ccr39.github.io/" itemprop="url" rel="author">ccr39</a>
             </h3>
           </div>
         </div>
         <hr>
         <p><i class="iconfont icon-write"></i>I am ordinary yet unique.</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

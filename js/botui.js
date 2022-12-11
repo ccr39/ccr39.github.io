@@ -26,11 +26,11 @@
         }).then(function () {
             botui.message.add({
                 delay: 1100,
-                content: "这里是 "
+                content: "欢迎来到CCR39のLazyNest"
             }).then(function () {
                 botui.message.add({
                     delay: 1100,
-                    content: "ccr39的个人博客"
+                    content: "我是CCR39"
                 }).then(function () {
                     botui.action.button({
                         delay: 1600,
