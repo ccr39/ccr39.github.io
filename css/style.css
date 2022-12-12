@@ -1094,13 +1094,13 @@ a:hover,a:active {
     opacity:1
 }
 .video-play,.loadvideo {
-    background-image:url('https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/play@32x32.png')
+    background-image:url('https://s2.loli.net/2022/12/12/Y1MAv2U75OckztZ.png')
 }
 .video-pause {
-    background-image:url('https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/pause@32x32.png')
+    background-image:url('https://s2.loli.net/2022/12/12/dv7lPGk1MtHBw2X.png')
 }
 #video-add {
-    background-image:url('https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/add@32x32.png');
+    background-image:url('https://s2.loli.net/2022/12/12/4M75akyjCGbtNeL.png');
     bottom:45px;
     display:none
 }
@@ -2239,7 +2239,7 @@ h1.page-title.mb- {
     z-index:99;
     width:70px;
     height:900px;
-    background:url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/scroll.png) no-repeat center;
+    background:url(https://s2.loli.net/2022/12/12/AbLIVn1RgPWDtly.png) no-repeat center;
     background-size:contain;
     -webkit-transition:all .5s ease-in-out;
     transition:all .5s ease-in-out;
@@ -3889,14 +3889,14 @@ li.feature-2 {
     background-color:rgba(0,0,0,.3)
 }
 .headertop.filter-grid::before {
-    background-image:url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png)
+    background-image:url(https://s2.loli.net/2022/12/12/q3JWBf8kCHNLpTG.png)
 }
 .headertop.filter-dot::before {
-    background-image:url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/dot.gif)
+    background-image:url(https://s2.loli.net/2022/12/12/UCIxrGg4vJSXuFL.gif)
 }
 @media(max-width:860px) {
     .headertop.filter-dot::before {
-    background-image:url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png)
+    background-image:url(https://s2.loli.net/2022/12/12/q3JWBf8kCHNLpTG.png)
 }
 }.headertop-bar::after {
     content:'';

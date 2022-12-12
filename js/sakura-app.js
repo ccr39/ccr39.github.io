@@ -431,8 +431,13 @@ function checkBgImgCookie () {
     $('#banner_wave_1').addClass('banner_wave_hide_fit_skin')
     $('#banner_wave_2').addClass('banner_wave_hide_fit_skin')
   }
+  // changeBG('#sakura-bg', 'https://s2.loli.net/2022/12/12/ZLbxdpVlDgsa4y3.png')
+  // changeBG('#gribs-bg', 'https://s2.loli.net/2022/12/12/sldEGpNQw76bt1V.jpg')
+  // changeBG('#pixiv-bg', 'https://s2.loli.net/2022/12/12/vVK42hkmiZOgYoa.png')
+  // changeBG('#KAdots-bg', 'https://s2.loli.net/2022/12/12/k7WrKxNhG9EU1iT.png')
+  // changeBG('#totem-bg', 'https://s2.loli.net/2022/12/12/jUIpzGyfElv8sCh.png')
   if (bgurl != '') {
-    if (bgurl == 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/sakura.png' || bgurl == 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/plaid.jpg' || bgurl == 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/star.png' || bgurl == 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/point.png' || bgurl == 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/little-monster.png') {
+    if (bgurl == 'https://s2.loli.net/2022/12/12/ZLbxdpVlDgsa4y3.png' || bgurl == 'https://s2.loli.net/2022/12/12/sldEGpNQw76bt1V.jpg' || bgurl == 'https://s2.loli.net/2022/12/12/vVK42hkmiZOgYoa.png' || bgurl == 'https://s2.loli.net/2022/12/12/k7WrKxNhG9EU1iT.png' || bgurl == 'https://s2.loli.net/2022/12/12/jUIpzGyfElv8sCh.png') {
       mashiro_global.variables.skinSecter = true
       mashiro_global.variables.isNight = false
       $('#night-mode-cover').css('visibility', 'hidden')
@@ -499,11 +504,11 @@ $(document).ready(function () {
       setCookie('bgImgSetting', url, 30)
     })
   }
-  changeBG('#sakura-bg', 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/sakura.png')
-  changeBG('#gribs-bg', 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/plaid.jpg')
-  changeBG('#pixiv-bg', 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/star.png')
-  changeBG('#KAdots-bg', 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/point.png')
-  changeBG('#totem-bg', 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/little-monster.png')
+  changeBG('#sakura-bg', 'https://s2.loli.net/2022/12/12/ZLbxdpVlDgsa4y3.png')
+  changeBG('#gribs-bg', 'https://s2.loli.net/2022/12/12/sldEGpNQw76bt1V.jpg')
+  changeBG('#pixiv-bg', 'https://s2.loli.net/2022/12/12/vVK42hkmiZOgYoa.png')
+  changeBG('#KAdots-bg', 'https://s2.loli.net/2022/12/12/k7WrKxNhG9EU1iT.png')
+  changeBG('#totem-bg', 'https://s2.loli.net/2022/12/12/jUIpzGyfElv8sCh.png')
   changeBGnoTrans('#bing-bg', 'https://api.shino.cc/bing/')
   $('.skin-menu #white-bg').click(function () {
     mashiro_global.variables.skinSecter = false
@@ -521,7 +526,7 @@ $(document).ready(function () {
   $('.skin-menu #dark-bg').click(function () {
     mashiro_global.variables.skinSecter = true
     mashiro_global.variables.isNight = true
-    $('body').css('background-image', 'url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/starry_sky.png)')
+    $('body').css('background-image', 'url(https://s2.loli.net/2022/12/12/Rm6kyQwBA4iPW9s.png)')
     $('.blank').css('background-color', 'rgba(255,255,255,.8)')
     $('#night-mode-cover').css('visibility', 'visible')
     $('.pattern-center').removeClass('pattern-center').addClass('pattern-center-sakura')
