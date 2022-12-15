@@ -4118,7 +4118,8 @@ function(e, t) {
 });
 
 function bot_ui_ini() {
-    var botui = new BotUI("hello-mashiro") botui.message.add
+    var botui = new BotUI("hello-mashiro") 
+    botui.message.add
     ({
         delay: 800,
         content: "你好呀!👋"

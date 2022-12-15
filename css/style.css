@@ -7635,7 +7635,7 @@ img[src*="#in-center"] {
 #banner_wave_1 {
     width:auto;
     height:65px;
-    background:url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wave1.png") repeat-x;
+    background:url("https://s2.loli.net/2022/12/15/hpaZP7uxWDYsLwe.png") repeat-x;
     _filter:alpha(opacity=80);
     position:absolute;
     bottom:0;
@@ -7649,7 +7649,7 @@ img[src*="#in-center"] {
 #banner_wave_2 {
     width:auto;
     height:80px;
-    background:url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wave2.png") repeat-x;
+    background:url("https://s2.loli.net/2022/12/15/udkE9XGWt7A5VML.png") repeat-x;
     _filter:alpha(opacity=80);
     position:absolute;
     bottom:0;
@@ -7660,10 +7660,10 @@ img[src*="#in-center"] {
     transiton-property:opacity,bottom;
     transition-duration:.4s,.4s
 }
-.banner_wave_hide,.banner_wave_hide_fit_skin {
+/* .banner_wave_hide,.banner_wave_hide_fit_skin {
     opacity:0 !important;
     bottom:-999px !important
-}
+} */
 @media(max-width:860px) {
     #banner_wave_1,#banner_wave_2 {
     display:none
