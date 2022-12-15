@@ -180,10 +180,10 @@ function imgError (ele, type) {
       break
     case 3:
 
-      ele.src = 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png'
+      ele.src = 'https://s2.loli.net/2022/12/14/XONb15e46Zd7ntP.png'
       break
     default:
-      ele.src = 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png'
+      ele.src = 'https://s2.loli.net/2022/12/14/XONb15e46Zd7ntP.png'
   }
 }
 mashiro_global.post_list_show_animation = new function () {
