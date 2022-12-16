@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="referrer" content="no-referrer" />
   
-  <title itemprop="name">Tag: 杂谈 | CCR39のLazyNest</title>
+  <title itemprop="name">基础动态规划 | CCR39のLazyNest</title>
   
     <link rel="shortcut icon" href="https://s2.loli.net/2022/12/11/jWa7P4GsMQfVheS.png">
   
@@ -353,97 +353,205 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="杂谈.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://s2.loli.net/2022/12/16/1x2AU7tG9MChbKQ.jpg);" src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="https://s2.loli.net/2022/12/16/1x2AU7tG9MChbKQ.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      基础动态规划</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://ccr39.github.io/">
+            <img src="https://s2.loli.net/2022/12/11/RWO3mithG8BEUzS.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://ccr39.github.io/">ccr39</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-12-16<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">杂谈</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ccr39/post-bi-ji-dong-tai-gui-hua-di-yin-ru">原文链接</a></p>
+<h3 id="一、基本概念与定义"><a href="#一、基本概念与定义" class="headerlink" title="一、基本概念与定义"></a>一、基本概念与定义</h3><h4 id="1、动态规划的概念"><a href="#1、动态规划的概念" class="headerlink" title="1、动态规划的概念"></a>1、动态规划的概念</h4><p>对于某些问题，我们可以将其分成若干个互相联系的阶段，并在每个阶段做出决策，从而达到最优解。</p>
+<p>这种通过状态来影响决策，在经由决策引起状态转移的动态过程被称作动态规划（简称DP）</p>
+<p>动态规划（DP）不是某种具体算法，而是一种思想。 </p>
+<p>核心在于：把大问题转化为小问题，利用小问题的解，推断出大问题的解。</p>
+<h4 id="2、状态"><a href="#2、状态" class="headerlink" title="2、状态"></a>2、状态</h4><p>当我们把大问题化成小问题时，只有大问题和小问题拥有相同的形式，才能考虑拆分子问题。</p>
+<p>如果满足这个要求，那么我们遇到的每个子问题，都可以通过某种简洁的形式来 表达。</p>
+<p>我们把可能遇到的每种“局面”称为状态。</p>
+<p>设计完状态之后，只要能利用小状态的解求出大状态的解，就可以动手把题目做 出来！</p>
+<h4 id="3、转移"><a href="#3、转移" class="headerlink" title="3、转移"></a>3、转移</h4><p>当我们设计好状态，我们需要用小状态推出大状态。</p>
+<p>从一个状态的解，得知另一个状态的解，我们称之为“状态转移”。这个转移式子 称为“状态转移方程”。</p>
+<h4 id="4、Dp的基本原则"><a href="#4、Dp的基本原则" class="headerlink" title="4、Dp的基本原则"></a>4、Dp的基本原则</h4><p>（1）最优子结构：大问题的最优解，一定是从小问题的最优解推出来的。</p>
+<p>（2）无后效性：无后效性 现在的决策，只与过去的结果有关，而与过去的决策无关。</p>
+<h4 id="5、DP与记忆化搜索"><a href="#5、DP与记忆化搜索" class="headerlink" title="5、DP与记忆化搜索"></a>5、DP与记忆化搜索</h4><h5 id="1-记忆化搜索"><a href="#1-记忆化搜索" class="headerlink" title="(1)记忆化搜索"></a>(1)记忆化搜索</h5><p>在经$dfs$搜索过程中，会产生许许多多的子序列，对于每个序列，可能会产生重复的元素。</p>
+<p>例如：</p>
+<pre><code>求99！，100！，101！
+</code></pre>
+<p>一般思路，分别从1开始乘</p>
+<p>但显然，对于这道题我们只需要算出99！，就不需要再从头计算了，因为100！即是99！ * 100，而101 !  即是 100 ！ * 101 ！</p>
+<p>所以说，我们只需要在阶乘的过程中将 99 ! 的得数存到数组a[99]中，等到下次再调到用时，就可以直接访问a[99]，从而省去不必要的时间。</p>
+<p>一般情况下，可以将O($2^n$)的时间复杂度优化为O($n^2$)的复杂度。</p>
+<h5 id="2-DP"><a href="#2-DP" class="headerlink" title="(2)DP"></a>(2)DP</h5><p>对于同样的问题，我们并不考虑如何直接去求 99 !  ,而去考虑如何可以将 99 ！ 分成若干个子问题。</p>
+<p>显然 99 ！ &#x3D;  98 ！ * 99；</p>
+<p>而	 98 ! &#x3D; 97! * 98;</p>
+<p>以此类推，我们可以等到： 1 ！ &#x3D;   1</p>
+<p>可以看出，对于所有的阶乘问题，我们都可以从 2的阶乘开始计算，最后一步步到达想要的结果，这就是DP。</p>
+<p>同时，对于这道题，状态转移方程为：a[N] &#x3D; a[N - 1] * N;且a[0]&#x3D;1</p>
+<h4 id="6、DP与递推"><a href="#6、DP与递推" class="headerlink" title="6、DP与递推"></a>6、DP与递推</h4><p>从上面我们的探究可以看出，对于同一个问题，DP的做法是，从最初结点开始遍历，在过程中，我们不考虑之前的值是否存在，也不考虑当决策是否对之后产生影响，只是根据状态转移方程，一步步选择，从而得到结果。</p>
+<p>我们可发现，DP其实运用了递推的思想。</p>
+<p>我们可以把状态转移方程看成递推公式，把初始值看做递推边界。</p>
+<p>对于上题，我们同样可以写成递推公式</p>
+<p>$F_n&#x3D;F_{n-1}*n$；$F_0&#x3D;1$</p>
+<p>同时，我们可以把记忆化搜索看成递归的思想</p>
+<p>在搜索过程中沿着某一个答案前进，在过程中调用之前所储存的答案。</p>
+<p><strong>所以，记忆化搜索和递推也常被当做DP的一种实现方式。</strong></p>
+<h3 id="二、DP程序的设计"><a href="#二、DP程序的设计" class="headerlink" title="二、DP程序的设计"></a>二、DP程序的设计</h3><h4 id="1、转移方式"><a href="#1、转移方式" class="headerlink" title="1、转移方式"></a>1、转移方式</h4><h5 id="（1）backward-型转移：我从哪里来"><a href="#（1）backward-型转移：我从哪里来" class="headerlink" title="（1）backward 型转移：我从哪里来?"></a>（1）backward 型转移：我从哪里来?</h5><p>这是一种常见的思路：对于一个没有求出解的状态，利用能走到它的状态，来得出它的解。</p>
+<p>同时它也是记忆化搜索的方式</p>
+<h5 id="（2）forward-型转移-考虑我到哪里去"><a href="#（2）forward-型转移-考虑我到哪里去" class="headerlink" title="（2）forward 型转移:考虑我到哪里去"></a>（2）forward 型转移:考虑我到哪里去</h5><p>对于一个已经求好了解的状态，拿去更新它能走 到的状态。</p>
+<h4 id="2、DP三连"><a href="#2、DP三连" class="headerlink" title="2、DP三连"></a>2、DP三连</h4><ul>
+<li><p>我是谁?	 (设计状态)</p>
+</li>
+<li><p>我从哪里来 (backward 型转移)</p>
+</li>
+<li><p>我到那里去 (forward 型转移)</p>
+</li>
+</ul>
+<p>(两种转移方式中，只需要选择一个来设计转移即可。)</p>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+<div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+    init({
+      el: '#waline',
+      serverURL: 'https://ccr39.cf/',
+       reaction: [
+    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',
+  ],
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.1.0/bilibili',
+        '//unpkg.com/@waline/emojis@1.1.0/weibo',
+        '//unpkg.com/@waline/emojis@1.1.0/qq',
+      ]
+    });
+  </script>
+
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://s2.loli.net/2022/12/11/rdgBz4h93ApRGmL.jpg"></li>
+                <li class="wechat-code"><img src="https://s2.loli.net/2022/12/11/VJB3RydclkMYuH9.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/%E8%BD%AC%E8%BD%BD/%E7%BA%BF%E6%80%A7DP/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="https://s2.loli.net/2022/12/16/6L7i4hIzj9nPguY.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.loli.net/2022/12/16/6L7i4hIzj9nPguY.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                线性DP</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://s2.loli.net/2022/12/14/euvYcO8QjKtF5iL.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-    解决电脑钉钉视频会议无法旋转屏幕的问题</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-12-13</div>
-    <p>
-    多角度解决视频会议画面旋转问题，同时分享适用于电脑画面单个窗口旋转方法。</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://s2.loli.net/2022/12/11/8D2VvjRPq6nsTKI.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-    浅谈我的学校</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-12-11</div>
-    <p>
-    关于我的学校</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "nJIfytgko1rH9zkhJaosZRZ3-MdYXbMMI",
+        appKey: "fAj8OKoTBsGObZsLQJmP66FJ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://ccr39.github.io/" class="profile gravatar"><img src="https://s2.loli.net/2022/12/11/RWO3mithG8BEUzS.jpg" itemprop="image" alt="ccr39" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://ccr39.github.io/" itemprop="url" rel="author">ccr39</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>I am ordinary yet unique.</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

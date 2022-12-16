@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="referrer" content="no-referrer" />
   
-  <title itemprop="name">Tag: 杂谈 | CCR39のLazyNest</title>
+  <title itemprop="name">进制与位运算 | CCR39のLazyNest</title>
   
     <link rel="shortcut icon" href="https://s2.loli.net/2022/12/11/jWa7P4GsMQfVheS.png">
   
@@ -353,97 +353,332 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="杂谈.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://s2.loli.net/2022/12/16/5YZSd2qmGWtgHQ6.png);" src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="https://s2.loli.net/2022/12/16/5YZSd2qmGWtgHQ6.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      进制与位运算</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://ccr39.github.io/">
+            <img src="https://s2.loli.net/2022/12/11/RWO3mithG8BEUzS.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://ccr39.github.io/">ccr39</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-12-16<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">杂谈</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ccr39/post-bi-ji-jin-zhi-yu-wei-yun-suan">原文链接</a></p>
+<h2 id="一、进制"><a href="#一、进制" class="headerlink" title="一、进制"></a>一、进制</h2><h3 id="（1）概念"><a href="#（1）概念" class="headerlink" title="（1）概念"></a>（1）概念</h3><p>几进制指的是几进一，日常生活中常常使用十进制，在计算机语言中，2进制最常见。</p>
+<p>同时，还有8进制，16进制等进制。</p>
+<h3 id="（2）进制的表示："><a href="#（2）进制的表示：" class="headerlink" title="（2）进制的表示："></a>（2）进制的表示：</h3><p>①二进制：用前缀 $0b$ 表示；或用后缀 $B$ 表示，如：$01101001B$。</p>
+<p>②八进制：用前缀 $0o$ 表示，如 $0o76$ ；或用后缀 $O$ 表示，如：$257O$。 </p>
+<p>③十进制：用前缀 $0d$ 表示,或用后缀 $D$ 表示。</p>
+<p>④十六进制：用前缀 $0x$ 表示,或用后缀 $H$ 表示。</p>
+<p>在表示9以上的数时使用用$A、B、C、D、E、F$。</p>
+<h3 id="（3）进制的转换"><a href="#（3）进制的转换" class="headerlink" title="（3）进制的转换"></a>（3）进制的转换</h3><h4 id="①n进制转10进制"><a href="#①n进制转10进制" class="headerlink" title="①n进制转10进制"></a>①n进制转10进制</h4><p>思路：将第a位数字乘以$n^{a-1}$,再作和。</p>
+<p>代码：</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+int n,b;
+string a;
+int main()
+&#123;
+    cin&gt;&gt;n&gt;&gt;a;
+    int l=a.size();
+    for(int i=1;i&lt;=l;i++)
+    &#123;	
+        if (a[l-i]&gt;=&#39;0&#39;&amp;&amp;a[l-i-1]&lt;=&#39;9&#39;)
+        a[l-i]-=&#39;0&#39;;
+        if ( a[l-i]&gt;=&#39;A&#39; &amp;&amp; a[l-i]&lt;=&#39;F&#39; )
+        &#123;
+            a[l-i]-=&#39;A&#39;;
+            a[l-i]+=10;
+        &#125;
+        b+=a[l-i]*pow(n,i-1);
+    &#125;
+    cout&lt;&lt;b;
+    return 0;
+&#125;
+</code></pre>
+<p>也可以用C++库函数实现，用到函数strtol()。</p>
+<p>用法strtol( 字符串(char*型) , NULL，n ）</p>
+<p>代码</p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n;
+char a[1000];
+int main()
+&#123;
+    cin&gt;&gt;n&gt;&gt;a;
+    cout&lt;&lt;strtol(a,NULL,n);
+    return 0;
+&#125;
+</code></pre>
+<h4 id="②10进制转n进制"><a href="#②10进制转n进制" class="headerlink" title="②10进制转n进制"></a>②10进制转n进制</h4><p>思路：模n取余法，将十进制数向n取余，记录余数，知道十进制数为零，反向书写余数，即为n进制数。</p>
+<p>代码：</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+int n,b,i,ans[10000];
+int main()
+&#123;
+    cin&gt;&gt;n&gt;&gt;b;
+    while(b&gt;0)
+    &#123;
+        ans[i++]=b%n;
+        b/=n;
+    &#125;
+    for ( int q=i-1 ; q&gt;=0 ; q-- )
+        if(ans[q]&gt;=10&amp;&amp;ans[q]&lt;16 )
+        cout&lt;&lt;char(ans[q]+55);
+        else cout&lt;&lt;ans[q];
+    return 0;
+&#125;
+</code></pre>
+<h4 id="③二进制转十六进制。"><a href="#③二进制转十六进制。" class="headerlink" title="③二进制转十六进制。"></a>③二进制转十六进制。</h4><p>思路：一个有趣的性质</p>
+<p>1位十六进制数码对应 4 位数的二进制数码。</p>
+<p>所以将十六进制和二进制之间相互转换时并不需要以 10 进制为中间跳板，直接进行翻译即可。</p>
+<p>例如二进制数 1010110111 经过分组可以变为 0010 1011 0111，直接查表（或者口算）可以翻译为 2B7。</p>
+<p>反过来也是一样的。</p>
+<h4 id="④n进制转m进制"><a href="#④n进制转m进制" class="headerlink" title="④n进制转m进制"></a>④n进制转m进制</h4><p>思路:先将n进制转10进制，再将10进制转m进制。</p>
+<p>代码:</p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+string a;
+int c[10000000],d,e,f,g,sum,ans;
+int main()
+&#123;
+    scanf(&quot;%d&quot;,&amp;d);
+    cin&gt;&gt;a;
+    scanf(&quot;%d&quot;,&amp;f);
+    for(int x=0;x&lt;a.size();x++)&#123;
+        if(a[x]&lt;&#39;A&#39;)&#123;
+            e=pow(d,a.size()-x-1);
+            e*=(a[x]-&#39;0&#39;);
+            sum+=e;
+        &#125;
+        else&#123;
+            e=pow(d,a.size()-1-x);
+            e*=(a[x]-&#39;A&#39;+10);
+            sum+=e;
+        &#125;
+    &#125;
+        while(sum&gt;0)&#123;
+        c[g++]=sum%f;
+        sum/=f;
+    &#125;
+    for(int x=g-1;x&gt;=0;x--)&#123;
+        if(c[x]&gt;=10)printf(&quot;%c&quot;,c[x]+&#39;A&#39;-10);
+        else printf(&quot;%d&quot;,c[x]);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h4 id="⑤浮点数的进制转换"><a href="#⑤浮点数的进制转换" class="headerlink" title="⑤浮点数的进制转换"></a>⑤浮点数的进制转换</h4><p>思路：先转换整形,再将浮点数部分乘n取整。</p>
+<p><img src="https://s3.bmp.ovh/imgs/2021/08/336edeacd5e37033.png"></p>
+<h3 id="4-二进制的深入探究"><a href="#4-二进制的深入探究" class="headerlink" title="(4) 二进制的深入探究"></a>(4) 二进制的深入探究</h3><p>在二进制中一个 0 或 1 的数码被称为一位。一个内存地址对应的 8 位，被称为一字节( Byte )。</p>
+<p>一个 int 类型或 float 类型的变量占用 32 位空间。</p>
+<p>而一个 char 的变量占用 8 位。</p>
+<p>有些变量类型也有无符号数，例如 unsigned int 类型。</p>
+<p>这个类型占用和 int 类型一样，为 32 位，但是以放弃存储正负符号为代价，可以储存比 int 多一倍的整数值（0 到$2^{32}$−1，接近4.3×$10^9$ ）。</p>
+<p>计算机中还有其他的表示数据大小的单位，比如 1 KB 是 $2^{10}$ &#x3D;1024 字节（大约一千），1 MB 是 $2^{20}$ 字节（大约一百万）， 1 GB 是 $2^{30}$ 字节。</p>
+<p><strong>在带符号整数的情况下，$-57$ 如何被表示成负数呢？在计算机中又是如何计算 $66-57$ 呢?</strong></p>
+<p>我们用 8 位的 $signed$ $char$ 类型来举例</p>
+<p>$57$ 用二进制表示为 $0011$ $1001$（补足 8 位）。</p>
+<p><strong>如何表示一个负数？</strong></p>
+<p>可以占用最高位的一位来表示正负，0 表示非负，1 表示负数。</p>
+<p>然后再经过以下方法处理</p>
+<ol>
+<li><p>用除了第一位的数字表示这个负数的绝对值，第一位变成 1。这样的话 $-57$ 表示为 $1011$ $1001$。</p>
+<p>这种表示方式称为原码。不过计算机不使用这种方式来表示负数。</p>
+</li>
+<li><p>将这个负数的绝对值的数全部取反，由 1 变为 0，0 变为 1。这样的话 $-57$ 表示为 $1100$ $0110$。这种表示方式成为<strong>反码</strong>。</p>
+<p>使用反码有一个问题，对于$0$，既可以表示为$0000$ $0000$也可以表示为$1111$ $1111$，所以也不常用。</p>
+</li>
+<li><p>先计算这个负数的反码，然后加 1。这样的话 $-57$ 表示为 $1100$ $0111$。</p>
+<p>这是计算机使用的表示数的方法，被称为<strong>补码</strong>。这种表达方式下，零只有 1 个，而$1111$ $1111$则代表 -1。</p>
+</li>
+</ol>
+<hr>
+<h2 id="二、位运算"><a href="#二、位运算" class="headerlink" title="二、位运算"></a>二、位运算</h2><h3 id="（1）定义"><a href="#（1）定义" class="headerlink" title="（1）定义"></a>（1）定义</h3><p>直接对整数在内存中的二进制位进行按位操作。</p>
+<h3 id="（2）运算符"><a href="#（2）运算符" class="headerlink" title="（2）运算符"></a>（2）运算符</h3><p>位运算包括与、或、非、异或等操作。</p>
+<p>①与运算:$A∧B$（在$C$语言写作”A&amp;B”）A与B全为真时，得数为真。（即: 1&amp;1 &#x3D; 1 ; 1&amp;0 &#x3D; 0 ; 0&amp;0 &#x3D; 0）</p>
+<p>②或运算:$A∨B$(在$C$语言写作” A|B”）A或B中有一个为真是，得数为真。（即：$1|1&#x3D;1$ ; $1|0&#x3D;1$  ; $0|0&#x3D;0$）</p>
+<p>③非运算：$￢A$(在$C$语言写作” ~A “）进行取反操作。（即：~1&#x3D;0 ; ~0&#x3D;1）</p>
+<p>④异或运算：$A⊕B$（在$C$语言写作” $A$^$B$ “ ）只有当两个值一假一真时，得数为真，等效于 “ ( A &amp; ~B ) | (~A  &amp;  B) “</p>
+<p>（即：除$1$^$0$得数位1外，得数均为零）</p>
+<ul>
+<li><p>性质1：任何数与 0 异或即为本身。</p>
+</li>
+<li><p>性质2：任何偶数个相同的数异或后结果为 0。</p>
+</li>
+<li><p>性质3：任何数异或偶数次另一个数结果不变。</p>
+</li>
+</ul>
+<p>⑤左移：$A&lt;&lt;B$ 将A的二进制向左移B位，空位用 0 补齐。</p>
+<p>⑥右移：$A&gt;&gt;B$ 将A的二进制向右移B位，非正数位删去。</p>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+<div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+    init({
+      el: '#waline',
+      serverURL: 'https://ccr39.cf/',
+       reaction: [
+    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',
+  ],
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.1.0/bilibili',
+        '//unpkg.com/@waline/emojis@1.1.0/weibo',
+        '//unpkg.com/@waline/emojis@1.1.0/qq',
+      ]
+    });
+  </script>
+
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://s2.loli.net/2022/12/11/rdgBz4h93ApRGmL.jpg"></li>
+                <li class="wechat-code"><img src="https://s2.loli.net/2022/12/11/VJB3RydclkMYuH9.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/%E8%BD%AC%E8%BD%BD/%E7%BA%BF%E6%80%A7DP/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="https://s2.loli.net/2022/12/16/6L7i4hIzj9nPguY.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.loli.net/2022/12/16/6L7i4hIzj9nPguY.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                线性DP</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/%E6%8A%80%E6%9C%AF/DingScreen/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="https://s2.loli.net/2022/12/14/euvYcO8QjKtF5iL.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.loli.net/2022/12/14/euvYcO8QjKtF5iL.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                解决电脑钉钉视频会议无法旋转屏幕的问题</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://s2.loli.net/2022/12/14/euvYcO8QjKtF5iL.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-    解决电脑钉钉视频会议无法旋转屏幕的问题</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-12-13</div>
-    <p>
-    多角度解决视频会议画面旋转问题，同时分享适用于电脑画面单个窗口旋转方法。</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://s2.loli.net/2022/12/11/8D2VvjRPq6nsTKI.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-    浅谈我的学校</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-12-11</div>
-    <p>
-    关于我的学校</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "nJIfytgko1rH9zkhJaosZRZ3-MdYXbMMI",
+        appKey: "fAj8OKoTBsGObZsLQJmP66FJ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://ccr39.github.io/" class="profile gravatar"><img src="https://s2.loli.net/2022/12/11/RWO3mithG8BEUzS.jpg" itemprop="image" alt="ccr39" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://ccr39.github.io/" itemprop="url" rel="author">ccr39</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>I am ordinary yet unique.</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

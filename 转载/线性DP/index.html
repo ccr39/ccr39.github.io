@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="referrer" content="no-referrer" />
   
-  <title itemprop="name">Tag: 杂谈 | CCR39のLazyNest</title>
+  <title itemprop="name">线性DP | CCR39のLazyNest</title>
   
     <link rel="shortcut icon" href="https://s2.loli.net/2022/12/11/jWa7P4GsMQfVheS.png">
   
@@ -353,97 +353,328 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="杂谈.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://s2.loli.net/2022/12/16/6L7i4hIzj9nPguY.jpg);" src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="https://s2.loli.net/2022/12/16/6L7i4hIzj9nPguY.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      线性DP</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://ccr39.github.io/">
+            <img src="https://s2.loli.net/2022/12/11/RWO3mithG8BEUzS.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://ccr39.github.io/">ccr39</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-12-16<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">杂谈</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>文章原链接: <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ccr39/post-bi-ji-xian-xing-dp">【笔记】线性DP - OIer:ccr39の博客 - 洛谷博客 (luogu.com.cn)</a></p>
+<h2 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h2><p>线性$DP$,指利用线性结构对问题进行求解的一种常见的动态规划类型。 </p>
+<p>对于线性$DP$ ，一般没有固定的模板，需要根据题意与状态进行逐步求解。</p>
+<p>线性动态规划的目标函数为特定变量的线性函数，约束是这些变量的线性不等式或等式，目的是求目标函数的最大值或最小值。</p>
+<p>因此，除了少量问题（如：LIS、LCS、LCIS等）有固定的模板外，大部分都要根据实际问题来推导得出答案。</p>
+<h2 id="二、常见问题"><a href="#二、常见问题" class="headerlink" title="二、常见问题"></a>二、常见问题</h2><p>对于线性$DP$一般有以下常见模板题型：</p>
+<h3 id="1、最长单调上升子序列（洛谷AT2827-LIS）"><a href="#1、最长单调上升子序列（洛谷AT2827-LIS）" class="headerlink" title="1、最长单调上升子序列（洛谷AT2827 LIS）"></a>1、最长单调上升子序列（洛谷<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/AT2827">AT2827 LIS</a>）</h3><h4 id="（1）题目"><a href="#（1）题目" class="headerlink" title="（1）题目"></a>（1）题目</h4><ul>
+<li>给定一个长为$n$ 的序列 $a_i$，求这个序列的单调上升子序列长度。</li>
+<li>$1 \le a_i \le n \le10^5$。</li>
+</ul>
+<h4 id="（2）做法"><a href="#（2）做法" class="headerlink" title="（2）做法"></a>（2）做法</h4><h4 id="solution-1-O-n-2"><a href="#solution-1-O-n-2" class="headerlink" title="$solution~1:O(n^2)$"></a>$solution~1:O(n^2)$</h4><p>线性$DP$，根据我们<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ccr39/post-bi-ji-dong-tai-gui-hua-di-yin-ru">之前</a>介绍过得$DP$三连可以得到以下思路。</p>
+<ol>
+<li><p>我是谁？（设计状态）</p>
+<p>我们考虑使用$DP[i]$来表示第以i位结尾的最长的单调上升子序列长度。</p>
+<p>即：我是第i位之前的最长单调上升子序列的长度。</p>
+</li>
+<li><p>我从何而来 (backward 型转移)</p>
+</li>
+<li><p>我将到何方 (forward 型转移)</p>
+<p>对于本题来说，我们采用第一种转移方式，考虑我是如何求得。</p>
+</li>
+</ol>
+<p>我们可以发现，对于任何一个点$dp_i$来说，以它为结尾的最长单调上升子序列的长度就是在它之前的，元素值小于它的所有点的最大值+1。</p>
+<p>即对于一个点$a_j(0\le j&lt; i)$若$a_j&lt;a_i$且在所有满足条件的j中,$dp_j$的值最大，那么，$dp_i&#x3D;dp_j+1$。</p>
+<p>把写出它的状态转移方程：</p>
+<h3 id="dp-i-x3D-max-dp-j-1-0-le-j-lt-i-a-j-lt-a-i-dp-0-x3D-0"><a href="#dp-i-x3D-max-dp-j-1-0-le-j-lt-i-a-j-lt-a-i-dp-0-x3D-0" class="headerlink" title="$dp_i&#x3D;max(dp_j)+1(0\le j&lt; i,a_j&lt;a_i );dp_0&#x3D;0$"></a>$dp_i&#x3D;max(dp_j)+1(0\le j&lt; i,a_j&lt;a_i );dp_0&#x3D;0$</h3><p>这样，我们就能求出每个阶段下最长的单调上升序列，再存储其最大值即可。</p>
+<p>时间复杂度$O(n^2)$</p>
+<h3 id="code-1"><a href="#code-1" class="headerlink" title="$code~1:$"></a>$code~1:$</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+#define re register
+#define rint re int
+const int MAXN=1e5+5;
+int n,ans,a[MAXN],dp[MAXN];
+signed main()
+&#123;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(rint i=1;i&lt;=n;i++)
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    for(rint i=1;i&lt;=n;i++)
+    &#123;
+        for(rint j=1;j&lt;i;j++)
+            if(a[j]&lt;a[i])
+                dp[i]=max(dp[i],dp[j]);
+        ans=max(ans,++dp[i]);
+    &#125;
+    printf(&quot;%d&quot;,ans);
+    return 0;
+&#125;
+</code></pre>
+<hr>
+<h4 id="solution-2-O-nlogn"><a href="#solution-2-O-nlogn" class="headerlink" title="$solution~2:O(nlogn)$"></a>$solution~2:O(nlogn)$</h4><p>利用二分的思想，去维护一个单调递增的序列。</p>
+<p>对于每一次的元素的插入，都利用二分查找其位置。</p>
+<p>时间复杂度$O(nlogn)$</p>
+<h4 id="code-2"><a href="#code-2" class="headerlink" title="$code$  $2:$"></a>$code$  $2:$</h4><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+#define re register
+#define rint re int
+const int MAXN=1e5+5;
+int n,a[MAXN],f[MAXN],p=1;
+signed main()
+&#123;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(rint i=1;i&lt;=n;i++)
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    f[p]=a[1];//把a[1]先放入数组中
+    for(rint i=2;i&lt;=n;i++)
+        if(a[i]&gt;f[p]) f[++p]=a[i];//如果a[i]&gt;s[p]也就是比现有元素都大，就直接将其插入到数组最后
+        else f[lower_bound(f+1,f+p+1,a[i])-f]=a[i];//在f中查找正好大于或等于a[i]的位置，并将其替换。lower_bound查找大于等于，upper_bound查找大于，两者初始仅可以在单调递增的序列中查询。
+    printf(&quot;%d&quot;,p);
+    return 0;
+&#125;
+</code></pre>
+<h4 id="solution-3"><a href="#solution-3" class="headerlink" title="$solution$  $3:$"></a>$solution$  $3:$</h4><p>树形数组，对$DP$的一种优化方式，时间复杂度$O(nlogn)$,但常数比第二种方法大。</p>
+<p>详解可<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/820-2018/shu-zhuang-shuo-zu-qiu-lis">见此</a>。(<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/35360">@星爵</a>$dalao$)</p>
+<h4 id="（3）同类题型-P1020导弹拦截、P1091合唱队形。"><a href="#（3）同类题型-P1020导弹拦截、P1091合唱队形。" class="headerlink" title="（3）同类题型:P1020导弹拦截、P1091合唱队形。"></a>（3）同类题型:<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1020">P1020导弹拦截</a>、<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1091">P1091合唱队形</a>。</h4><hr>
+<h3 id="2、最长公共子序列-LCS-P1439"><a href="#2、最长公共子序列-LCS-P1439" class="headerlink" title="2、最长公共子序列$LCS$(P1439)"></a>2、最长公共子序列$LCS$(<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1439">P1439</a>)</h3><h4 id="（1）题目-1"><a href="#（1）题目-1" class="headerlink" title="（1）题目"></a>（1）题目</h4><ul>
+<li>给定两个长为$n$ 的序列$P_1$ 和 $P_2$ ，求它们的最长公共子序列。</li>
+<li>$1  \le n \le10^5$。</li>
+</ul>
+<h4 id="（2）做法-1"><a href="#（2）做法-1" class="headerlink" title="（2）做法"></a>（2）做法</h4><h4 id="solution1：O-n-2"><a href="#solution1：O-n-2" class="headerlink" title="$solution1：O(n^2)$"></a>$solution<del>1：</del>O(n^2)$</h4><p>线性$DP$，我们继续按照<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ccr39/post-bi-ji-dong-tai-gui-hua-di-yin-ru">之前</a>做题的思路，使用$DP$三连分析问题。</p>
+<ol>
+<li><p>我是谁？（设计状态）</p>
+<p>我们考虑使用$DP[i][j]$来表示$a_{1∼i},b_{1∼j}$的LCS长度。</p>
+<p>即：我是第$a$的第i位之前,和b的第$j$位前，$a,b$的最长公共子序列。</p>
+</li>
+<li><p>我从何而来 (backward 型转移)</p>
+</li>
+<li><p>我将到何方 (forward 型转移)</p>
+<p>这里我们依旧选择第二种转移方式解决此题。</p>
+</li>
+</ol>
+<p>我们来思考，当$a[i]&#x3D;b[j]$时,那么就表示有新的公共元素，那么</p>
+<p>$dp[i][j]&#x3D;dp[i-1][j-1]+1$</p>
+<p>如果没有新的公共元素，那么就要继承之前的值</p>
+<p>$dp[i][j]&#x3D;max(dp[i−1][j],dp[i][j−1])$</p>
+<p>那么我们就可以写出来它的状态转移方程。</p>
+<p><img src="https://s3.bmp.ovh/imgs/2021/08/e5c09e27db867f0b.png"></p>
+<h4 id="code-1-1"><a href="#code-1-1" class="headerlink" title="$code~1:$"></a>$code~1:$</h4><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+int dp[1001][1001],a[2001],b[2001],n,m;
+int main()
+&#123;
+   cin&gt;&gt;n;
+   for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;a[i]);
+   for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;b[i]);
+   for(int i=1;i&lt;=n;i++)
+    for(int j=1;j&lt;=n;j++)
+        if(a[i]==b[j]) dp[i][j]=dp[i-1][j-1]+1;
+         else dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
+   cout&lt;&lt;dp[n][n];
+&#125;
+</code></pre>
+<hr>
+<h4 id="solution-2-O-nlogn-1"><a href="#solution-2-O-nlogn-1" class="headerlink" title="$solution~2:O(nlogn)$"></a>$solution~2:O(nlogn)$</h4><p>将问题转化成$LIS$,将$a$序列映射进一个数组里，数组下标代表a序列的数，而数组的值表示其下标在$a$数组的位置。</p>
+<p>即若 $a_1&#x3D;3,a_2&#x3D;2,a_3&#x3D;1,a_4&#x3D;4,a_5&#x3D;5$</p>
+<p>那么$map_1&#x3D;3,map_2&#x3D;2,map_3&#x3D;1,map_4&#x3D;4,map_5&#x3D;5$</p>
+<p>那么在根据$b$数组在$map$数组中的相对位置做$LIS$。</p>
+<p>得到的就是他们的$LCS$。</p>
+<p>换句话说，只要$b$中某个子序列在$a$中的相对位置单调递增，那么它就是$a$的子序列。</p>
+<p>当$b_1&#x3D;1,b_2&#x3D;2,b_3&#x3D;3,b_4&#x3D;4,b_5&#x3D;5$时</p>
+<p>$b_1$的位置在$a$中排第3位，$b_2$的的位置在$a$中排第2位,$b_3$的位置在$a$中排第1位，$b_4$的位置在$a$中排第4位,$b_5$的位置在$a$中排第5位。</p>
+<p>(也可以写成$map_{b_1}&#x3D;3,map_{b_2}&#x3D;2,map_{b_3}&#x3D;1,map_{b_4}&#x3D;4,map_{b_5}&#x3D;5$)</p>
+<p>在此之中，最长单调上升子序列为$1,4,5$,那么相对应的,$b$与$a$的$LCS$就是$b_3,b_4,b_5$。</p>
+<p>时间复杂度$O(nlogn)$,但仅限于全排列数组。</p>
+<h4 id="code-2-1"><a href="#code-2-1" class="headerlink" title="$code~2:$"></a>$code~2:$</h4><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+#define re register
+#define rint re int
+using namespace std;
+const int MAXN=1e6+5;
+int a,b[MAXN],Map[MAXN],dp[MAXN];
+int main()
+&#123;
+    rint n,len=0;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(rint i=1;i&lt;=n;i++)
+        scanf(&quot;%d&quot;,&amp;a),Map[a]=i;
+    for(rint i=1;i&lt;=n;i++)
+        scanf(&quot;%d&quot;,&amp;b[i]),dp[i]=0x7fffffff;//因为要查找位置，所以dp要赋极大值 
+    for(rint i=1;i&lt;=n;i++)
+        if(Map[b[i]]&gt;dp[len]) dp[++len]=Map[b[i]];//如果可以直接满足递增，则直接插入尾部 
+        else 
+        &#123;
+            rint k=lower_bound(dp+1,dp+len+1,Map[b[i]])-dp;
+            dp[k]=Map[b[i]];//如果不行，则插入到第一个大于等于本身的地方 
+        &#125;
+    printf(&quot;%d&quot;,len);
+    return 0;
+&#125;
+</code></pre>
+<h4 id="（3）同类题目：AT4527-LCS"><a href="#（3）同类题目：AT4527-LCS" class="headerlink" title="（3）同类题目：AT4527 LCS"></a>（3）同类题目：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/AT4527">AT4527 LCS</a></h4><hr>
+<h3 id="3、最长公共子上升序列-CF10D-LCIS"><a href="#3、最长公共子上升序列-CF10D-LCIS" class="headerlink" title="3、最长公共子上升序列(CF10D LCIS)"></a>3、最长公共子上升序列(<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF10D">CF10D LCIS</a>)</h3><h4 id="（1）题目-2"><a href="#（1）题目-2" class="headerlink" title="（1）题目"></a>（1）题目</h4><ul>
+<li>给定两个长分别为$n、m$ 的序列$P_1$ 和 $P_2$ ，求它们的最长公共上升子序列。</li>
+<li>$1  \le n,m \le500$。</li>
+</ul>
+<h4 id="（2）做法-2"><a href="#（2）做法-2" class="headerlink" title="（2）做法"></a>（2）做法</h4><p>待补充（鸽了）</p>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+<div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+    init({
+      el: '#waline',
+      serverURL: 'https://ccr39.cf/',
+       reaction: [
+    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',
+  ],
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.1.0/bilibili',
+        '//unpkg.com/@waline/emojis@1.1.0/weibo',
+        '//unpkg.com/@waline/emojis@1.1.0/qq',
+      ]
+    });
+  </script>
+
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://s2.loli.net/2022/12/11/rdgBz4h93ApRGmL.jpg"></li>
+                <li class="wechat-code"><img src="https://s2.loli.net/2022/12/11/VJB3RydclkMYuH9.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/%E8%BD%AC%E8%BD%BD/baseDP/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="https://s2.loli.net/2022/12/16/1x2AU7tG9MChbKQ.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.loli.net/2022/12/16/1x2AU7tG9MChbKQ.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                基础动态规划</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/%E8%BD%AC%E8%BD%BD/%E8%BF%9B%E5%88%B6%E4%B8%8E%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://s2.loli.net/2022/12/11/AwcVbn2y5NEMTXq.png" data-src="https://s2.loli.net/2022/12/16/5YZSd2qmGWtgHQ6.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.loli.net/2022/12/16/5YZSd2qmGWtgHQ6.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                进制与位运算</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://s2.loli.net/2022/12/14/euvYcO8QjKtF5iL.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-    解决电脑钉钉视频会议无法旋转屏幕的问题</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-12-13</div>
-    <p>
-    多角度解决视频会议画面旋转问题，同时分享适用于电脑画面单个窗口旋转方法。</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://s2.loli.net/2022/12/11/8D2VvjRPq6nsTKI.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-    浅谈我的学校</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-12-11</div>
-    <p>
-    关于我的学校</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "nJIfytgko1rH9zkhJaosZRZ3-MdYXbMMI",
+        appKey: "fAj8OKoTBsGObZsLQJmP66FJ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://ccr39.github.io/" class="profile gravatar"><img src="https://s2.loli.net/2022/12/11/RWO3mithG8BEUzS.jpg" itemprop="image" alt="ccr39" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://ccr39.github.io/" itemprop="url" rel="author">ccr39</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>I am ordinary yet unique.</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
