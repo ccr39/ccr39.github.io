@@ -1,0 +1,83 @@
+                .xuanxiang
+                {
+                    background-color: #333;
+                    text-align: center;
+                    padding: 10px 20px;/*上下填充10px左右填充20px*/
+                    overflow: hidden;/*如果内部元素超出，不显示滚动条*/
+                    box-shadow:0 5px 20px rgba(0,0,0,0.5);/*边缘淡化*/
+                }
+                /*选项栏*/
+                .head-a
+                {
+                    background-color: #333;
+                    color: rgb(255, 255, 255);
+                    text-decoration: none;/*不显示下划线*/
+                    padding: 100% 9%;/*上下完全填充，左右填充%9*/
+                }
+                /*未选中选项*/
+                .head-a:hover
+                {
+                    background-color: #ddd;
+                    color: black;
+                }
+                /*未选中选项鼠标悬停时样式*/
+                .now 
+                {
+                    background-color: #ddd;
+                    color: black;
+                    text-decoration: none;
+                    padding: 100% 9%;
+                }
+                /*已选中选项*/
+                body
+                {
+                    background-image: url(../beijing.jpg);
+                    background-size:cover;/*适应图片大小*/
+                    background-repeat: no-repeat;/*是否重复(否)*/
+                    background-position:center center;/*图片居中(水平 上下)*/
+                    /*background-attachment: fixed;图片跟随滑动*/
+                }
+                /*背景*/
+                .main
+                {
+                    background-color: rgba(255, 255, 255, 0.842);
+                    box-shadow:0 5px 20px rgba(0,0,0,0.5);/*边缘淡化*/
+                    text-align: center; /*居中*/
+                    padding: 50px;
+                }
+                /*文本部分背景*/
+                .tt
+                {
+                    font-size: 50px;/*字体大小*/
+                    color: black;
+                    text-shadow: 1px 1px 1px black;/*文字阴影(水平位置 垂直位置 模糊距离 颜色)*/
+                }
+                /*标题文本*/
+                .ftt
+                {
+                    font-size: 30px;
+                    text-shadow: 1px 1px 1px black;
+                }
+                /*副标题文本*/
+                .fot
+                {
+                    padding: 100px;
+                    background-color: #333;
+                }
+                .son
+                {
+                    background-color: rgb(255, 255, 255);
+                    box-shadow:0 5px 20px rgba;
+                    height: 350px(0,0,0,0.5);
+                    width: 250px;
+                    text-align: center;
+                    padding: 20px;
+                    margin: 20px;
+                    display: inline-block;/*末尾结束不换行*/
+                    box-shadow:0 5px 20px rgba(0,0,0,0.5);/*边缘淡化*/
+                }
+                .tou
+                {
+                    text-decoration: none;/*不显示下划线*/
+                    color:rgba(194, 194, 194, 0.705);
+                }
