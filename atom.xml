@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ccr39.github.io/"/>
-  <updated>2022-12-20T14:48:35.902Z</updated>
+  <updated>2023-01-05T13:54:56.787Z</updated>
   <id>http://ccr39.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vim的安装以及基础使用</title>
+    <link href="http://ccr39.github.io/%E6%8A%80%E6%9C%AF/vim/"/>
+    <id>http://ccr39.github.io/技术/vim/</id>
+    <published>2023-01-05T13:24:00.000Z</published>
+    <updated>2023-01-05T13:54:56.787Z</updated>
+    
+    <content type="html"><![CDATA[<p>Vim 是从 Vi 发展出来的一个文本编辑器，也是所有的 Unix Like 内置的文本编辑器。其拥有强大的对代码的处理功能，因此成为了许多大佬写代码的首选。</p><p>这里要说明, Vim 不是 IDE 他可以在任何的平台中使用，也没有对语言的限制。</p><p>可以说，学好对 Vim ，可以让你的手几乎不会离开键盘的主操作区，对我们有着极大的帮助。</p><h3 id="一、Vim-在-Windows-上的安装"><a href="#一、Vim-在-Windows-上的安装" class="headerlink" title="一、Vim 在 Windows 上的安装"></a>一、Vim 在 Windows 上的安装</h3><h4 id="1、直接安装-Vim-本体"><a href="#1、直接安装-Vim-本体" class="headerlink" title="1、直接安装 Vim 本体"></a>1、直接安装 Vim 本体</h4><p>在<a href="https://www.vim.org/download.php#pc">官网</a>中直接下载 Gvim 的安装包，根据提示进行安装。</p><p>安装完成之后，即可以从目录中启动 Vim ，或者，你可以在控制台中输入 Vim 进行使用。（当然要保证已经为 Vim 配置了环境变量）</p><p><img src="https://i0.hdslb.com/bfs/album/91c814cb3b478fe5bc5aad4d1afbbf0e18445085.png"></p><h4 id="2、在-VS-Code-中使用-Vim"><a href="#2、在-VS-Code-中使用-Vim" class="headerlink" title="2、在 VS Code  中使用 Vim"></a>2、在 VS Code  中使用 Vim</h4><p>直接在 VS Code 的拓展中搜索 Vim 即可让 VS Code 的文本编译方式转为和 Vim 相同。</p><p><img src="https://i0.hdslb.com/bfs/album/b54142a63ab086bbf799a9a545be5fe8c5158e65.png"></p><h3 id="二、Vim-的学习和使用"><a href="#二、Vim-的学习和使用" class="headerlink" title="二、Vim 的学习和使用"></a>二、Vim 的学习和使用</h3><p>如果你是安装的 Gvim 本体的话，你可以直接在控制台输入 <code>vimtutor</code>使用 Vim 自带的学习文档进行学习。</p><p>下面将在这里介绍 Vim 的基本使用。</p><p>如下图，Vim 为我们编辑文本提供了三种方式：命令模式、输入模式、底线命令模式。</p><p><img src="https://i0.hdslb.com/bfs/album/bfe47f2595be5e1031a5b43b673916ad90f27678.png"></p><p>当我们打开 Vim 默认的模式即为命令模式，在命令模式下，我们不能完成文本的输入等操作，但是我们可以通过键盘上的按键来操作并编辑文本。</p><p>当我们在命令模式下输入 : 时，会进入底线命令模式，这个时候，光标会在左下角出现，我们可以输入相应的指令并按回车执行指令。</p><p>在命令模式下，当我们输入 i a o 三个键时，即可进入输入模式，在输入模式下，我们可以正常的输入文字，如果想要切换回命令模式，需要按 esc 键。</p><p>下面是 vi&#x2F;vim 的键盘图</p><p><img src="https://i0.hdslb.com/bfs/album/0cfcae47854e492ed03c1ff8bc727efb85a690cc.gif"></p><p>Vim 的指令十分强大，需要一段时间的学习和适应，在熟悉按键之后，即可达到非常强大的效果。</p><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://ccr39.cf/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
+    
+    <summary type="html">
+    
+      来解决环境搭建困难的避坑指南。
+    
+    </summary>
+    
+      <category term="技术" scheme="http://ccr39.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="编程" scheme="http://ccr39.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="工具" scheme="http://ccr39.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>BOCCHI THE ROCK!</title>
