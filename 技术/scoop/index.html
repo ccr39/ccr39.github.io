@@ -436,7 +436,7 @@ scoop install nodejs
 <h4 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h4><p>scoop的安装依靠PoweShell，如果你使用的是 Windows 7 系统，那么PowerShell的版本可能过于陈旧。你可以手动安装新版的PowerShell。</p>
 <p>安装命令:在PowerShell中输入</p>
 <pre><code class="powershell">Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-rm get.scoop.sh -outfile &#39;install.ps1&#39;
+irm get.scoop.sh -outfile &#39;install.ps1&#39;
 .\install.ps1 -ScoopDir &#39;C:\Scoop&#39;
 </code></pre>
 <h4 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h4><p>如：</p>
@@ -582,7 +582,7 @@ rm get.scoop.sh -outfile &#39;install.ps1&#39;
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -594,10 +594,10 @@ rm get.scoop.sh -outfile &#39;install.ps1&#39;
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -609,7 +609,7 @@ rm get.scoop.sh -outfile &#39;install.ps1&#39;
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2022 ccr39<br>
+      &copy; 2023 ccr39<br>
       powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
