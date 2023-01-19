@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="referrer" content="no-referrer" />
   
-  <title itemprop="name">Tag: PC | CCR39のLazyNest</title>
+  <title itemprop="name">Git 的入门（一）：Git 的常用命令 | CCR39のLazyNest</title>
   
     <link rel="shortcut icon" href="https://s1.ax1x.com/2023/01/06/pSAdoAs.png">
   
@@ -353,164 +353,181 @@
   </div>
 </header>
 
-      
-<meta name="referrer" content="no-referrer">
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="PC.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-  </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">PC</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">Git 的入门（一）：Git 的常用命令</h1>
+            <p class="entry-census">ccr39&nbsp;·&nbsp;2023-1-9&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <h2 id="一、设置用户签名"><a href="#一、设置用户签名" class="headerlink" title="一、设置用户签名"></a>一、设置用户签名</h2><p>当我们使用 Git 前，首先要设置自己的用户签名。</p>
+<h3 id="1、基本语法"><a href="#1、基本语法" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><p>在任意控制台下输入：</p>
+<pre><code class="git">git config --global user.name 用户名
+git config --global user.email 邮箱
+</code></pre>
+<p>注意，在此处设置的邮箱并不一定为真实邮箱， Git 也并不会验证其真实性。</p>
+<p>同时，此邮箱与将来使用的 GitHub 没有关系。</p>
+<p><strong>但是最好用自己创建 GitHub 的邮箱，不然提交代码没有小绿点！</strong></p>
+<h3 id="2、用户签名所在位置"><a href="#2、用户签名所在位置" class="headerlink" title="2、用户签名所在位置"></a>2、用户签名所在位置</h3><p>在 Git 设置的用户签名会保存在<code>C:\Users\你当前使用的用户\.gitconfig</code></p>
+<p>当我们尝试打开此文件可以看到</p>
+<pre><code class=".gitconfig">[user]
+    name = 用户名
+    email = 邮箱
+</code></pre>
+<h2 id="二、初始化本地库"><a href="#二、初始化本地库" class="headerlink" title="二、初始化本地库"></a>二、初始化本地库</h2><h3 id="1、基本语法-1"><a href="#1、基本语法-1" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code class="git">git init
+</code></pre>
+<h3 id="2、具体用法"><a href="#2、具体用法" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>在我们的工作区文件夹下打开 Git，并执行代码进行初始化本地库。</p>
+<p>如果文件夹没有进行初始化，那么 Git 将没有权限修改文件。</p>
+<p>执行完毕后，Git 将在文件夹下生成名为<code>.git</code>的文件夹（如果没有，是因为此文件夹被系统自动隐藏，请开启查看隐藏的文件）</p>
+<h2 id="三、将文件添加到暂存区"><a href="#三、将文件添加到暂存区" class="headerlink" title="三、将文件添加到暂存区"></a>三、将文件添加到暂存区</h2><h3 id="1、基本语法-2"><a href="#1、基本语法-2" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code>git add 
+</code></pre>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+<div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+
+    init({
+      el: '#waline',
+      serverURL: 'https://ccr39.cf/',
+       reaction: [
+    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',
+
+  ],
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.1.0/bilibili',
+        '//unpkg.com/@waline/emojis@1.1.0/weibo',
+        '//unpkg.com/@waline/emojis@1.1.0/qq',
+      ]
+    });
+  </script>
+
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://s2.loli.net/2022/12/11/rdgBz4h93ApRGmL.jpg"></li>
+                <li class="wechat-code"><img src="https://s2.loli.net/2022/12/11/VJB3RydclkMYuH9.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/%E6%8A%80%E6%9C%AF/git-1/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/5022f0e071ece85b81658d2a36991449ed5092e9.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/5022f0e071ece85b81658d2a36991449ed5092e9.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Git 的入门（一）：Git 的基本概念以及 Git 命令行的使用</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/%E8%B5%84%E6%BA%90/Gal-Atri/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://i0.hdslb.com/bfs/album/b4551be1a70b990b2e5a1be9c46e22408c457b53.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i0.hdslb.com/bfs/album/b4551be1a70b990b2e5a1be9c46e22408c457b53.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                【Galgame】【PC/安卓直装】亚托莉—我挚爱的时光／ATRI -MY DEAR MOMENTS</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E8%B5%84%E6%BA%90/Gal-Atri/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i0.hdslb.com/bfs/album/b4551be1a70b990b2e5a1be9c46e22408c457b53.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E8%B5%84%E6%BA%90/Gal-Atri/">
-    【Galgame】【PC/安卓直装】亚托莉—我挚爱的时光／ATRI -MY DEAR MOMENTS</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2023-1-8</div>
-    <p>
-    Atri 资源分享及攻略</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E8%B5%84%E6%BA%90/Gal-Atri/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E8%B5%84%E6%BA%90/Gal-zsmfs/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/fd588f2bb21aeaf8356ae20b027b11006f9888b4.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E8%B5%84%E6%BA%90/Gal-zsmfs/">
-    【Galgame】【PC/KRKR】纸上魔法使</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2023-1-8</div>
-    <p>
-    《纸上魔法师》资源分享，以及攻略。</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E8%B5%84%E6%BA%90/Gal-zsmfs/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E8%B5%84%E6%BA%90/Gal-you/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/9d94879cb26e2521a5929a7f2de5ece04ec6f90b.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E8%B5%84%E6%BA%90/Gal-you/">
-    【Galgame】【PC/ONS】悠之空</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2023-1-8</div>
-    <p>
-    悠之空资源分享</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E8%B5%84%E6%BA%90/Gal-you/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E8%B5%84%E6%BA%90/Gal-sora/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/f10284aaf05e42b3e6b1c9f1a8ff81ffb38671f8.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E8%B5%84%E6%BA%90/Gal-sora/">
-    【Galgame】【PC/ONS】缘之空</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2023-1-8</div>
-    <p>
-    缘之空资源分享</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E8%B5%84%E6%BA%90/Gal-sora/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "nJIfytgko1rH9zkhJaosZRZ3-MdYXbMMI",
+        appKey: "fAj8OKoTBsGObZsLQJmP66FJ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://ccr39.github.io/" class="profile gravatar"><img src="https://i0.hdslb.com/bfs/album/31885206e51d953c6cdd9e7fcc4e65e31d884f2e.jpg" itemprop="image" alt="ccr39" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://ccr39.github.io/" itemprop="url" rel="author">ccr39</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>I am ordinary yet unique.</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
