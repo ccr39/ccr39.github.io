@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ccr39.github.io/"/>
-  <updated>2023-01-19T20:01:33.985Z</updated>
+  <updated>2023-01-20T08:45:08.154Z</updated>
   <id>http://ccr39.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git 的入门（二）：Git 的常用命令</title>
+    <link href="http://ccr39.github.io/%E6%8A%80%E6%9C%AF/git-2/"/>
+    <id>http://ccr39.github.io/技术/git-2/</id>
+    <published>2023-01-20T08:23:34.000Z</published>
+    <updated>2023-01-20T08:45:08.154Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、设置用户签名"><a href="#一、设置用户签名" class="headerlink" title="一、设置用户签名"></a>一、设置用户签名</h2><p>当我们使用 Git 前，首先要设置自己的用户签名。</p><h3 id="1、基本语法"><a href="#1、基本语法" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><p>在任意控制台下输入：</p><pre><code class="git">git config --global user.name 用户名git config --global user.email 邮箱</code></pre><p>注意，在此处设置的邮箱并不一定为真实邮箱， Git 也并不会验证其真实性。</p><p>同时，此邮箱与将来使用的 GitHub 没有关系。</p><p><strong>但是最好用自己创建 GitHub 的邮箱，不然提交代码没有小绿点！</strong></p><h3 id="2、用户签名所在位置"><a href="#2、用户签名所在位置" class="headerlink" title="2、用户签名所在位置"></a>2、用户签名所在位置</h3><p>在 Git 设置的用户签名会保存在<code>C:\Users\你当前使用的用户\.gitconfig</code></p><p>当我们尝试打开此文件可以看到</p><pre><code class=".gitconfig">[user]    name = 用户名    email = 邮箱</code></pre><h2 id="二、初始化本地库"><a href="#二、初始化本地库" class="headerlink" title="二、初始化本地库"></a>二、初始化本地库</h2><h3 id="1、基本语法-1"><a href="#1、基本语法-1" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code class="git">git init</code></pre><h3 id="2、具体用法"><a href="#2、具体用法" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>在我们的工作区文件夹下打开 Git，并执行代码进行初始化本地库。</p><p>如果文件夹没有进行初始化，那么 Git 将没有权限修改文件。</p><p>执行完毕后，Git 将在文件夹下生成名为<code>.git</code>的文件夹（如果没有，是因为此文件夹被系统自动隐藏，请开启查看隐藏的文件）</p><h2 id="三、将文件添加-x2F-删除到暂存区"><a href="#三、将文件添加-x2F-删除到暂存区" class="headerlink" title="三、将文件添加&#x2F;删除到暂存区"></a>三、将文件添加&#x2F;删除到暂存区</h2><h3 id="1、基本语法-2"><a href="#1、基本语法-2" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><p>添加命令：</p><pre><code class="git">git add .git add 文件名</code></pre><p>删除命令：</p><pre><code class="git">git rm --cached 文件名rm .git/index</code></pre><h3 id="2、具体用法-1"><a href="#2、具体用法-1" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>添加命令：将工作区的文件添加到暂存区，其中第一行指令为将工作区所有文件添加到暂存区，第二行指令为将指定文件添加到暂存区。</p><p>删除命令：第一行为将某文件从暂存区移除，暂存区实质是.git目录下的index文件，只要将此文件删除，那么就可以认为暂存区被清空（即第二行代码）。</p><h2 id="四、提交到本地库"><a href="#四、提交到本地库" class="headerlink" title="四、提交到本地库"></a>四、提交到本地库</h2><h3 id="1、基本语法-3"><a href="#1、基本语法-3" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><p>提交暂存区到本地仓库中:</p><pre><code class="git">git commit -m [message]</code></pre><p>[message] 可以是一些备注信息。</p><p>提交暂存区的指定文件到仓库区：</p><pre><code class="git">$ git commit [file1] [file2] ... -m [message]</code></pre><p><strong>-a</strong> 参数设置修改文件后不需要执行 git add 命令，直接来提交</p><pre><code class="git">$ git commit -a</code></pre><h3 id="2、具体用法-2"><a href="#2、具体用法-2" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>使用提交命令提交到本地库中的文件不能再次删除。</p><h3 id="五、查看本地库状态"><a href="#五、查看本地库状态" class="headerlink" title="五、查看本地库状态"></a>五、查看本地库状态</h3><h3 id="1、基本语法-4"><a href="#1、基本语法-4" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code class="git">git status</code></pre><h3 id="2、具体用法-3"><a href="#2、具体用法-3" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>当工作区文件没有在暂存区找到时，会提示：</p><pre><code class="git">$ git statusOn branch masterUntracked files:  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)        new3.txt</code></pre><p>当我们使用命令将文件添加到暂存区，提示：</p><pre><code class="git">$ git statusOn branch masterChanges to be committed:  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)        new file:   new3.txt</code></pre><p>代表我们还未将文件提交本地库，再次执行提交本地库的命令，会提示：</p><pre><code class="git">$ git statusOn branch masternothing to commit, working tree clean</code></pre><p>表明文件已经全部提交到本地库。</p><h2 id="六、查看历史版本"><a href="#六、查看历史版本" class="headerlink" title="六、查看历史版本"></a>六、查看历史版本</h2><h3 id="1、基本语法-5"><a href="#1、基本语法-5" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code class="git">git reflog查看精简版本信息git log查看版本信息</code></pre><h3 id="2、具体用法-4"><a href="#2、具体用法-4" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>使用<code>git reflog</code>可以查看本地库中的各个版本号前七位，以及该版本的备注信息，以及当前版本指向的本地库中的版本。</p><p>使用<code>git log</code>咳哟看到本地库中各版本完整的版本号，提交者及邮箱，提交日期以及备注信息。</p><p>如:</p><pre><code class="git">$ git logcommit c1c925dffc5b57bdb82b22d0d9ae18c8d5cf141f (HEAD -&gt; master)Author: ccr39 &lt;1632145835@qq.com&gt;Date:   Fri Jan 20 15:44:41 2023 +0800    测试版本</code></pre><p>commit 后的就是版本号。</p><h2 id="七、进行版本穿梭"><a href="#七、进行版本穿梭" class="headerlink" title="七、进行版本穿梭"></a>七、进行版本穿梭</h2><h3 id="1、基本语法-6"><a href="#1、基本语法-6" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code class="git">git reset --hard 版本号/版本号前七位</code></pre><h3 id="2、具体用法-5"><a href="#2、具体用法-5" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>使用版本穿梭命令进行版本穿梭。我们可以再次使用<code>git reflog</code>查看版本信息。</p><p>观察到新生成了一个日志信息，以及当前指针已经指向穿梭到的版本号。</p><pre><code class="git">$ git reflogc845da5 (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to c845da5新生成的版本信息c1c925d HEAD@&#123;1&#125;: commit: 测试版本4738829 HEAD@&#123;2&#125;: commit: secondc845da5 (HEAD -&gt; master) HEAD@&#123;3&#125;: commit (initial): first当前指针指向的版本</code></pre><p>我们可以再次验证本地库的文件状态，发现本地库中的文件已经回到原来版本的状态。</p><p>实际上，指针先指向了 master 分支，再指向了我们的相应版本。</p><p>我们可以在<code>.\.git\HEAD</code>看到：</p><pre><code class="yaml">ref: refs/heads/master</code></pre><p>表明指针在指向 master。</p><p>再次打开<code>.\.git\refs\heads\master</code>，可以看到，在 master 文件中正保存了当前的版本号。表明 master 版本指向了我们当前的版本。</p><p>实际上，Git 切换版本的实质是移动 HEAD 指针。</p><p>在刚刚的案例中：HEAD -&gt; master（分支）-&gt; 版本。通过移动指针指向不同的分支与版本，即可完成版本控制。</p><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://ccr39.cf/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
+    
+    <summary type="html">
+    
+      从保存到暂存区，到提交到本地库。
+    
+    </summary>
+    
+      <category term="技术" scheme="http://ccr39.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="编程" scheme="http://ccr39.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="工具" scheme="http://ccr39.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>Git 的入门（一）：Git 的基本概念以及 Git 命令行的使用</title>
@@ -34,33 +58,9 @@
       <category term="技术" scheme="http://ccr39.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="工具" scheme="http://ccr39.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="编程" scheme="http://ccr39.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Git 的入门（一）：Git 的常用命令</title>
-    <link href="http://ccr39.github.io/%E6%8A%80%E6%9C%AF/git-2/"/>
-    <id>http://ccr39.github.io/技术/git-2/</id>
-    <published>2023-01-09T02:35:27.000Z</published>
-    <updated>2023-01-19T20:21:55.565Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一、设置用户签名"><a href="#一、设置用户签名" class="headerlink" title="一、设置用户签名"></a>一、设置用户签名</h2><p>当我们使用 Git 前，首先要设置自己的用户签名。</p><h3 id="1、基本语法"><a href="#1、基本语法" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><p>在任意控制台下输入：</p><pre><code class="git">git config --global user.name 用户名git config --global user.email 邮箱</code></pre><p>注意，在此处设置的邮箱并不一定为真实邮箱， Git 也并不会验证其真实性。</p><p>同时，此邮箱与将来使用的 GitHub 没有关系。</p><p><strong>但是最好用自己创建 GitHub 的邮箱，不然提交代码没有小绿点！</strong></p><h3 id="2、用户签名所在位置"><a href="#2、用户签名所在位置" class="headerlink" title="2、用户签名所在位置"></a>2、用户签名所在位置</h3><p>在 Git 设置的用户签名会保存在<code>C:\Users\你当前使用的用户\.gitconfig</code></p><p>当我们尝试打开此文件可以看到</p><pre><code class=".gitconfig">[user]    name = 用户名    email = 邮箱</code></pre><h2 id="二、初始化本地库"><a href="#二、初始化本地库" class="headerlink" title="二、初始化本地库"></a>二、初始化本地库</h2><h3 id="1、基本语法-1"><a href="#1、基本语法-1" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code class="git">git init</code></pre><h3 id="2、具体用法"><a href="#2、具体用法" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>在我们的工作区文件夹下打开 Git，并执行代码进行初始化本地库。</p><p>如果文件夹没有进行初始化，那么 Git 将没有权限修改文件。</p><p>执行完毕后，Git 将在文件夹下生成名为<code>.git</code>的文件夹（如果没有，是因为此文件夹被系统自动隐藏，请开启查看隐藏的文件）</p><h2 id="三、将文件添加到暂存区"><a href="#三、将文件添加到暂存区" class="headerlink" title="三、将文件添加到暂存区"></a>三、将文件添加到暂存区</h2><h3 id="1、基本语法-2"><a href="#1、基本语法-2" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code>git add </code></pre><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://ccr39.cf/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
-    
-    <summary type="html">
-    
-      开始使用 Git 进行版本控制并学会提交到远程库。
-    
-    </summary>
-    
-      <category term="技术" scheme="http://ccr39.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
       <category term="工具" scheme="http://ccr39.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="编程" scheme="http://ccr39.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -254,9 +254,9 @@
       <category term="技术" scheme="http://ccr39.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="工具" scheme="http://ccr39.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="编程" scheme="http://ccr39.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="工具" scheme="http://ccr39.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -437,6 +437,28 @@
   </entry>
   
   <entry>
+    <title>图床的使用与推荐</title>
+    <link href="http://ccr39.github.io/%E6%8A%80%E6%9C%AF/picbed/"/>
+    <id>http://ccr39.github.io/技术/picbed/</id>
+    <published>2022-12-11T08:23:00.000Z</published>
+    <updated>2023-01-20T12:17:14.939Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、了解图床"><a href="#一、了解图床" class="headerlink" title="一、了解图床"></a>一、了解图床</h2><p>引用百度的话：</p><blockquote><p>图床就是专门用来存放图片，同时允许你把图片对外连接的网上空间。</p></blockquote><p>简单来说，我们在网上看到的所有的信息都是要储存在服务器里面的，那么允许我们上传图片，并且生成网上链接供给他人观看此图片的空间，就叫做图床。</p><p>图床分为很多种，你可以把图片放在自己的服务器&#x2F;云服务器中，并生成链接。也可以使用他人提供的服务器生成的链接，服务器的不同也会造成图片的访问速度不同，同时可能还存在一些大小限制。</p><h2 id="二、使用图床"><a href="#二、使用图床" class="headerlink" title="二、使用图床"></a>二、使用图床</h2><p>图床有什么用？要知道，有的时候部分网页时不支持上传图片的，如某些论坛，他们不支持图片上传，因此你需要预先将图片上传到其他服务器，并生成图床链接。</p><p>还有的时候，如你在写 web 脚本，博客，此时的图片信息一般也使用图床。</p><p>下面我将演示图片的上传，以及生成相应链接。</p><h3 id="1、首先，我们打开提供图片上传的网站（图床网站，这里以-sm-ms-为例）"><a href="#1、首先，我们打开提供图片上传的网站（图床网站，这里以-sm-ms-为例）" class="headerlink" title="1、首先，我们打开提供图片上传的网站（图床网站，这里以 sm.ms 为例）"></a>1、首先，我们打开提供图片上传的网站（图床网站，这里以 <a href="https://smms.app/">sm.ms</a> 为例）</h3><p><img src="https://i0.hdslb.com/bfs/album/d12491a471053df6cc7ca57a98a747be107b091d.png" alt="image-20230120165527526"></p><h3 id="2、按照提示注册账号"><a href="#2、按照提示注册账号" class="headerlink" title="2、按照提示注册账号"></a>2、按照提示注册账号</h3><h3 id="3、上传图片"><a href="#3、上传图片" class="headerlink" title="3、上传图片"></a>3、上传图片</h3><p>直接将图片拖动到页面中，或预览文件，并选择图片。</p><p><img src="https://i0.hdslb.com/bfs/album/cbd56adcb56d59e7cca345b8e2a9b481cb311e81.png" alt="屏幕截图_20230120_165758"></p><p>接下来点击上传。</p><p><img src="https://i0.hdslb.com/bfs/album/fa22f8e4104ff39a5ed005aa614e065793a9eac0.png" alt="image-20230120170016531"></p><h3 id="4、获取图片链接"><a href="#4、获取图片链接" class="headerlink" title="4、获取图片链接"></a>4、获取图片链接</h3><p>上传成功后在下方点击复制链接即可。</p><p><img src="https://i0.hdslb.com/bfs/album/ab4fdb30d62e4f7f5ded83070f0d925ec92ee782.png" alt="image-20230120170416528"></p><p>这里大家如果不明白复制哪一个，就先点击上面的 Image URL 再复制出现的链接即可。</p><p>这只是 <a href="https://smms.app/">sm.ms</a> 的用法，其他的图床网站均类似，最后均选择复制<strong>图片URL</strong>。</p><h2 id="三、图床网站的推荐"><a href="#三、图床网站的推荐" class="headerlink" title="三、图床网站的推荐"></a>三、图床网站的推荐</h2><p>注意，这里只涉及提供图床网站的推荐，并不包含自建图床，对于图床的一些进阶使用，我会再写一篇文章进行叙述。</p><p>在上面提到过图片的加载速度与图床有关，因此使用一个好的图床实分重要，同时，你上传的的图片有可能被删除，图床网站也有可能跑路，因此图床的稳定性也很重要。</p><p>这里提醒大家：<strong>不要上传违法照片</strong></p><p>下面我推荐两个网站：</p><h3 id="1、-sm-ms"><a href="#1、-sm-ms" class="headerlink" title="1、 sm.ms"></a>1、 <a href="https://smms.app/">sm.ms</a></h3><p>这是上面提到的网站，服务器在国外，之前被国内墙过，被墙的图床生成的图片在国内也无法显示。</p><p>其使用了新网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a>，新网站解决了被墙的问题。</p><p>新用户注册免费使用 5GB 的空间，每张图片最大 5MB ，每次最多上传十张图片。</p><p>由于在国外，其图片加载速度一般，因此如果加载大量图片不建议使用，但是十分稳定，在少量使用时成为首选。</p><p>如果想要追求更高速度可以继续阅读下文第四章。</p><h3 id="2、路过图床"><a href="#2、路过图床" class="headerlink" title="2、路过图床"></a>2、<a href="https://imgse.com/">路过图床</a></h3><p>这是国内的网站，最大单张支持10 MB，在国内加载速度良好。</p><p>但是路过图床<strong>不允许上传二次元图片</strong>，并且会对上传的违法图片进行删除。</p><h3 id="3、图床-imgloc-com"><a href="#3、图床-imgloc-com" class="headerlink" title="3、图床 imgloc.com"></a>3、<a href="https://imgloc.com/">图床 imgloc.com</a></h3><p>最大 6 MB 图片大小，在国内的速度同样良好。</p><p>相比于路过图床，支持上传二次元图片，但是也会对违法图片进行删除。</p><h2 id="四、使用-wsrv-nl-对图片访问加速"><a href="#四、使用-wsrv-nl-对图片访问加速" class="headerlink" title="四、使用 wsrv.nl 对图片访问加速"></a>四、使用 wsrv.nl 对图片访问加速</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>werv.nl 是一个十分强大的提供图像缓存和调整大小服务的工具。</p><p>他会先把图片进行缓存，同时你可以使用它对图片进行编辑与操作。</p><p>因为他的CDN由<a href="https://www.cloudflare.com/">Cloudflare</a>提供，而Cloudflare会对全球访问进行加速，因此我们可以用 werv.nl 对图片进行缓存，从而进行加速的效果。</p><p>利用这一方法，我们可以解决图床被墙，访问慢，甚至防盗链等问题。</p><h3 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h3><p>详细使用已经编辑图像请阅读<a href="https://images.weserv.nl/docs/">官方文档</a>，我们只介绍缓存图片的方法。</p><p>在原来的图片链接前加上：</p><pre><code> https://images.weserv.nl/?url=</code></pre><p>即可完成缓存，接下来只要使用组合成的新链接即可。</p><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://ccr39.cf/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
+    
+    <summary type="html">
+    
+      了解图床以及使用图床
+    
+    </summary>
+    
+      <category term="技术" scheme="http://ccr39.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="工具" scheme="http://ccr39.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ACGN插画(一)</title>
     <link href="http://ccr39.github.io/%E8%B5%84%E6%BA%90/ACGN%E6%8F%92%E7%94%BB(%E4%B8%80)/"/>
     <id>http://ccr39.github.io/资源/ACGN插画(一)/</id>
@@ -455,30 +477,6 @@
     
     
       <category term="图集" scheme="http://ccr39.github.io/tags/%E5%9B%BE%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基础计数原理与排列组合</title>
-    <link href="http://ccr39.github.io/%E8%BD%AC%E8%BD%BD/%E5%9F%BA%E7%A1%80%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/"/>
-    <id>http://ccr39.github.io/转载/基础计数原理与排列组合/</id>
-    <published>2022-12-10T16:00:00.000Z</published>
-    <updated>2023-01-10T08:40:04.202Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一、加法原理和乘法原理"><a href="#一、加法原理和乘法原理" class="headerlink" title="一、加法原理和乘法原理"></a>一、加法原理和乘法原理</h2><h3 id="1、定义："><a href="#1、定义：" class="headerlink" title="1、定义："></a>1、定义：</h3><h4 id="①加法原理："><a href="#①加法原理：" class="headerlink" title="①加法原理："></a>①加法原理：</h4><p>加法原理是分类计数原理，常用于排列组合中，具体是指：做一件事情，完成它有N类方式，第一类方式有$M_1$种方法，第二类方式有$M_2$种方法，……，第n类方式有Mn种方法，那么完成这件事情共有$M_1+M_2+……+M_n$种方法。</p><p>口诀：类类独立</p><h4 id="②乘法原理："><a href="#②乘法原理：" class="headerlink" title="②乘法原理："></a>②乘法原理：</h4><p>做一件事，完成它需要分成N个步骤，做第一步有$M_1$种不同的方法，做第二步有$M_2$种不同的方法，……，做第n步有$M_n$种不同的方法。那么完成这件事共有 $N&#x3D;M_1×M_2×M_3×…×M_n$ 种不同的方法。</p><p>口诀：步步相关</p><h3 id="2、例："><a href="#2、例：" class="headerlink" title="2、例："></a>2、例：</h3><p>（1）某中学八年级一班有12名男生，16名女生；二班有9名男生，17名女生。</p><p>问：</p><p>从这两个班的同学中，选择 1 名男生、1 名女生作为主持人。有几种选法?</p><p>利用乘法原理，总方案数等于 总男生数  *  总女生数</p><p>$ (12+9)* (16+17)&#x3D; 693 $</p><h3 id="3、模运算"><a href="#3、模运算" class="headerlink" title="3、模运算"></a>3、模运算</h3><p>在得数较大时，要每进行一步计算就取余。</p><p>模运算符合以下规律</p><p>（1）$$ (a-b)\%p&#x3D;(a\%p-b\%p)\%p$$</p><p>（2）$$ (a + b)\%p&#x3D;(a\%p+b\% p)\%p$$</p><p>（3）$$(a*b)\%p&#x3D;(a\%p*b\%p)\%p$$</p><p>（4）$$(a^b)\%p&#x3D;((a\%p)^b)\%p$$</p><h2 id="二、排列与组合"><a href="#二、排列与组合" class="headerlink" title="二、排列与组合"></a>二、排列与组合</h2><h4 id="1、排列数"><a href="#1、排列数" class="headerlink" title="1、排列数"></a>1、排列数</h4><p>定义：从 n 个人里面选出 m 个人站成一排，方案数是： n ⋅ (n − 1) ⋯ (n − m + 1) &#x3D; $ \frac{ n ! }{ (n-m)! } $。我们将它称为排列数。</p><p>排列数用 $A^m_n$ 表示“从 n 个元素里面取 m 个元素，排成一排的方案数”，也就是$ A^m_n $ &#x3D; $ \frac{ n ! }{ (n-m)! } $。</p><h3 id="2、组合数"><a href="#2、组合数" class="headerlink" title="2、组合数"></a>2、组合数</h3><h4 id="1-定义："><a href="#1-定义：" class="headerlink" title="(1) 定义："></a>(1) 定义：</h4><p>用 $C^m_n$ 表示“从 n 个元素里面选出 m 个元素”的方案数,我们将它称为组合数。</p><h4 id="2-公式"><a href="#2-公式" class="headerlink" title="(2) 公式:"></a>(2) 公式:</h4><p>组合数的递推公式，称为帕斯卡公式。</p><p>$C^m_n$ &#x3D; $C^{m-1}_{n-1}$ + $C^{m-1}_n$</p><p>$C^n_0$&#x3D;1 ; $C^n_n$&#x3D;1 ; $C^0_0$&#x3D;1<br>组合数的通项公式</p><p>$C^m_n$ &#x3D; $\frac{A_n^m}{A_m^m}$ &#x3D; $\frac{n\cdot(n-1)\cdot\cdot\cdot(n-m+1)}{m(m-1)\cdot\cdot\cdot2\cdot1}$ &#x3D; $\frac{n!}{m!\cdot(n-m)!}$<br>互补性质</p><p>$C_n^m&#x3D;C^{n-m}_n$</p><h4 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="(3) 代码实现"></a>(3) 代码实现</h4><p>①通项公式</p><pre><code class="cpp">long long fac(int n) &#123;     long long f=1;    for(int i=n;i&gt;0;i--)    f *= i;    return f;&#125;//求阶乘long long C(int n, int m) &#123;    return fac(n)/(fac(n - m)*fac(m));&#125;</code></pre><p>②递归公式</p><pre><code class="cpp">for (int i=0;i&lt;=21;i++) &#123;    C[i][0] = C[i][i] = 1;    for (int j=1;j&lt;i;j++)         C[i][j]=C[i-1][j]+C[i-1][j-1] ; //递推&#125;</code></pre><p>文章转载于<a href="https://www.luogu.com.cn/blog/ccr39/post-bi-ji-ji-chu-ji-shuo-yuan-li-yu-zu-ge-shuo">本人原博客</a></p><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://ccr39.cf/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
-    
-    <summary type="html">
-    
-      排列组合的算法应用
-    
-    </summary>
-    
-      <category term="转载" scheme="http://ccr39.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-    
-      <category term="算法" scheme="http://ccr39.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数学" scheme="http://ccr39.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   

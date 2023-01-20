@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="referrer" content="no-referrer" />
   
-  <title itemprop="name">Git 的入门（一）：Git 的常用命令 | CCR39のLazyNest</title>
+  <title itemprop="name">Git 的入门（二）：Git 的常用命令 | CCR39のLazyNest</title>
   
     <link rel="shortcut icon" href="https://s1.ax1x.com/2023/01/06/pSAdoAs.png">
   
@@ -357,19 +357,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/0ca3be09fe51ae688c2614f55f1f63ed05f04ed3.jpg);" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/0ca3be09fe51ae688c2614f55f1f63ed05f04ed3.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Git 的入门（二）：Git 的常用命令</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://ccr39.github.io/">
+            <img src="https://i0.hdslb.com/bfs/album/31885206e51d953c6cdd9e7fcc4e65e31d884f2e.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://ccr39.github.io/">ccr39</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2023-1-20<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
       <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-          <header class="entry-header">
-            <h1 class="entry-title">Git 的入门（一）：Git 的常用命令</h1>
-            <p class="entry-census">ccr39&nbsp;·&nbsp;2023-1-9&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
         
         <div class="entry-content">
           <h2 id="一、设置用户签名"><a href="#一、设置用户签名" class="headerlink" title="一、设置用户签名"></a>一、设置用户签名</h2><p>当我们使用 Git 前，首先要设置自己的用户签名。</p>
@@ -391,8 +408,82 @@ git config --global user.email 邮箱
 <h3 id="2、具体用法"><a href="#2、具体用法" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>在我们的工作区文件夹下打开 Git，并执行代码进行初始化本地库。</p>
 <p>如果文件夹没有进行初始化，那么 Git 将没有权限修改文件。</p>
 <p>执行完毕后，Git 将在文件夹下生成名为<code>.git</code>的文件夹（如果没有，是因为此文件夹被系统自动隐藏，请开启查看隐藏的文件）</p>
-<h2 id="三、将文件添加到暂存区"><a href="#三、将文件添加到暂存区" class="headerlink" title="三、将文件添加到暂存区"></a>三、将文件添加到暂存区</h2><h3 id="1、基本语法-2"><a href="#1、基本语法-2" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code>git add 
+<h2 id="三、将文件添加-x2F-删除到暂存区"><a href="#三、将文件添加-x2F-删除到暂存区" class="headerlink" title="三、将文件添加&#x2F;删除到暂存区"></a>三、将文件添加&#x2F;删除到暂存区</h2><h3 id="1、基本语法-2"><a href="#1、基本语法-2" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><p>添加命令：</p>
+<pre><code class="git">git add .
+git add 文件名
 </code></pre>
+<p>删除命令：</p>
+<pre><code class="git">git rm --cached 文件名
+rm .git/index
+</code></pre>
+<h3 id="2、具体用法-1"><a href="#2、具体用法-1" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>添加命令：将工作区的文件添加到暂存区，其中第一行指令为将工作区所有文件添加到暂存区，第二行指令为将指定文件添加到暂存区。</p>
+<p>删除命令：第一行为将某文件从暂存区移除，暂存区实质是.git目录下的index文件，只要将此文件删除，那么就可以认为暂存区被清空（即第二行代码）。</p>
+<h2 id="四、提交到本地库"><a href="#四、提交到本地库" class="headerlink" title="四、提交到本地库"></a>四、提交到本地库</h2><h3 id="1、基本语法-3"><a href="#1、基本语法-3" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><p>提交暂存区到本地仓库中:</p>
+<pre><code class="git">git commit -m [message]
+</code></pre>
+<p>[message] 可以是一些备注信息。</p>
+<p>提交暂存区的指定文件到仓库区：</p>
+<pre><code class="git">$ git commit [file1] [file2] ... -m [message]
+</code></pre>
+<p><strong>-a</strong> 参数设置修改文件后不需要执行 git add 命令，直接来提交</p>
+<pre><code class="git">$ git commit -a
+</code></pre>
+<h3 id="2、具体用法-2"><a href="#2、具体用法-2" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>使用提交命令提交到本地库中的文件不能再次删除。</p>
+<h3 id="五、查看本地库状态"><a href="#五、查看本地库状态" class="headerlink" title="五、查看本地库状态"></a>五、查看本地库状态</h3><h3 id="1、基本语法-4"><a href="#1、基本语法-4" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code class="git">git status
+</code></pre>
+<h3 id="2、具体用法-3"><a href="#2、具体用法-3" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>当工作区文件没有在暂存区找到时，会提示：</p>
+<pre><code class="git">$ git status
+On branch master
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        new3.txt
+</code></pre>
+<p>当我们使用命令将文件添加到暂存区，提示：</p>
+<pre><code class="git">$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+        new file:   new3.txt
+</code></pre>
+<p>代表我们还未将文件提交本地库，再次执行提交本地库的命令，会提示：</p>
+<pre><code class="git">$ git status
+On branch master
+nothing to commit, working tree clean
+</code></pre>
+<p>表明文件已经全部提交到本地库。</p>
+<h2 id="六、查看历史版本"><a href="#六、查看历史版本" class="headerlink" title="六、查看历史版本"></a>六、查看历史版本</h2><h3 id="1、基本语法-5"><a href="#1、基本语法-5" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code class="git">git reflog	查看精简版本信息
+git log	查看版本信息
+</code></pre>
+<h3 id="2、具体用法-4"><a href="#2、具体用法-4" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>使用<code>git reflog</code>可以查看本地库中的各个版本号前七位，以及该版本的备注信息，以及当前版本指向的本地库中的版本。</p>
+<p>使用<code>git log</code>咳哟看到本地库中各版本完整的版本号，提交者及邮箱，提交日期以及备注信息。</p>
+<p>如:</p>
+<pre><code class="git">$ git log
+commit c1c925dffc5b57bdb82b22d0d9ae18c8d5cf141f (HEAD -&gt; master)
+Author: ccr39 &lt;1632145835@qq.com&gt;
+Date:   Fri Jan 20 15:44:41 2023 +0800
+
+    测试版本
+</code></pre>
+<p>commit 后的就是版本号。</p>
+<h2 id="七、进行版本穿梭"><a href="#七、进行版本穿梭" class="headerlink" title="七、进行版本穿梭"></a>七、进行版本穿梭</h2><h3 id="1、基本语法-6"><a href="#1、基本语法-6" class="headerlink" title="1、基本语法"></a>1、基本语法</h3><pre><code class="git">git reset --hard 版本号/版本号前七位
+</code></pre>
+<h3 id="2、具体用法-5"><a href="#2、具体用法-5" class="headerlink" title="2、具体用法"></a>2、具体用法</h3><p>使用版本穿梭命令进行版本穿梭。我们可以再次使用<code>git reflog</code>查看版本信息。</p>
+<p>观察到新生成了一个日志信息，以及当前指针已经指向穿梭到的版本号。</p>
+<pre><code class="git">$ git reflog
+c845da5 (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to c845da5	新生成的版本信息
+c1c925d HEAD@&#123;1&#125;: commit: 测试版本
+4738829 HEAD@&#123;2&#125;: commit: second
+c845da5 (HEAD -&gt; master) HEAD@&#123;3&#125;: commit (initial): first	当前指针指向的版本
+</code></pre>
+<p>我们可以再次验证本地库的文件状态，发现本地库中的文件已经回到原来版本的状态。</p>
+<p>实际上，指针先指向了 master 分支，再指向了我们的相应版本。</p>
+<p>我们可以在<code>.\.git\HEAD</code>看到：</p>
+<pre><code class="yaml">ref: refs/heads/master
+</code></pre>
+<p>表明指针在指向 master。</p>
+<p>再次打开<code>.\.git\refs\heads\master</code>，可以看到，在 master 文件中正保存了当前的版本号。表明 master 版本指向了我们当前的版本。</p>
+<p>实际上，Git 切换版本的实质是移动 HEAD 指针。</p>
+<p>在刚刚的案例中：HEAD -&gt; master（分支）-&gt; 版本。通过移动指针指向不同的分支与版本，即可完成版本控制。</p>
 
 <link
     rel="stylesheet"
@@ -450,36 +541,19 @@ git config --global user.email 邮箱
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+        
           
-            <div class="post-nepre half previous">
+            <div class="post-nepre full next">
           
-            <a href="/%E6%8A%80%E6%9C%AF/git-1/" rel="prev">
+            <a href="/%E6%8A%80%E6%9C%AF/git-1/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/5022f0e071ece85b81658d2a36991449ed5092e9.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/5022f0e071ece85b81658d2a36991449ed5092e9.jpg">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                Git 的入门（一）：Git 的基本概念以及 Git 命令行的使用</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/%E8%B5%84%E6%BA%90/Gal-Atri/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://i0.hdslb.com/bfs/album/b4551be1a70b990b2e5a1be9c46e22408c457b53.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i0.hdslb.com/bfs/album/b4551be1a70b990b2e5a1be9c46e22408c457b53.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                【Galgame】【PC/安卓直装】亚托莉—我挚爱的时光／ATRI -MY DEAR MOMENTS</h3>
+                Git 的入门（一）：Git 的基本概念以及 Git 命令行的使用</h3>
                 <hr>
               </div>
             </a>
@@ -533,7 +607,7 @@ git config --global user.email 邮箱
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -545,10 +619,10 @@ git config --global user.email 邮箱
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            // PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',

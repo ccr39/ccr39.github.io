@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="referrer" content="no-referrer" />
   
-  <title itemprop="name">Tag: 杂谈 | CCR39のLazyNest</title>
+  <title itemprop="name">图床的使用与推荐 | CCR39のLazyNest</title>
   
     <link rel="shortcut icon" href="https://s1.ax1x.com/2023/01/06/pSAdoAs.png">
   
@@ -353,98 +353,215 @@
   </div>
 </header>
 
-      
-<meta name="referrer" content="no-referrer">
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="杂谈.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/6e8d5e3fa366127a8b9c94455480e043066c369a.png);" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/album/6e8d5e3fa366127a8b9c94455480e043066c369a.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      图床的使用与推荐</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://ccr39.github.io/">
+            <img src="https://i0.hdslb.com/bfs/album/31885206e51d953c6cdd9e7fcc4e65e31d884f2e.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://ccr39.github.io/">ccr39</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-12-11<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">杂谈</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="一、了解图床"><a href="#一、了解图床" class="headerlink" title="一、了解图床"></a>一、了解图床</h2><p>引用百度的话：</p>
+<blockquote>
+<p>图床就是专门用来存放图片，同时允许你把图片对外连接的网上空间。</p>
+</blockquote>
+<p>简单来说，我们在网上看到的所有的信息都是要储存在服务器里面的，那么允许我们上传图片，并且生成网上链接供给他人观看此图片的空间，就叫做图床。</p>
+<p>图床分为很多种，你可以把图片放在自己的服务器&#x2F;云服务器中，并生成链接。也可以使用他人提供的服务器生成的链接，服务器的不同也会造成图片的访问速度不同，同时可能还存在一些大小限制。</p>
+<h2 id="二、使用图床"><a href="#二、使用图床" class="headerlink" title="二、使用图床"></a>二、使用图床</h2><p>图床有什么用？要知道，有的时候部分网页时不支持上传图片的，如某些论坛，他们不支持图片上传，因此你需要预先将图片上传到其他服务器，并生成图床链接。</p>
+<p>还有的时候，如你在写 web 脚本，博客，此时的图片信息一般也使用图床。</p>
+<p>下面我将演示图片的上传，以及生成相应链接。</p>
+<h3 id="1、首先，我们打开提供图片上传的网站（图床网站，这里以-sm-ms-为例）"><a href="#1、首先，我们打开提供图片上传的网站（图床网站，这里以-sm-ms-为例）" class="headerlink" title="1、首先，我们打开提供图片上传的网站（图床网站，这里以 sm.ms 为例）"></a>1、首先，我们打开提供图片上传的网站（图床网站，这里以 <a target="_blank" rel="noopener" href="https://smms.app/">sm.ms</a> 为例）</h3><p><img src="https://i0.hdslb.com/bfs/album/d12491a471053df6cc7ca57a98a747be107b091d.png" alt="image-20230120165527526"></p>
+<h3 id="2、按照提示注册账号"><a href="#2、按照提示注册账号" class="headerlink" title="2、按照提示注册账号"></a>2、按照提示注册账号</h3><h3 id="3、上传图片"><a href="#3、上传图片" class="headerlink" title="3、上传图片"></a>3、上传图片</h3><p>直接将图片拖动到页面中，或预览文件，并选择图片。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/cbd56adcb56d59e7cca345b8e2a9b481cb311e81.png" alt="屏幕截图_20230120_165758"></p>
+<p>接下来点击上传。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/fa22f8e4104ff39a5ed005aa614e065793a9eac0.png" alt="image-20230120170016531"></p>
+<h3 id="4、获取图片链接"><a href="#4、获取图片链接" class="headerlink" title="4、获取图片链接"></a>4、获取图片链接</h3><p>上传成功后在下方点击复制链接即可。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/ab4fdb30d62e4f7f5ded83070f0d925ec92ee782.png" alt="image-20230120170416528"></p>
+<p>这里大家如果不明白复制哪一个，就先点击上面的 Image URL 再复制出现的链接即可。</p>
+<p>这只是 <a target="_blank" rel="noopener" href="https://smms.app/">sm.ms</a> 的用法，其他的图床网站均类似，最后均选择复制<strong>图片URL</strong>。</p>
+<h2 id="三、图床网站的推荐"><a href="#三、图床网站的推荐" class="headerlink" title="三、图床网站的推荐"></a>三、图床网站的推荐</h2><p>注意，这里只涉及提供图床网站的推荐，并不包含自建图床，对于图床的一些进阶使用，我会再写一篇文章进行叙述。</p>
+<p>在上面提到过图片的加载速度与图床有关，因此使用一个好的图床实分重要，同时，你上传的的图片有可能被删除，图床网站也有可能跑路，因此图床的稳定性也很重要。</p>
+<p>这里提醒大家：<strong>不要上传违法照片</strong></p>
+<p>下面我推荐两个网站：</p>
+<h3 id="1、-sm-ms"><a href="#1、-sm-ms" class="headerlink" title="1、 sm.ms"></a>1、 <a target="_blank" rel="noopener" href="https://smms.app/">sm.ms</a></h3><p>这是上面提到的网站，服务器在国外，之前被国内墙过，被墙的图床生成的图片在国内也无法显示。</p>
+<p>其使用了新网站<a target="_blank" rel="noopener" href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a>，新网站解决了被墙的问题。</p>
+<p>新用户注册免费使用 5GB 的空间，每张图片最大 5MB ，每次最多上传十张图片。</p>
+<p>由于在国外，其图片加载速度一般，因此如果加载大量图片不建议使用，但是十分稳定，在少量使用时成为首选。</p>
+<p>如果想要追求更高速度可以继续阅读下文第四章。</p>
+<h3 id="2、路过图床"><a href="#2、路过图床" class="headerlink" title="2、路过图床"></a>2、<a target="_blank" rel="noopener" href="https://imgse.com/">路过图床</a></h3><p>这是国内的网站，最大单张支持10 MB，在国内加载速度良好。</p>
+<p>但是路过图床<strong>不允许上传二次元图片</strong>，并且会对上传的违法图片进行删除。</p>
+<h3 id="3、图床-imgloc-com"><a href="#3、图床-imgloc-com" class="headerlink" title="3、图床 imgloc.com"></a>3、<a target="_blank" rel="noopener" href="https://imgloc.com/">图床 imgloc.com</a></h3><p>最大 6 MB 图片大小，在国内的速度同样良好。</p>
+<p>相比于路过图床，支持上传二次元图片，但是也会对违法图片进行删除。</p>
+<h2 id="四、使用-wsrv-nl-对图片访问加速"><a href="#四、使用-wsrv-nl-对图片访问加速" class="headerlink" title="四、使用 wsrv.nl 对图片访问加速"></a>四、使用 wsrv.nl 对图片访问加速</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>werv.nl 是一个十分强大的提供图像缓存和调整大小服务的工具。</p>
+<p>他会先把图片进行缓存，同时你可以使用它对图片进行编辑与操作。</p>
+<p>因为他的CDN由<a target="_blank" rel="noopener" href="https://www.cloudflare.com/">Cloudflare</a>提供，而Cloudflare会对全球访问进行加速，因此我们可以用 werv.nl 对图片进行缓存，从而进行加速的效果。</p>
+<p>利用这一方法，我们可以解决图床被墙，访问慢，甚至防盗链等问题。</p>
+<h3 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h3><p>详细使用已经编辑图像请阅读<a target="_blank" rel="noopener" href="https://images.weserv.nl/docs/">官方文档</a>，我们只介绍缓存图片的方法。</p>
+<p>在原来的图片链接前加上：</p>
+<pre><code> https://images.weserv.nl/?url=
+</code></pre>
+<p>即可完成缓存，接下来只要使用组合成的新链接即可。</p>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+<div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+    init({
+      el: '#waline',
+      serverURL: 'https://ccr39.cf/',
+       reaction: [
+    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',
+    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',
+  ],
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.1.0/bilibili',
+        '//unpkg.com/@waline/emojis@1.1.0/weibo',
+        '//unpkg.com/@waline/emojis@1.1.0/qq',
+      ]
+    });
+  </script>
+
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://s2.loli.net/2022/12/11/rdgBz4h93ApRGmL.jpg"></li>
+                <li class="wechat-code"><img src="https://s2.loli.net/2022/12/11/VJB3RydclkMYuH9.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/%E7%94%9F%E6%B4%BB/about_school/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/eafa31afb278a5edba5017f7db0b078c4dcbb432.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/eafa31afb278a5edba5017f7db0b078c4dcbb432.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                浅谈我的学校</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/%E8%B5%84%E6%BA%90/ACGN%E6%8F%92%E7%94%BB(%E4%B8%80)/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/8cd0aa9b7005ca16892b08c1c12801352c4a6591.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/8cd0aa9b7005ca16892b08c1c12801352c4a6591.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                ACGN插画(一)</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://i0.hdslb.com/bfs/album/136ff685a0e0b6479a7231c7e9838dae975a2d4e.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-    解决电脑钉钉视频会议无法旋转屏幕的问题</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-12-13</div>
-    <p>
-    多角度解决视频会议画面旋转问题，同时分享适用于电脑画面单个窗口旋转方法。</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E6%8A%80%E6%9C%AF/DingScreen/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/eafa31afb278a5edba5017f7db0b078c4dcbb432.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-    浅谈我的学校</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2022-12-11</div>
-    <p>
-    关于我的学校</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/%E7%94%9F%E6%B4%BB/about_school/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "nJIfytgko1rH9zkhJaosZRZ3-MdYXbMMI",
+        appKey: "fAj8OKoTBsGObZsLQJmP66FJ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://ccr39.github.io/" class="profile gravatar"><img src="https://i0.hdslb.com/bfs/album/31885206e51d953c6cdd9e7fcc4e65e31d884f2e.jpg" itemprop="image" alt="ccr39" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://ccr39.github.io/" itemprop="url" rel="author">ccr39</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>I am ordinary yet unique.</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
