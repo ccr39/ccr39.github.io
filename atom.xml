@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ccr39.github.io/"/>
-  <updated>2023-01-20T08:45:08.154Z</updated>
+  <updated>2023-01-20T12:21:49.069Z</updated>
   <id>http://ccr39.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图床的使用与推荐</title>
+    <link href="http://ccr39.github.io/%E6%8A%80%E6%9C%AF/picbed/"/>
+    <id>http://ccr39.github.io/技术/picbed/</id>
+    <published>2023-01-20T12:21:32.000Z</published>
+    <updated>2023-01-20T12:21:49.069Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、了解图床"><a href="#一、了解图床" class="headerlink" title="一、了解图床"></a>一、了解图床</h2><p>引用百度的话：</p><blockquote><p>图床就是专门用来存放图片，同时允许你把图片对外连接的网上空间。</p></blockquote><p>简单来说，我们在网上看到的所有的信息都是要储存在服务器里面的，那么允许我们上传图片，并且生成网上链接供给他人观看此图片的空间，就叫做图床。</p><p>图床分为很多种，你可以把图片放在自己的服务器&#x2F;云服务器中，并生成链接。也可以使用他人提供的服务器生成的链接，服务器的不同也会造成图片的访问速度不同，同时可能还存在一些大小限制。</p><h2 id="二、使用图床"><a href="#二、使用图床" class="headerlink" title="二、使用图床"></a>二、使用图床</h2><p>图床有什么用？要知道，有的时候部分网页时不支持上传图片的，如某些论坛，他们不支持图片上传，因此你需要预先将图片上传到其他服务器，并生成图床链接。</p><p>还有的时候，如你在写 web 脚本，博客，此时的图片信息一般也使用图床。</p><p>下面我将演示图片的上传，以及生成相应链接。</p><h3 id="1、首先，我们打开提供图片上传的网站（图床网站，这里以-sm-ms-为例）"><a href="#1、首先，我们打开提供图片上传的网站（图床网站，这里以-sm-ms-为例）" class="headerlink" title="1、首先，我们打开提供图片上传的网站（图床网站，这里以 sm.ms 为例）"></a>1、首先，我们打开提供图片上传的网站（图床网站，这里以 <a href="https://smms.app/">sm.ms</a> 为例）</h3><p><img src="https://i0.hdslb.com/bfs/album/d12491a471053df6cc7ca57a98a747be107b091d.png" alt="image-20230120165527526"></p><h3 id="2、按照提示注册账号"><a href="#2、按照提示注册账号" class="headerlink" title="2、按照提示注册账号"></a>2、按照提示注册账号</h3><h3 id="3、上传图片"><a href="#3、上传图片" class="headerlink" title="3、上传图片"></a>3、上传图片</h3><p>直接将图片拖动到页面中，或预览文件，并选择图片。</p><p><img src="https://i0.hdslb.com/bfs/album/cbd56adcb56d59e7cca345b8e2a9b481cb311e81.png" alt="屏幕截图_20230120_165758"></p><p>接下来点击上传。</p><p><img src="https://i0.hdslb.com/bfs/album/fa22f8e4104ff39a5ed005aa614e065793a9eac0.png" alt="image-20230120170016531"></p><h3 id="4、获取图片链接"><a href="#4、获取图片链接" class="headerlink" title="4、获取图片链接"></a>4、获取图片链接</h3><p>上传成功后在下方点击复制链接即可。</p><p><img src="https://i0.hdslb.com/bfs/album/ab4fdb30d62e4f7f5ded83070f0d925ec92ee782.png" alt="image-20230120170416528"></p><p>这里大家如果不明白复制哪一个，就先点击上面的 Image URL 再复制出现的链接即可。</p><p>这只是 <a href="https://smms.app/">sm.ms</a> 的用法，其他的图床网站均类似，最后均选择复制<strong>图片URL</strong>。</p><h2 id="三、图床网站的推荐"><a href="#三、图床网站的推荐" class="headerlink" title="三、图床网站的推荐"></a>三、图床网站的推荐</h2><p>注意，这里只涉及提供图床网站的推荐，并不包含自建图床，对于图床的一些进阶使用，我会再写一篇文章进行叙述。</p><p>在上面提到过图片的加载速度与图床有关，因此使用一个好的图床实分重要，同时，你上传的的图片有可能被删除，图床网站也有可能跑路，因此图床的稳定性也很重要。</p><p>这里提醒大家：<strong>不要上传违法照片</strong></p><p>下面我推荐两个网站：</p><h3 id="1、-sm-ms"><a href="#1、-sm-ms" class="headerlink" title="1、 sm.ms"></a>1、 <a href="https://smms.app/">sm.ms</a></h3><p>这是上面提到的网站，服务器在国外，之前被国内墙过，被墙的图床生成的图片在国内也无法显示。</p><p>其使用了新网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a>，新网站解决了被墙的问题。</p><p>新用户注册免费使用 5GB 的空间，每张图片最大 5MB ，每次最多上传十张图片。</p><p>由于在国外，其图片加载速度一般，因此如果加载大量图片不建议使用，但是十分稳定，在少量使用时成为首选。</p><p>如果想要追求更高速度可以继续阅读下文第四章。</p><h3 id="2、路过图床"><a href="#2、路过图床" class="headerlink" title="2、路过图床"></a>2、<a href="https://imgse.com/">路过图床</a></h3><p>这是国内的网站，最大单张支持10 MB，在国内加载速度良好。</p><p>但是路过图床<strong>不允许上传二次元图片</strong>，并且会对上传的违法图片进行删除。</p><h3 id="3、图床-imgloc-com"><a href="#3、图床-imgloc-com" class="headerlink" title="3、图床 imgloc.com"></a>3、<a href="https://imgloc.com/">图床 imgloc.com</a></h3><p>最大 6 MB 图片大小，在国内的速度同样良好。</p><p>相比于路过图床，支持上传二次元图片，但是也会对违法图片进行删除。</p><h2 id="四、使用-wsrv-nl-对图片访问加速"><a href="#四、使用-wsrv-nl-对图片访问加速" class="headerlink" title="四、使用 wsrv.nl 对图片访问加速"></a>四、使用 wsrv.nl 对图片访问加速</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>werv.nl 是一个十分强大的提供图像缓存和调整大小服务的工具。</p><p>他会先把图片进行缓存，同时你可以使用它对图片进行编辑与操作。</p><p>因为他的CDN由<a href="https://www.cloudflare.com/">Cloudflare</a>提供，而Cloudflare会对全球访问进行加速，因此我们可以用 werv.nl 对图片进行缓存，从而进行加速的效果。</p><p>利用这一方法，我们可以解决图床被墙，访问慢，甚至防盗链等问题。</p><h3 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h3><p>详细使用已经编辑图像请阅读<a href="https://images.weserv.nl/docs/">官方文档</a>，我们只介绍缓存图片的方法。</p><p>在原来的图片链接前加上：</p><pre><code> https://images.weserv.nl/?url=</code></pre><p>即可完成缓存，接下来只要使用组合成的新链接即可。</p><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://ccr39.cf/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
+    
+    <summary type="html">
+    
+      了解图床以及使用图床
+    
+    </summary>
+    
+      <category term="技术" scheme="http://ccr39.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="工具" scheme="http://ccr39.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>Git 的入门（二）：Git 的常用命令</title>
@@ -418,8 +440,8 @@
     <title>浅谈我的学校</title>
     <link href="http://ccr39.github.io/%E7%94%9F%E6%B4%BB/about_school/"/>
     <id>http://ccr39.github.io/生活/about_school/</id>
-    <published>2022-12-11T08:23:00.000Z</published>
-    <updated>2023-01-10T08:22:18.437Z</updated>
+    <published>2022-12-11T08:23:32.000Z</published>
+    <updated>2023-01-20T12:22:04.493Z</updated>
     
     <content type="html"><![CDATA[<h3 id="我？"><a href="#我？" class="headerlink" title="我？"></a>我？</h3><p>本人就读衡水志臻清河校区(衡水二中的分校)。</p><h3 id="其他内容"><a href="#其他内容" class="headerlink" title="其他内容"></a>其他内容</h3><p>省略</p><h3 id="如何评价衡水志臻"><a href="#如何评价衡水志臻" class="headerlink" title="如何评价衡水志臻"></a>如何评价衡水志臻</h3><p>RT<br>请在评论留言</p><h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><h4 id="清河志臻吧"><a href="#清河志臻吧" class="headerlink" title="清河志臻吧"></a><a href="https://tieba.baidu.com/f?kw=%E6%B8%85%E6%B2%B3%E5%BF%97%E8%87%BB&ie=utf-8">清河志臻吧</a></h4><h4 id="清河志臻二次元同学群"><a href="#清河志臻二次元同学群" class="headerlink" title="清河志臻二次元同学群"></a><a href="https://ccr39.github.io/ACGFUN-IN-QHZZ/index.html">清河志臻二次元同学群</a></h4><p>小游戏：<a href="https://ccr39.github.io/eathengshuizhizhen/EatKano-main/index.html">吃掉衡水志臻</a></p><h4 id="接住衡水志臻"><a href="#接住衡水志臻" class="headerlink" title="接住衡水志臻"></a><a href="https://ccr39.github.io/eathengshuizhizhen/jiezhuzz/index.html">接住衡水志臻</a></h4><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://ccr39.cf/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
     
@@ -433,28 +455,6 @@
     
     
       <category term="杂谈" scheme="http://ccr39.github.io/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图床的使用与推荐</title>
-    <link href="http://ccr39.github.io/%E6%8A%80%E6%9C%AF/picbed/"/>
-    <id>http://ccr39.github.io/技术/picbed/</id>
-    <published>2022-12-11T08:23:00.000Z</published>
-    <updated>2023-01-20T12:17:14.939Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一、了解图床"><a href="#一、了解图床" class="headerlink" title="一、了解图床"></a>一、了解图床</h2><p>引用百度的话：</p><blockquote><p>图床就是专门用来存放图片，同时允许你把图片对外连接的网上空间。</p></blockquote><p>简单来说，我们在网上看到的所有的信息都是要储存在服务器里面的，那么允许我们上传图片，并且生成网上链接供给他人观看此图片的空间，就叫做图床。</p><p>图床分为很多种，你可以把图片放在自己的服务器&#x2F;云服务器中，并生成链接。也可以使用他人提供的服务器生成的链接，服务器的不同也会造成图片的访问速度不同，同时可能还存在一些大小限制。</p><h2 id="二、使用图床"><a href="#二、使用图床" class="headerlink" title="二、使用图床"></a>二、使用图床</h2><p>图床有什么用？要知道，有的时候部分网页时不支持上传图片的，如某些论坛，他们不支持图片上传，因此你需要预先将图片上传到其他服务器，并生成图床链接。</p><p>还有的时候，如你在写 web 脚本，博客，此时的图片信息一般也使用图床。</p><p>下面我将演示图片的上传，以及生成相应链接。</p><h3 id="1、首先，我们打开提供图片上传的网站（图床网站，这里以-sm-ms-为例）"><a href="#1、首先，我们打开提供图片上传的网站（图床网站，这里以-sm-ms-为例）" class="headerlink" title="1、首先，我们打开提供图片上传的网站（图床网站，这里以 sm.ms 为例）"></a>1、首先，我们打开提供图片上传的网站（图床网站，这里以 <a href="https://smms.app/">sm.ms</a> 为例）</h3><p><img src="https://i0.hdslb.com/bfs/album/d12491a471053df6cc7ca57a98a747be107b091d.png" alt="image-20230120165527526"></p><h3 id="2、按照提示注册账号"><a href="#2、按照提示注册账号" class="headerlink" title="2、按照提示注册账号"></a>2、按照提示注册账号</h3><h3 id="3、上传图片"><a href="#3、上传图片" class="headerlink" title="3、上传图片"></a>3、上传图片</h3><p>直接将图片拖动到页面中，或预览文件，并选择图片。</p><p><img src="https://i0.hdslb.com/bfs/album/cbd56adcb56d59e7cca345b8e2a9b481cb311e81.png" alt="屏幕截图_20230120_165758"></p><p>接下来点击上传。</p><p><img src="https://i0.hdslb.com/bfs/album/fa22f8e4104ff39a5ed005aa614e065793a9eac0.png" alt="image-20230120170016531"></p><h3 id="4、获取图片链接"><a href="#4、获取图片链接" class="headerlink" title="4、获取图片链接"></a>4、获取图片链接</h3><p>上传成功后在下方点击复制链接即可。</p><p><img src="https://i0.hdslb.com/bfs/album/ab4fdb30d62e4f7f5ded83070f0d925ec92ee782.png" alt="image-20230120170416528"></p><p>这里大家如果不明白复制哪一个，就先点击上面的 Image URL 再复制出现的链接即可。</p><p>这只是 <a href="https://smms.app/">sm.ms</a> 的用法，其他的图床网站均类似，最后均选择复制<strong>图片URL</strong>。</p><h2 id="三、图床网站的推荐"><a href="#三、图床网站的推荐" class="headerlink" title="三、图床网站的推荐"></a>三、图床网站的推荐</h2><p>注意，这里只涉及提供图床网站的推荐，并不包含自建图床，对于图床的一些进阶使用，我会再写一篇文章进行叙述。</p><p>在上面提到过图片的加载速度与图床有关，因此使用一个好的图床实分重要，同时，你上传的的图片有可能被删除，图床网站也有可能跑路，因此图床的稳定性也很重要。</p><p>这里提醒大家：<strong>不要上传违法照片</strong></p><p>下面我推荐两个网站：</p><h3 id="1、-sm-ms"><a href="#1、-sm-ms" class="headerlink" title="1、 sm.ms"></a>1、 <a href="https://smms.app/">sm.ms</a></h3><p>这是上面提到的网站，服务器在国外，之前被国内墙过，被墙的图床生成的图片在国内也无法显示。</p><p>其使用了新网站<a href="https://smms.app/">Image Upload - SM.MS - Simple Free Image Hosting (smms.app)</a>，新网站解决了被墙的问题。</p><p>新用户注册免费使用 5GB 的空间，每张图片最大 5MB ，每次最多上传十张图片。</p><p>由于在国外，其图片加载速度一般，因此如果加载大量图片不建议使用，但是十分稳定，在少量使用时成为首选。</p><p>如果想要追求更高速度可以继续阅读下文第四章。</p><h3 id="2、路过图床"><a href="#2、路过图床" class="headerlink" title="2、路过图床"></a>2、<a href="https://imgse.com/">路过图床</a></h3><p>这是国内的网站，最大单张支持10 MB，在国内加载速度良好。</p><p>但是路过图床<strong>不允许上传二次元图片</strong>，并且会对上传的违法图片进行删除。</p><h3 id="3、图床-imgloc-com"><a href="#3、图床-imgloc-com" class="headerlink" title="3、图床 imgloc.com"></a>3、<a href="https://imgloc.com/">图床 imgloc.com</a></h3><p>最大 6 MB 图片大小，在国内的速度同样良好。</p><p>相比于路过图床，支持上传二次元图片，但是也会对违法图片进行删除。</p><h2 id="四、使用-wsrv-nl-对图片访问加速"><a href="#四、使用-wsrv-nl-对图片访问加速" class="headerlink" title="四、使用 wsrv.nl 对图片访问加速"></a>四、使用 wsrv.nl 对图片访问加速</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>werv.nl 是一个十分强大的提供图像缓存和调整大小服务的工具。</p><p>他会先把图片进行缓存，同时你可以使用它对图片进行编辑与操作。</p><p>因为他的CDN由<a href="https://www.cloudflare.com/">Cloudflare</a>提供，而Cloudflare会对全球访问进行加速，因此我们可以用 werv.nl 对图片进行缓存，从而进行加速的效果。</p><p>利用这一方法，我们可以解决图床被墙，访问慢，甚至防盗链等问题。</p><h3 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h3><p>详细使用已经编辑图像请阅读<a href="https://images.weserv.nl/docs/">官方文档</a>，我们只介绍缓存图片的方法。</p><p>在原来的图片链接前加上：</p><pre><code> https://images.weserv.nl/?url=</code></pre><p>即可完成缓存，接下来只要使用组合成的新链接即可。</p><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://ccr39.cf/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
-    
-    <summary type="html">
-    
-      了解图床以及使用图床
-    
-    </summary>
-    
-      <category term="技术" scheme="http://ccr39.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="工具" scheme="http://ccr39.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
