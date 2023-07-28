@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ccr39.github.io/"/>
-  <updated>2023-06-06T05:00:09.667Z</updated>
+  <updated>2023-01-20T12:21:49.069Z</updated>
   <id>http://ccr39.github.io/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>我的二次元观(1)</title>
-    <link href="http://ccr39.github.io/%E4%BA%8C%E6%AC%A1%E5%85%83/my_ACG_one/"/>
-    <id>http://ccr39.github.io/二次元/my_ACG_one/</id>
-    <published>2023-06-06T05:00:00.000Z</published>
-    <updated>2023-06-06T05:00:09.667Z</updated>
-    
-    <content type="html"><![CDATA[<a href="https://article.biliimg.com/bfs/article/f6cf66d552c5983086b04c4a13a758cfc7b989e8.jpg" data-fancybox="images" data-caption="sakura"><img src="https://article.biliimg.com/bfs/article/f6cf66d552c5983086b04c4a13a758cfc7b989e8.jpg" /></a><a href="https://article.biliimg.com/bfs/article/d2acbd6b77060719c2b3eff40b9030131e0ee198.jpg" data-fancybox="images" data-caption="sakura"><img src="https://article.biliimg.com/bfs/article/d2acbd6b77060719c2b3eff40b9030131e0ee198.jpg" /></a><a href="https://article.biliimg.com/bfs/article/b3f75c7e701c293331027df1aec728c19b9da68f.jpg" data-fancybox="images" data-caption="sakura"><img src="https://article.biliimg.com/bfs/article/b3f75c7e701c293331027df1aec728c19b9da68f.jpg" /></a><a href="https://article.biliimg.com/bfs/article/7bf161b639d4b8c7520f5a72d7c3035e454df1fa.jpg" data-fancybox="images" data-caption="sakura"><img src="https://article.biliimg.com/bfs/article/7bf161b639d4b8c7520f5a72d7c3035e454df1fa.jpg" /></a><a href="https://article.biliimg.com/bfs/article/f4a9c6e3c75d95f638c9d6efa093ad0d21873247.jpg" data-fancybox="images" data-caption="sakura"><img src="https://article.biliimg.com/bfs/article/f4a9c6e3c75d95f638c9d6efa093ad0d21873247.jpg" /></a><a href="https://article.biliimg.com/bfs/article/cfab40790884b4eee67c3c579caa436313183dc8.jpg" data-fancybox="images" data-caption="sakura"><img src="https://article.biliimg.com/bfs/article/cfab40790884b4eee67c3c579caa436313183dc8.jpg" /></a><h4 id=""><a href="#" class="headerlink" title=""></a></h4><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://comment.ccr39.love/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
-    
-    <summary type="html">
-    
-      关于我对二次元的一些系统的看法，本文是第一篇，主要讲述什么是二次元
-    
-    </summary>
-    
-      <category term="二次元" scheme="http://ccr39.github.io/categories/%E4%BA%8C%E6%AC%A1%E5%85%83/"/>
-    
-    
-      <category term="杂谈" scheme="http://ccr39.github.io/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
   
   <entry>
     <title>图床的使用与推荐</title>
@@ -477,6 +455,28 @@
     
     
       <category term="杂谈" scheme="http://ccr39.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ACGN插画(一)</title>
+    <link href="http://ccr39.github.io/%E8%B5%84%E6%BA%90/ACGN%E6%8F%92%E7%94%BB(%E4%B8%80)/"/>
+    <id>http://ccr39.github.io/资源/ACGN插画(一)/</id>
+    <published>2022-12-11T04:56:00.000Z</published>
+    <updated>2023-01-10T08:24:40.483Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i0.hdslb.com/bfs/album/8cd0aa9b7005ca16892b08c1c12801352c4a6591.jpg" alt="QQ图片20221211125142"></p><p><img src="https://i0.hdslb.com/bfs/album/8151665808cb163f97fe82a9246719b2d540aed5.png" alt="QQ图片20221211125127"></p><p><img src="https://i0.hdslb.com/bfs/album/def3cf63280490b4b714b1e79321e15bd15f5c66.png" alt="QQ图片20221211125131"></p><p><img src="https://i0.hdslb.com/bfs/album/17a668af096814bb2c2305545b2c192fccc62df4.jpg" alt="QQ图片20221211125135"></p><p><img src="https://i0.hdslb.com/bfs/album/96e394b7fa06a437681f0c64f6f12b7fc74af3ac.png" alt="QQ图片20221211125147"></p><p><img src="https://s2.loli.net/2022/12/11/TxtdR2hBFiE8Gpr.png" alt="QQ图片20221211125152"></p><p><img src="https://s2.loli.net/2022/12/11/kNfLAbcHuMOKamn.jpg" alt="QQ图片20221211125156"></p><p><img src="https://s2.loli.net/2022/12/11/kJyRYwaUMrcszCA.png" alt="QQ图片20221211125201"></p><p><img src="https://s2.loli.net/2022/12/11/1bZUfMDt2SmTK8v.jpg" alt="QQ图片20221211125030"></p><p><img src="https://s2.loli.net/2022/12/11/G9l7tNyqH31Lime.jpg" alt="QQ图片20221211125043"></p><p><img src="https://s2.loli.net/2022/12/11/kXdmRJ9z5FvPshH.png" alt="QQ图片20221211125115"></p><p><img src="https://s2.loli.net/2022/12/11/HkpJwh5ovfBZlxr.png" alt="QQ图片20221211125121"></p><link    rel="stylesheet"    href="https://unpkg.com/@waline/client@v2/dist/waline.css"  /><div id="waline"></div>  <script type="module">    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';    init({      el: '#waline',      serverURL: 'https://ccr39.cf/',       reaction: [    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',  ],      emoji: [        '//unpkg.com/@waline/emojis@1.1.0/bilibili',        '//unpkg.com/@waline/emojis@1.1.0/weibo',        '//unpkg.com/@waline/emojis@1.1.0/qq',      ]    });  </script>]]></content>
+    
+    <summary type="html">
+    
+      ACGN插画分享第一弹
+    
+    </summary>
+    
+      <category term="资源" scheme="http://ccr39.github.io/categories/%E8%B5%84%E6%BA%90/"/>
+    
+    
+      <category term="图集" scheme="http://ccr39.github.io/tags/%E5%9B%BE%E9%9B%86/"/>
     
   </entry>
   
