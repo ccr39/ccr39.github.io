@@ -367,8 +367,7 @@
   
   <div id="content" class="site-content">
     <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      
-<div class="entry-content">
+      <div class="entry-content">
   <div class="poem-wrap">
     <div class="poem-border poem-left">
     </div>
@@ -384,7 +383,6 @@
   </div>
 </div>
 
-
 <link
     rel="stylesheet"
     href="https://unpkg.com/@waline/client@v2/dist/waline.css"
@@ -394,9 +392,18 @@
   <script type="module">
     import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
 
+
     init({
       el: '#waline',
-      serverURL: 'https://ccr39.cf/',
+      serverURL: 'https://waline-ccr39.netlify.app/.netlify/functions/comment',
+       reaction: [
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_heart_eyes.png',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_joy.png',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_consider.png',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_sob.png',
+    
+
+  ],
       emoji: [
         '//unpkg.com/@waline/emojis@1.1.0/bilibili',
         '//unpkg.com/@waline/emojis@1.1.0/weibo',

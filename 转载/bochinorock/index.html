@@ -432,14 +432,17 @@
   <script type="module">
     import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
 
+
     init({
       el: '#waline',
-      serverURL: 'https://ccr39.cf/',
+      serverURL: 'https://waline-ccr39.netlify.app/.netlify/functions/comment',
        reaction: [
-    'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',
-    'https://i.328888.xyz/2022/12/09/f5H4Q.jpeg',
-    'https://i.328888.xyz/2022/12/09/f5juP.md.jpeg',
-    'https://i.328888.xyz/2022/12/09/f5bhC.md.jpeg',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_heart_eyes.png',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_joy.png',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_consider.png',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_sob.png',
+    
+
   ],
       emoji: [
         '//unpkg.com/@waline/emojis@1.1.0/bilibili',

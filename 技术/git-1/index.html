@@ -509,6 +509,41 @@
 
     init({
       el: '#waline',
+      serverURL: 'https://waline-ccr39.netlify.app/.netlify/functions/comment',
+       reaction: [
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_heart_eyes.png',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_joy.png',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_consider.png',
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_sob.png',
+    
+
+  ],
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.1.0/bilibili',
+        '//unpkg.com/@waline/emojis@1.1.0/weibo',
+        '//unpkg.com/@waline/emojis@1.1.0/qq',
+      ]
+    });
+  </script>
+
+
+
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+<div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+
+    init({
+      el: '#waline',
       serverURL: 'https://ccr39.cf/',
        reaction: [
     'https://i.328888.xyz/2022/12/09/f5ONE.jpeg',
