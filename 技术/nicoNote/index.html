@@ -359,7 +359,7 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://images.weserv.nl/?url=https://article.biliimg.com/bfs/new_dyn/1daab4d6fe64715c7f7f83999ce157711865926893.jpg);" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/new_dyn/1daab4d6fe64715c7f7f83999ce157711865926893.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://images.weserv.nl/?url=https://article.biliimg.com/bfs/new_dyn/c83f4868b2abab30096713bce439bea51865926893.jpg);" src="https://i0.hdslb.com/bfs/album/f6df0a683b73352e3b78523dbe9ccc07e5560899.png" data-src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/new_dyn/c83f4868b2abab30096713bce439bea51865926893.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
@@ -389,20 +389,19 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/ccr39/NicoNote/">ccr39&#x2F;NicoNote: 从零开始编写的浏览器笔记脚本</a>（该项目尚未完成）</p>
-<h1 id="从零开始编写一个浏览器笔记脚本"><a href="#从零开始编写一个浏览器笔记脚本" class="headerlink" title="从零开始编写一个浏览器笔记脚本"></a>从零开始编写一个浏览器笔记脚本</h1><blockquote>
+          <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/ccr39/NicoNote/">ccr39&#x2F;NicoNote: 从零开始编写的浏览器笔记脚本</a></p>
+<blockquote>
 <p>故事的开始：</p>
 <p>在浏览器上学习时时常要记笔记。</p>
 <p>在预览网络上已有的各类插件后本人发现，这类插件往往已经长时间失去维护，或需要付费使用。</p>
 <p>为什么不自己制作一个有类似功能的脚本呢？</p>
 <p>在几乎没有任何理论知识的前提下本人决定实施这个构想。</p>
 </blockquote>
-<p>[TOC]</p>
 <h2 id="一、开始前的准备"><a href="#一、开始前的准备" class="headerlink" title="一、开始前的准备"></a>一、开始前的准备</h2><h3 id="希望实现的功能"><a href="#希望实现的功能" class="headerlink" title="希望实现的功能"></a>希望实现的功能</h3><p>基本功能：</p>
 <ul>
-<li><input disabled="" type="checkbox"> 能够在网页上编写笔记，并保存在本地。可以在网页后显示对应笔记。</li>
+<li><input checked="" disabled="" type="checkbox"> <del>能够在网页上编写笔记，并保存在本地。可以在打开网页后显示对应笔记。</del></li>
 <li><input checked="" disabled="" type="checkbox"> <del>能够使用 Markdown 语法并实现实时渲染 $\LaTeX$ 。</del></li>
-<li><input disabled="" type="checkbox"> 能够导出与导入 Markdown 笔记。</li>
+<li><input checked="" disabled="" type="checkbox"> <del>能够导出与导入 Markdown 笔记。</del></li>
 <li><input checked="" disabled="" type="checkbox"> <del>能够调整笔记框的大小。</del></li>
 </ul>
 <p>进阶功能：</p>
@@ -631,8 +630,8 @@
 </tbody></table>
 <h3 id="2、目前产生的问题（ChatGPT-解答）"><a href="#2、目前产生的问题（ChatGPT-解答）" class="headerlink" title="2、目前产生的问题（ChatGPT 解答）"></a>2、目前产生的问题（ChatGPT 解答）</h3><h5 id="Q-1：-downloadURL和-updateURL的区别"><a href="#Q-1：-downloadURL和-updateURL的区别" class="headerlink" title="Q.1：@downloadURL和@updateURL的区别"></a><strong>Q.1：@downloadURL和@updateURL的区别</strong></h5><blockquote>
 <p>在编写油猴（Tampermonkey 或 Greasemonkey）脚本时，<code>@include</code> 和 <code>@match</code> 是用来定义脚本作用范围的元数据注释。它们的作用类似，但有一些关键区别：</p>
-<hr>
-<h3 id="include"><a href="#include" class="headerlink" title="@include"></a><strong>@include</strong></h3><ul>
+<p><strong>@include</strong></p>
+<ul>
 <li><p><strong>用途</strong>：匹配指定的 URL 模式，让脚本在符合模式的页面上运行。</p>
 </li>
 <li><p><strong>语法</strong>：支持通配符（*），简单易用。</p>
@@ -640,7 +639,7 @@
 <li><p><code>*</code>：匹配任意字符。</p>
 </li>
 <li><p>示例：</p>
-<pre><code class="javascript">// 脚本会在所有以 &quot;https://example.com/&quot; 开头的页面上运行
+<pre><code class="javascript"> // 脚本会在所有以 &quot;https://example.com/&quot; 开头的页面上运行
 @include https://example.com/*
 </code></pre>
 </li>
@@ -653,8 +652,9 @@
 <p> 可以匹配：</p>
 <ul>
 <li><code>https://example.com/page1</code></li>
-<li><code>https://example.com/page2</code></li>
 </ul>
+</li>
+<li><p><code>https://example.com/page2</code></p>
 </li>
 <li><p>通配符 *也可以放在中间或末尾，如：</p>
 <ul>
@@ -664,8 +664,8 @@
 </ul>
 </li>
 </ul>
-<hr>
-<h3 id="match"><a href="#match" class="headerlink" title="@match"></a><strong>@match</strong></h3><ul>
+<p><strong>@match</strong></p>
+<ul>
 <li><p><strong>用途</strong>：更严格地匹配 URL 模式，符合 URL 模式规范。</p>
 </li>
 <li><p><strong>语法</strong>：不支持简单的 * 通配符定义所有，而是更精确的匹配规则。</p>
@@ -673,11 +673,13 @@
 <li><p>但可以使用通配符 <code>*</code> 匹配子域名或协议。</p>
 </li>
 <li><p>示例：</p>
-<pre><code>javascript复制代码// 脚本会在 https://example.com 的所有页面运行
+<pre><code> javascript复制代码// 脚本会在 https://example.com 的所有页面运行
 @match https://example.com/*
 </code></pre>
 </li>
 </ul>
+<pre><code>
+</code></pre>
 </li>
 <li><p>匹配示例：</p>
 <ul>
@@ -686,7 +688,10 @@
 <p> 可以匹配：</p>
 <ul>
 <li><code>https://sub.example.com/page</code></li>
-<li><code>https://another.example.com/page</code></li>
+</ul>
+</li>
+<li><p><code>https://another.example.com/page</code></p>
+</li>
 </ul>
 </li>
 <li><p>但不会匹配：</p>
@@ -695,10 +700,8 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<hr>
-<h3 id="关键区别"><a href="#关键区别" class="headerlink" title="关键区别"></a><strong>关键区别</strong></h3><table>
+<p><strong>关键区别</strong></p>
+<table>
 <thead>
 <tr>
 <th>特性</th>
@@ -727,42 +730,46 @@
 <td>推荐使用，符合现代浏览器扩展规范</td>
 </tr>
 </tbody></table>
-<hr>
-<h3 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a><strong>使用建议</strong></h3><ol>
+<p><strong>使用建议</strong></p>
+<ol>
 <li>如果需要快速定义作用域，且 URL 规则较简单，可以使用 <code>@include</code>。</li>
 <li>如果需要更安全、更准确的匹配，建议使用 <code>@match</code>，特别是在现代浏览器扩展环境下。</li>
 </ol>
 <blockquote>
 <p>现代浏览器和 Tampermonkey 都更推荐使用 <code>@match</code>，因为它的匹配规则符合浏览器扩展的标准。</p>
 </blockquote>
-<h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>两者用来将脚本应用到所有的页面，应分别如下写：</p>
+<p><strong>个人总结</strong></p>
+<p>两者用来将脚本应用到所有的页面，应分别如下写：</p>
 <p><code>@match        *://*/*</code></p>
 <p><code>@include	   *</code></p>
 </blockquote>
 <h5 id="Q-2：什么是-DOMContentLoaded-事件？"><a href="#Q-2：什么是-DOMContentLoaded-事件？" class="headerlink" title="Q.2：什么是 DOMContentLoaded 事件？"></a>Q.2：什么是 DOMContentLoaded 事件？</h5><blockquote>
 <p><code>DOMContentLoaded</code> 是一个常见的 JavaScript 事件，用于监听 HTML 文档的加载状态。当浏览器解析完所有的 HTML 并构建完成 DOM 树时，就会触发 <code>DOMContentLoaded</code> 事件，而无需等待其他资源（如图片、样式表和脚本文件）的加载完成。</p>
-<hr>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a><strong>特点</strong></h3><ol>
+<p><strong>特点</strong></p>
+<ol>
 <li><strong>触发时机</strong>：当 HTML 文档被完全加载和解析完成时（即 DOM 树构建完成）。</li>
 <li><strong>不等待其他资源</strong>：与 <code>window.onload</code> 不同，<code>DOMContentLoaded</code> 不需要等待图片、样式表、iframe 等资源加载完成后才触发。</li>
 <li><strong>适用于操作 DOM</strong>：在该事件触发时，DOM 已经可用，因此适合初始化页面内容或操作 DOM 元素。</li>
 </ol>
-<hr>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a><strong>用法</strong></h3><p>监听 <code>DOMContentLoaded</code> 的方法有以下几种：</p>
-<h4 id="1-使用-addEventListener"><a href="#1-使用-addEventListener" class="headerlink" title="1. 使用 addEventListener"></a><strong>1. 使用 <code>addEventListener</code></strong></h4><pre><code class="javascript">document.addEventListener(&quot;DOMContentLoaded&quot;, function() &#123;
+<p><strong>用法</strong></p>
+<p>监听 <code>DOMContentLoaded</code> 的方法有以下几种：</p>
+<p><strong>1. 使用 <code>addEventListener</code></strong></p>
+<pre><code class="javascript">document.addEventListener(&quot;DOMContentLoaded&quot;, function() &#123;
     console.log(&quot;DOM 已完全加载并解析&quot;);
-    // 可以安全地操作 DOM 元素
+   // 可以安全地操作 DOM 元素
     document.body.style.backgroundColor = &quot;lightblue&quot;;
 &#125;);
 </code></pre>
-<h4 id="2-使用旧的-onreadystatechange"><a href="#2-使用旧的-onreadystatechange" class="headerlink" title="2. 使用旧的 onreadystatechange"></a><strong>2. 使用旧的 <code>onreadystatechange</code></strong></h4><p>早期浏览器中，可以通过 <code>readyState</code> 属性判断文档是否加载完成：</p>
+<p><strong>2. 使用旧的 <code>onreadystatechange</code></strong></p>
+<p>早期浏览器中，可以通过 <code>readyState</code> 属性判断文档是否加载完成：</p>
 <pre><code class="javascript">document.onreadystatechange = function() &#123;
     if (document.readyState === &quot;interactive&quot;) &#123;
-        console.log(&quot;DOM 已完全加载并解析&quot;);
+       console.log(&quot;DOM 已完全加载并解析&quot;);
     &#125;
 &#125;;
 </code></pre>
-<h4 id="3-直接在脚本末尾执行"><a href="#3-直接在脚本末尾执行" class="headerlink" title="3. 直接在脚本末尾执行"></a><strong>3. 直接在脚本末尾执行</strong></h4><p>如果你的脚本放在文档的底部（<code>&lt;/body&gt;</code>标签之前），可以不显式监听 <code>DOMContentLoaded</code>，因为此时 DOM 已经解析完成：</p>
+<p><strong>3. 直接在脚本末尾执行</strong></p>
+<p>如果你的脚本放在文档的底部（<code>&lt;/body&gt;</code>标签之前），可以不显式监听 <code>DOMContentLoaded</code>，因为此时 DOM 已经解析完成：</p>
 <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -776,8 +783,8 @@
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<hr>
-<h3 id="DOMContentLoaded-和-window-onload-的区别"><a href="#DOMContentLoaded-和-window-onload-的区别" class="headerlink" title="DOMContentLoaded 和 window.onload 的区别"></a><strong><code>DOMContentLoaded</code> 和 <code>window.onload</code> 的区别</strong></h3><table>
+<p><strong><code>DOMContentLoaded</code> 和 <code>window.onload</code> 的区别</strong></p>
+<table>
 <thead>
 <tr>
 <th>特性</th>
@@ -801,8 +808,8 @@
 <td>确保所有资源可用（如图片尺寸）。</td>
 </tr>
 </tbody></table>
-<hr>
-<h3 id="示例：两者对比"><a href="#示例：两者对比" class="headerlink" title="示例：两者对比"></a><strong>示例：两者对比</strong></h3><pre><code class="javascript">document.addEventListener(&quot;DOMContentLoaded&quot;, function() &#123;
+<p><strong>示例：两者对比</strong></p>
+<pre><code class="javascript">document.addEventListener(&quot;DOMContentLoaded&quot;, function() &#123;
     console.log(&quot;DOM 已加载完成，但图片可能还在加载中&quot;);
 &#125;);
 
@@ -810,17 +817,17 @@ window.addEventListener(&quot;load&quot;, function() &#123;
     console.log(&quot;页面所有资源加载完成，包括图片和样式&quot;);
 &#125;);
 </code></pre>
-<hr>
-<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a><strong>浏览器支持</strong></h3><p><code>DOMContentLoaded</code> 是一个标准事件，现代浏览器（包括 IE9+）都完全支持。</p>
-<hr>
-<h3 id="使用建议-1"><a href="#使用建议-1" class="headerlink" title="使用建议"></a><strong>使用建议</strong></h3><ul>
+<p><strong>浏览器支持</strong></p>
+<p><code>DOMContentLoaded</code> 是一个标准事件，现代浏览器（包括 IE9+）都完全支持。</p>
+<p><strong>使用建议</strong></p>
+<ul>
 <li><strong>推荐场景</strong>：如果你的脚本只需要操作 DOM 元素（如添加事件监听器或修改内容），优先使用 <code>DOMContentLoaded</code>，因为它比 <code>window.onload</code> 更早触发。</li>
 <li><strong>性能优化</strong>：通过监听 <code>DOMContentLoaded</code>，可以更快地响应用户交互，而无需等待所有资源加载完成。</li>
 </ul>
 </blockquote>
 <h5 id="Q-3：什么是DOM树？"><a href="#Q-3：什么是DOM树？" class="headerlink" title="Q.3：什么是DOM树？"></a><strong>Q.3：什么是DOM树？</strong></h5><p><strong>DOM 树</strong>（Document Object Model Tree）是浏览器在加载和解析 HTML 文档时，根据 HTML 的层级结构生成的一种<strong>树形数据结构</strong>。它表示了文档的结构以及每个节点之间的关系，使得 JavaScript 可以通过 DOM API 操作页面内容和结构。</p>
-<p><strong>DOM 树的组成</strong></p>
 <blockquote>
+<p><strong>DOM 树的组成</strong></p>
 <p>DOM 树由以下几种节点组成，每个节点代表 HTML 文档的一部分：</p>
 <ol>
 <li><strong>文档节点（Document Node）</strong>：<ul>
@@ -848,8 +855,8 @@ window.addEventListener(&quot;load&quot;, function() &#123;
 </ul>
 </li>
 </ol>
-<hr>
-<h3 id="DOM-树的结构"><a href="#DOM-树的结构" class="headerlink" title="DOM 树的结构"></a><strong>DOM 树的结构</strong></h3><p>以以下 HTML 代码为例：</p>
+<p><strong>DOM 树的结构</strong></p>
+<p>以以下 HTML 代码为例：</p>
 <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -874,13 +881,15 @@ window.addEventListener(&quot;load&quot;, function() &#123;
             └── p
                   └── &quot;Welcome to DOM.&quot;
 </code></pre>
-<hr>
-<h3 id="DOM-树的特点"><a href="#DOM-树的特点" class="headerlink" title="DOM 树的特点"></a><strong>DOM 树的特点</strong></h3><ol>
-<li><strong>层级关系</strong>：<ul>
+<p><strong>DOM 树的特点</strong></p>
+<ol>
+<li><strong>层级关系</strong>：</li>
+</ol>
+<ul>
 <li>HTML 文档的嵌套结构会在 DOM 树中反映为父子关系。</li>
 <li>每个 HTML 元素是一个节点，嵌套关系形成了树状层级。</li>
 </ul>
-</li>
+<ol start="2">
 <li><strong>节点类型</strong>：<ul>
 <li>可以通过 <code>nodeType</code> 属性查看节点类型，例如：<ul>
 <li><code>1</code>：元素节点</li>
@@ -895,38 +904,43 @@ window.addEventListener(&quot;load&quot;, function() &#123;
 </ul>
 </li>
 </ol>
-<hr>
-<h3 id="常见操作"><a href="#常见操作" class="headerlink" title="常见操作"></a><strong>常见操作</strong></h3><ol>
+<p><strong>常见操作</strong></p>
+<ol>
 <li><p><strong>获取节点</strong>：</p>
-<pre><code class="javascript">const header = document.getElementById(&quot;header&quot;); // 获取 h1 元素
+<pre><code class="javascript"> const header = document.getElementById(&quot;header&quot;); // 获取 h1 元素
 const paragraphs = document.getElementsByTagName(&quot;p&quot;); // 获取所有 &lt;p&gt; 元素
 </code></pre>
 </li>
-<li><p><strong>修改节点内容</strong>：</p>
-<pre><code class="javascript">const header = document.getElementById(&quot;header&quot;);
-header.textContent = &quot;Hello, DOM!&quot;;
+</ol>
+<pre><code>2. **修改节点内容**：
+
+ ```javascript
+const header = document.getElementById(&quot;header&quot;);
+ header.textContent = &quot;Hello, DOM!&quot;;
 </code></pre>
-</li>
+<ol start="3">
 <li><p><strong>添加新节点</strong>：</p>
-<pre><code class="javascript">const newDiv = document.createElement(&quot;div&quot;);
+<pre><code class="javascript"> const newDiv = document.createElement(&quot;div&quot;);
 newDiv.textContent = &quot;This is a new div.&quot;;
-document.body.appendChild(newDiv);
+ document.body.appendChild(newDiv);
 </code></pre>
 </li>
 <li><p><strong>删除节点</strong>：</p>
-<pre><code class="javascript">const header = document.getElementById(&quot;header&quot;);
+<pre><code class="javascript"> const header = document.getElementById(&quot;header&quot;);
 header.remove();
 </code></pre>
 </li>
 </ol>
-<hr>
-<h3 id="DOM-树的作用"><a href="#DOM-树的作用" class="headerlink" title="DOM 树的作用"></a><strong>DOM 树的作用</strong></h3><ol>
-<li><strong>页面动态交互</strong>：通过操作 DOM 树，可以动态修改页面的结构和内容。</li>
-<li><strong>事件绑定</strong>：JavaScript 事件处理器通过 DOM 树关联 HTML 元素。</li>
-<li><strong>样式动态调整</strong>：通过修改 DOM 节点的样式属性实现动态效果。</li>
-</ol>
-<hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>DOM 树是 HTML 文档在浏览器中的表示形式，它将 HTML 结构化为可以用 JavaScript 操作的对象模型。熟练掌握 DOM 树和相关操作是前端开发的基础。</p>
+<pre><code>**DOM 树的作用**
+
+1. **页面动态交互**：通过操作 DOM 树，可以动态修改页面的结构和内容。
+2. **事件绑定**：JavaScript 事件处理器通过 DOM 树关联 HTML 元素。
+3. **样式动态调整**：通过修改 DOM 节点的样式属性实现动态效果。
+
+**总结**
+
+DOM 树是 HTML 文档在浏览器中的表示形式，它将 HTML 结构化为可以用 JavaScript 操作的对象模型。熟练掌握 DOM 树和相关操作是前端开发的基础。
+</code></pre>
 </blockquote>
 <p>2024&#x2F;12&#x2F;8</p>
 <hr>
@@ -956,8 +970,8 @@ header.remove();
 <p>在此出现的问题：</p>
 <h5 id="Q-4：之前-HelloWorld-脚本中的alert-39-HelloWorld-39-末尾没有分号，这种写法是否合法？"><a href="#Q-4：之前-HelloWorld-脚本中的alert-39-HelloWorld-39-末尾没有分号，这种写法是否合法？" class="headerlink" title="Q.4：之前 HelloWorld 脚本中的alert(&#39;HelloWorld&#39;)末尾没有分号，这种写法是否合法？"></a><strong>Q.4：之前 HelloWorld 脚本中的<code>alert(&#39;HelloWorld&#39;)</code>末尾没有分号，这种写法是否合法？</strong></h5><blockquote>
 <p>是合法的！在 JavaScript 中，分号（<code>;</code>）是<strong>可选的</strong>，因为 JavaScript 有一个<strong>自动分号插入（Automatic Semicolon Insertion, ASI）</strong>的机制。在大多数情况下，即使你省略了分号，JavaScript 引擎也会根据上下文自动插入。</p>
-<hr>
-<h3 id="解释代码中的-alert-39-HelloWorld-39"><a href="#解释代码中的-alert-39-HelloWorld-39" class="headerlink" title="解释代码中的 alert(&#39;HelloWorld&#39;)"></a><strong>解释代码中的 <code>alert(&#39;HelloWorld&#39;)</code></strong></h3><p>在以下代码中：</p>
+<p><strong>解释代码中的 <code>alert(&#39;HelloWorld&#39;)</code></strong></p>
+<p>在以下代码中：</p>
 <pre><code class="javascript">alert(&#39;HelloWorld&#39;)
 </code></pre>
 <p>即使没有写分号，JavaScript 引擎仍然能正确解析，因为：</p>
@@ -965,14 +979,15 @@ header.remove();
 <li><p><code>alert(&#39;HelloWorld&#39;)</code> 是一个独立的语句。</p>
 </li>
 <li><p>ASI 机制会在行末自动插入分号，等效于：</p>
-<pre><code class="javascript">alert(&#39;HelloWorld&#39;);
+<pre><code class="javascript"> alert(&#39;HelloWorld&#39;);
 </code></pre>
 </li>
 </ol>
 <p>因此，这种省略分号的写法是合法的。</p>
-<hr>
-<h3 id="什么时候分号是必要的？"><a href="#什么时候分号是必要的？" class="headerlink" title="什么时候分号是必要的？"></a><strong>什么时候分号是必要的？</strong></h3><p>尽管 ASI 机制可以避免大部分语法错误，但在某些特定情况下，<strong>省略分号可能导致意外行为</strong>。例如：</p>
-<h4 id="情况-1：行首是-或-的表达式"><a href="#情况-1：行首是-或-的表达式" class="headerlink" title="情况 1：行首是 [ 或 ( 的表达式"></a>情况 1：行首是 <code>[</code> 或 <code>(</code> 的表达式</h4><pre><code class="javascript">let a = 5
+<p><strong>什么时候分号是必要的？</strong></p>
+<p>尽管 ASI 机制可以避免大部分语法错误，但在某些特定情况下，<strong>省略分号可能导致意外行为</strong>。例如：</p>
+<p>情况 1：行首是 <code>[</code> 或 <code>(</code> 的表达式</p>
+<pre><code class="javascript">let a = 5
 [1, 2, 3].forEach(x =&gt; console.log(x))
 </code></pre>
 <p>在这种情况下，JavaScript 会将 <code>[1, 2, 3]</code> 视为数组访问器，而不是独立的数组字面量。</p>
@@ -980,9 +995,10 @@ header.remove();
 <pre><code class="javascript">let a = 5;
 [1, 2, 3].forEach(x =&gt; console.log(x));
 </code></pre>
-<h4 id="情况-2：返回值与表达式在不同行"><a href="#情况-2：返回值与表达式在不同行" class="headerlink" title="情况 2：返回值与表达式在不同行"></a>情况 2：返回值与表达式在不同行</h4><pre><code class="javascript">function test() &#123;
+<p>情况 2：返回值与表达式在不同行</p>
+<pre><code class="javascript">function test() &#123;
     return
-    &#123;
+   &#123;
         value: 42
     &#125;
 &#125;
@@ -992,18 +1008,18 @@ console.log(test()) // undefined
 <p>解决方法：</p>
 <pre><code class="javascript">function test() &#123;
     return &#123;
-        value: 42
+       value: 42
     &#125;;
 &#125;
 </code></pre>
-<hr>
-<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a><strong>建议</strong></h3><ol>
+<p><strong>建议</strong></p>
+<ol>
 <li><strong>始终使用分号</strong>：虽然 JavaScript 的 ASI 机制可以省略分号，但为了代码的可读性和避免潜在的错误，建议显式添加分号。</li>
 <li><strong>遵循团队规范</strong>：如果项目使用了某种代码风格（如 Airbnb 或 Standard），遵循其规范（例如 Standard JS 就不使用分号）。</li>
 <li><strong>工具辅助</strong>：使用代码检查工具（如 ESLint）和格式化工具（如 Prettier）来统一代码风格。</li>
 </ol>
-<hr>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a><strong>结论</strong></h3><p>在你的脚本中，省略 <code>alert(&#39;HelloWorld&#39;)</code> 的分号是合法的，且能正确运行。不过，养成显式添加分号的习惯会更安全、更规范。</p>
+<p><strong>结论</strong></p>
+<p>在你的脚本中，省略 <code>alert(&#39;HelloWorld&#39;)</code> 的分号是合法的，且能正确运行。不过，养成显式添加分号的习惯会更安全、更规范。</p>
 </blockquote>
 <h3 id="5、（番外）为插件创作一个图标"><a href="#5、（番外）为插件创作一个图标" class="headerlink" title="5、（番外）为插件创作一个图标"></a>5、（番外）为插件创作一个图标</h3><p>使用 ChatGPT 绘制一个笔记本的图标，将其转换为64*64大小。</p>
 <p>使用 <a target="_blank" rel="noopener" href="https://www.jyshare.com/more/svgeditor/">SVG 在线编辑器 | 菜鸟工具</a> 将其转化为矢量图形，并使其可以用代码表示出来。</p>
@@ -1061,7 +1077,7 @@ document.querySelector(&quot;body&quot;).insertAdjacentHTML(&quot;afterbegin&quo
     transform: translate(-50%, -50%);/*x,y方向上均往回移动自身的一般*/
 </code></pre>
 <p>使用上面的方法把图像居中，参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css3-pr-transform.html">CSS3 transform 属性 | 菜鸟教程</a></p>
-<p>发现存在<iframe>时会添加很多的标识，希望只在主页面添加，加上判断：</p>
+<p>发现存在<code>&lt;iframe&gt;</code>时会添加很多的标识，希望只在主页面添加，加上判断：</p>
 <pre><code class="JS">    if (window.self === window.top) &#123;
         document.querySelector(&quot;body&quot;).insertAdjacentHTML(&quot;afterend&quot;,htmlNicoButton);
     &#125;
@@ -1107,40 +1123,40 @@ document.querySelector(&quot;body&quot;).insertAdjacentHTML(&quot;afterbegin&quo
 <p>为了实现上述操作，我们考虑把存放笔记本主体的<div>和调整大小的<div>分开，外层仅仅实现拖拽功能，内层为主体。</p>
 <h5 id="Q-5-在查询资料时发现的-gt-是什么意思"><a href="#Q-5-在查询资料时发现的-gt-是什么意思" class="headerlink" title="Q.5:在查询资料时发现的() =&gt; {}是什么意思?"></a><strong>Q.5:在查询资料时发现的<code>() =&gt; &#123;&#125;</code>是什么意思?</strong></h5><blockquote>
 <p><code>(e) =&gt; &#123;&#125;</code> 是 JavaScript 中的箭头函数语法，是定义函数的一种简洁方式。它可以用来代替传统的 <code>function</code> 声明。</p>
-<hr>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a><strong>语法</strong></h3><pre><code>javascript
-
-
-复制代码
-(param1, param2, ...) =&gt; &#123; // 函数体 &#125;
+<p><strong>语法</strong></p>
+<pre><code>(param1, param2, ...) =&gt; &#123; // 函数体 &#125;
 </code></pre>
-<hr>
-<h3 id="分解理解-e-gt"><a href="#分解理解-e-gt" class="headerlink" title="分解理解 (e) =&gt; {}"></a><strong>分解理解 <code>(e) =&gt; &#123;&#125;</code></strong></h3><ol>
+<p><strong>分解理解 <code>(e) =&gt; &#123;&#125;</code></strong></p>
+<ol>
 <li><strong>箭头函数</strong>：<ul>
 <li><code>=&gt;</code> 是箭头函数的核心，表示这是一个函数。</li>
 </ul>
 </li>
-<li>**参数 <code>(e)</code>**：<ul>
+<li>**参数 <code>(e)</code>**：</li>
+</ol>
+<ul>
 <li><code>e</code> 是箭头函数的参数。它通常代表事件对象，尤其是在事件处理程序中，比如 <code>addEventListener</code>。</li>
 </ul>
-</li>
-<li>**函数体 <code>&#123;&#125;</code>**：<ul>
+<ol start="3">
+<li>**函数体 <code>&#123;&#125;</code>**：</li>
+</ol>
+<ul>
 <li><code>&#123;&#125;</code> 包含函数执行的代码。</li>
 </ul>
-</li>
-</ol>
-<hr>
-<h3 id="完整例子"><a href="#完整例子" class="headerlink" title="完整例子"></a><strong>完整例子</strong></h3><p>以下是一个常见的使用场景：</p>
-<h4 id="传统函数写法"><a href="#传统函数写法" class="headerlink" title="传统函数写法"></a><strong>传统函数写法</strong></h4><pre><code class="javascript">document.addEventListener(&quot;click&quot;, function(e) &#123;
+<p><strong>完整例子</strong></p>
+<p>以下是一个常见的使用场景：</p>
+<p><strong>传统函数写法</strong></p>
+<pre><code class="javascript">document.addEventListener(&quot;click&quot;, function(e) &#123;
     console.log(&quot;鼠标点击了页面&quot;, e);
 &#125;);
 </code></pre>
-<h4 id="箭头函数写法"><a href="#箭头函数写法" class="headerlink" title="箭头函数写法"></a><strong>箭头函数写法</strong></h4><pre><code class="javascript">document.addEventListener(&quot;click&quot;, (e) =&gt; &#123;
+<p><strong>箭头函数写法</strong></p>
+<pre><code class="javascript">document.addEventListener(&quot;click&quot;, (e) =&gt; &#123;
     console.log(&quot;鼠标点击了页面&quot;, e);
 &#125;);
 </code></pre>
-<hr>
-<h3 id="简化规则"><a href="#简化规则" class="headerlink" title="简化规则"></a><strong>简化规则</strong></h3><ol>
+<p><strong>简化规则</strong></p>
+<ol>
 <li><p><strong>参数简写</strong>：</p>
 <ul>
 <li><p>如果只有一个参数，可以省略括号 ()</p>
@@ -1148,36 +1164,38 @@ document.querySelector(&quot;body&quot;).insertAdjacentHTML(&quot;afterbegin&quo
 </code></pre>
 </li>
 <li><p>如果没有参数或有多个参数，则必须使用括号。</p>
-<pre><code class="javascript">() =&gt; console.log(&quot;无参数&quot;);
+<pre><code class="javascript"> () =&gt; console.log(&quot;无参数&quot;);
 (x, y) =&gt; console.log(x + y);
 </code></pre>
 </li>
 </ul>
+<pre><code>
+</code></pre>
 </li>
 <li><p><strong>函数体简写</strong>：</p>
 <ul>
-<li><p>如果函数体只有一行代码，且直接返回值，可以省略 {} 和 return</p>
+<li>如果函数体只有一行代码，且直接返回值，可以省略 {} 和 return</li>
+</ul>
 <pre><code class="javascript">x =&gt; x * x; // 返回 x 的平方
 </code></pre>
 </li>
-</ul>
-</li>
 </ol>
-<hr>
-<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a><strong>优势</strong></h3><ul>
+<p><strong>优势</strong></p>
+<ul>
 <li><strong>简洁</strong>：语法更短，易读。</li>
 <li><strong>自动绑定上下文</strong>：箭头函数不会创建自己的 <code>this</code>，而是继承自外层作用域。</li>
 </ul>
-<h4 id="例子：箭头函数绑定上下文"><a href="#例子：箭头函数绑定上下文" class="headerlink" title="例子：箭头函数绑定上下文"></a><strong>例子：箭头函数绑定上下文</strong></h4><pre><code class="javascript">function Example() &#123;
+<p><strong>例子：箭头函数绑定上下文</strong></p>
+<pre><code class="javascript">function Example() &#123;
     this.name = &quot;箭头函数示例&quot;;
     document.addEventListener(&quot;click&quot;, () =&gt; &#123;
-        console.log(this.name); // 指向 Example 实例
+       console.log(this.name); // 指向 Example 实例
     &#125;);
 &#125;
 new Example();
 </code></pre>
-<hr>
-<h3 id="对比传统函数"><a href="#对比传统函数" class="headerlink" title="对比传统函数"></a><strong>对比传统函数</strong></h3><table>
+<p><strong>对比传统函数</strong></p>
+<table>
 <thead>
 <tr>
 <th>特性</th>
@@ -1209,11 +1227,12 @@ new Example();
 <blockquote>
 <p>在以下代码中：</p>
 <pre><code class="javascript">document.addEventListener(&#39;mousemove&#39;, (event) =&gt; &#123; 
-  const &#123; clientX, clientY &#125; = event;
-  console.log(`鼠标X坐标: $&#123;clientX&#125;, 鼠标Y坐标: $&#123;clientY&#125;`);//console.log（）用于把信息输出到工作台。$&#123;&#125;表示在字符串中插入函数或变量。
+const &#123; clientX, clientY &#125; = event;
+console.log(`鼠标X坐标: $&#123;clientX&#125;, 鼠标Y坐标: $&#123;clientY&#125;`);//console.log（）用于把信息输出到工作台。$&#123;&#125;表示在字符串中插入函数或变量。
 &#125;);
 </code></pre>
-<h3 id="事件参数-event-的捕捉和传递机制："><a href="#事件参数-event-的捕捉和传递机制：" class="headerlink" title="事件参数 event 的捕捉和传递机制："></a>事件参数 <code>event</code> 的捕捉和传递机制：</h3><ol>
+<p>事件参数 <code>event</code> 的捕捉和传递机制：</p>
+<ol>
 <li><strong>事件监听器的注册</strong>：<ul>
 <li><code>document.addEventListener(&#39;mousemove&#39;, callback)</code> 将事件监听器绑定到 <code>document</code> 上，用于监听 <code>mousemove</code> 事件。</li>
 <li>当用户移动鼠标时，浏览器会触发 <code>mousemove</code> 事件。</li>
@@ -1240,8 +1259,8 @@ new Example();
 <p>MouseEvent实例中还有那些属性？</p>
 <p><code>MouseEvent</code> 是由浏览器生成的事件对象，专门用于表示与鼠标操作相关的事件（例如 <code>click</code>、<code>mousemove</code>、<code>mousedown</code> 等）。它继承自 <code>UIEvent</code>，并进一步继承自 <code>Event</code>。<code>MouseEvent</code> 实例包含许多有用的属性，用于描述鼠标事件的详细信息。</p>
 <p>以下是 <code>MouseEvent</code> 的主要属性：</p>
-<hr>
-<h3 id="鼠标位置信息"><a href="#鼠标位置信息" class="headerlink" title="鼠标位置信息"></a><strong>鼠标位置信息</strong></h3><ul>
+<p><strong>鼠标位置信息</strong></p>
+<ul>
 <li>**<code>clientX</code>**：鼠标指针相对于浏览器视口（窗口）左边缘的 X 坐标。</li>
 <li>**<code>clientY</code>**：鼠标指针相对于浏览器视口（窗口）顶部的 Y 坐标。</li>
 <li>**<code>screenX</code>**：鼠标指针相对于屏幕左边缘的 X 坐标。</li>
@@ -1251,15 +1270,13 @@ new Example();
 <li>**<code>offsetX</code>**：鼠标指针相对于事件目标元素左边缘的 X 坐标。</li>
 <li>**<code>offsetY</code>**：鼠标指针相对于事件目标元素顶部的 Y 坐标。</li>
 </ul>
-<hr>
-<h3 id="鼠标按键信息"><a href="#鼠标按键信息" class="headerlink" title="鼠标按键信息"></a><strong>鼠标按键信息</strong></h3><ul>
-<li><code>button</code>：<ul>
+<p><strong>鼠标按键信息</strong></p>
+<ul>
+<li><code>button</code>：</li>
 <li>触发事件的鼠标按键的代码：<ul>
 <li><code>0</code>：主按钮（通常是左键）</li>
 <li><code>1</code>：中间按钮（滚轮）</li>
 <li><code>2</code>：次按钮（通常是右键）</li>
-</ul>
-</li>
 </ul>
 </li>
 <li><code>buttons</code>：<ul>
@@ -1272,41 +1289,37 @@ new Example();
 </ul>
 </li>
 </ul>
-<hr>
-<h3 id="键盘修饰键状态"><a href="#键盘修饰键状态" class="headerlink" title="键盘修饰键状态"></a><strong>键盘修饰键状态</strong></h3><p>这些属性表示事件发生时是否按下了修饰键：</p>
+<p><strong>键盘修饰键状态</strong></p>
+<p>这些属性表示事件发生时是否按下了修饰键：</p>
 <ul>
 <li>**<code>altKey</code>**：<code>true</code> 表示 <code>Alt</code> 键被按下。</li>
 <li>**<code>ctrlKey</code>**：<code>true</code> 表示 <code>Ctrl</code> 键被按下。</li>
 <li>**<code>metaKey</code>**：<code>true</code> 表示 <code>Meta</code> 键被按下（Mac 上为 <code>Command</code> 键）。</li>
 <li>**<code>shiftKey</code>**：<code>true</code> 表示 <code>Shift</code> 键被按下。</li>
 </ul>
-<hr>
-<h3 id="拖放和相关元素"><a href="#拖放和相关元素" class="headerlink" title="拖放和相关元素"></a><strong>拖放和相关元素</strong></h3><ul>
+<p><strong>拖放和相关元素</strong></p>
+<ul>
 <li><code>relatedTarget</code>：<ul>
 <li>对于某些事件（如 <code>mouseover</code> 和 <code>mouseout</code>），表示鼠标从哪个元素移入&#x2F;移出。</li>
 </ul>
 </li>
-<li><code>target</code>：<ul>
+<li><code>target</code>：</li>
 <li>事件的目标元素。</li>
-</ul>
-</li>
-<li><code>currentTarget</code>：<ul>
+<li><code>currentTarget</code>：</li>
 <li>当前正在处理事件的元素。</li>
 </ul>
-</li>
-</ul>
-<hr>
-<h3 id="其他信息"><a href="#其他信息" class="headerlink" title="其他信息"></a><strong>其他信息</strong></h3><ul>
+<p><strong>其他信息</strong></p>
+<ul>
 <li>**<code>movementX</code>**：自上一次 <code>mousemove</code> 事件以来，鼠标指针在 X 轴上的移动距离。</li>
 <li>**<code>movementY</code>**：自上一次 <code>mousemove</code> 事件以来，鼠标指针在 Y 轴上的移动距离。</li>
 <li>**<code>detail</code>**：事件的点击次数（适用于 <code>click</code> 和 <code>dblclick</code> 等事件）。</li>
 </ul>
-<hr>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong>方法</strong></h3><ul>
+<p><strong>方法</strong></p>
+<ul>
 <li><code>getModifierState(key)</code>：检查指定的修饰键（如 <code>Alt</code>、<code>Shift</code>）是否被按下。</li>
 </ul>
-<hr>
-<h3 id="继承自-UIEvent-和-Event-的属性"><a href="#继承自-UIEvent-和-Event-的属性" class="headerlink" title="继承自 UIEvent 和 Event 的属性"></a>继承自 <code>UIEvent</code> 和 <code>Event</code> 的属性</h3><ul>
+<p>继承自 <code>UIEvent</code> 和 <code>Event</code> 的属性</p>
+<ul>
 <li>**<code>type</code>**：事件类型（如 <code>&quot;click&quot;</code>、<code>&quot;mousemove&quot;</code>）。</li>
 <li>**<code>target</code>**：事件触发的目标元素。</li>
 <li>**<code>bubbles</code>**：<code>true</code> 表示事件会冒泡。</li>
@@ -1314,11 +1327,11 @@ new Example();
 <li>**<code>defaultPrevented</code>**：<code>true</code> 表示默认操作已被阻止。</li>
 <li>**<code>timeStamp</code>**：事件触发时的时间戳。</li>
 </ul>
-<hr>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre><code class="javascript">document.addEventListener(&#39;mousemove&#39;, (event) =&gt; &#123;
-  console.log(&#39;clientX:&#39;, event.clientX);
+<p>示例</p>
+<pre><code class="javascript">document.addEventListener(&#39;mousemove&#39;, (event) =&gt; &#123;
+ console.log(&#39;clientX:&#39;, event.clientX);
   console.log(&#39;clientY:&#39;, event.clientY);
-  console.log(&#39;screenX:&#39;, event.screenX);
+ console.log(&#39;screenX:&#39;, event.screenX);
   console.log(&#39;button:&#39;, event.button); 
   console.log(&#39;altKey pressed:&#39;, event.altKey);
 &#125;);
@@ -1328,8 +1341,8 @@ new Example();
 <h5 id="Q-6-什么是解构赋值？"><a href="#Q-6-什么是解构赋值？" class="headerlink" title="Q.6:什么是解构赋值？"></a><strong>Q.6:什么是解构赋值？</strong></h5><blockquote>
 <p>在 <code>const &#123; clientX &#125; = event;</code> 和 <code>const clientX = event.clientX;</code> 中，**<code>clientX</code>** 最终的效果是等价的，它们都会从 <code>event</code> 对象中提取 <code>clientX</code> 的值并赋值给一个同名变量。</p>
 <p>但它们的语法和解构方式不同，具体区别如下：</p>
-<hr>
-<h3 id="解构赋值-const-clientX-event"><a href="#解构赋值-const-clientX-event" class="headerlink" title="解构赋值 (const { clientX } = event;)"></a><strong>解构赋值 (<code>const &#123; clientX &#125; = event;</code>)</strong></h3><p>这是 <strong>ES6 解构赋值</strong> 的语法，用于从对象中提取属性并赋值给同名变量。</p>
+<p><strong>解构赋值 (<code>const &#123; clientX &#125; = event;</code>)</strong></p>
+<p>这是 <strong>ES6 解构赋值</strong> 的语法，用于从对象中提取属性并赋值给同名变量。</p>
 <pre><code class="javascript">const &#123; clientX &#125; = event;
 </code></pre>
 <p>等价于：</p>
@@ -1338,26 +1351,26 @@ new Example();
 <p>优点：</p>
 <ul>
 <li><p>可以同时提取多个属性：</p>
-<pre><code class="javascript">const &#123; clientX, clientY &#125; = event;
+<pre><code class="javascript"> const &#123; clientX, clientY &#125; = event;
 </code></pre>
 <p>上述写法相当于：</p>
-<pre><code class="javascript">const clientX = event.clientX;
+<pre><code class="javascript"> const clientX = event.clientX;
 const clientY = event.clientY;
 </code></pre>
 </li>
 <li><p>语法更加简洁，适合处理多个属性时使用。</p>
 </li>
 </ul>
-<hr>
-<h3 id="普通赋值-const-clientX-event-clientX"><a href="#普通赋值-const-clientX-event-clientX" class="headerlink" title="普通赋值 (const clientX = event.clientX;)"></a><strong>普通赋值 (<code>const clientX = event.clientX;</code>)</strong></h3><p>这是更传统的方式，逐个访问对象属性并赋值。</p>
+<p><strong>普通赋值 (<code>const clientX = event.clientX;</code>)</strong></p>
+<p>这是更传统的方式，逐个访问对象属性并赋值。</p>
 <pre><code class="javascript">const clientX = event.clientX;
 </code></pre>
 <p>优点：</p>
 <ul>
 <li>更直观，适合只提取单个属性时。</li>
 </ul>
-<hr>
-<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>两种写法最终效果是<strong>等价</strong>的，区别在于语法形式和适用场景：</p>
+<p><strong>总结</strong></p>
+<p>两种写法最终效果是<strong>等价</strong>的，区别在于语法形式和适用场景：</p>
 <ol>
 <li>如果只需要提取单个属性，使用 <code>const clientX = event.clientX;</code> 和 <code>const &#123; clientX &#125; = event;</code> 都可以。</li>
 <li>如果需要提取多个属性，解构赋值更简洁且可读性更好。</li>
@@ -1404,42 +1417,45 @@ const clientY = event.clientY;
 <p>但是事情并没有那么简单，在松开鼠标后这个玩意还在动，原因如下：</p>
 <blockquote>
 <p> JavaScript 中，监听器（事件监听器）只要没有被明确移除或停止，就会一直监听事件。</p>
-<p>当你使用诸如 <code>addEventListener</code> 方法在 DOM 元素上绑定一个事件监听器时，这个监听器会一直处于活动状态，直到满足以下条件之一：</p>
+<p> 当你使用诸如 <code>addEventListener</code> 方法在 DOM 元素上绑定一个事件监听器时，这个监听器会一直处于活动状态，直到满足以下条件之一：</p>
 <ol>
-<li><p><strong>手动移除监听器</strong>：<br>  可以使用 <code>removeEventListener</code> 方法来移除监听器。例如：</p>
+<li><strong>手动移除监听器</strong>：<br>可以使用 <code>removeEventListener</code> 方法来移除监听器。例如：</li>
+</ol>
 <pre><code class="javascript">const button = document.getElementById(&#39;myButton&#39;);
 function handleClick(event) &#123;
     console.log(&#39;Button clicked!&#39;);
 &#125;
-
+ 
 // 添加监听器
 button.addEventListener(&#39;click&#39;, handleClick);
-
+ 
 // 移除监听器
 button.removeEventListener(&#39;click&#39;, handleClick);
 </code></pre>
+<ol start="2">
+<li><p><strong>元素被移除</strong>：<br>如果绑定了监听器的 DOM 元素被从 DOM 中移除，监听器也会随之停止。</p>
 </li>
-<li><p><strong>元素被移除</strong>：<br>  如果绑定了监听器的 DOM 元素被从 DOM 中移除，监听器也会随之停止。</p>
-</li>
-<li><p><strong>一次性监听器</strong>：<br>  如果在添加监听器时指定了 <code>&#123; once: true &#125;</code>，监听器会在首次触发后自动移除。例如：</p>
-<pre><code class="javascript">button.addEventListener(&#39;click&#39;, handleClick, &#123; once: true &#125;);
-</code></pre>
+<li><p><strong>一次性监听器</strong>：<br>如果在添加监听器时指定了 <code>&#123; once: true &#125;</code>，监听器会在首次触发后自动移除。例如：</p>
 </li>
 </ol>
-<h3 id="父监听器与子监听器的关系"><a href="#父监听器与子监听器的关系" class="headerlink" title="父监听器与子监听器的关系"></a>父监听器与子监听器的关系</h3><p>如果你指的是在父元素上添加的事件监听器（比如通过事件冒泡机制监听子元素的事件），这种父监听器也会一直监听，除非明确移除。事件冒泡意味着子元素触发的事件会逐层向上传递到父元素，因此父监听器会接收到事件。比如：</p>
+<pre><code class="javascript"> button.addEventListener(&#39;click&#39;, handleClick, &#123; once: true &#125;);
+</code></pre>
+<p> 父监听器与子监听器的关系</p>
+<p> 如果你指的是在父元素上添加的事件监听器（比如通过事件冒泡机制监听子元素的事件），这种父监听器也会一直监听，除非明确移除。事件冒泡意味着子元素触发的事件会逐层向上传递到父元素，因此父监听器会接收到事件。比如：</p>
 <pre><code class="javascript">const parent = document.getElementById(&#39;parent&#39;);
 
 // 父元素监听器
 parent.addEventListener(&#39;click&#39;, (event) =&gt; &#123;
-    console.log(&#39;Parent clicked!&#39;, event.target);
+   console.log(&#39;Parent clicked!&#39;, event.target);
 &#125;);
 </code></pre>
-<p>无论是直接点击父元素，还是点击子元素，父元素的监听器都会被触发，除非：</p>
+<p> 无论是直接点击父元素，还是点击子元素，父元素的监听器都会被触发，除非：</p>
 <ul>
 <li>你使用 <code>stopPropagation()</code> 来阻止冒泡；</li>
 <li>或者通过 <code>removeEventListener</code> 手动移除父监听器。</li>
 </ul>
-<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><ul>
+<p> 总结</p>
+<ul>
 <li>监听器会持续监听事件，直到手动移除或绑定的 DOM 元素被移除。</li>
 <li>如果没有停止或移除，父监听器会一直监听其范围内的事件冒泡。</li>
 </ul>
@@ -1483,88 +1499,93 @@ parent.addEventListener(&#39;click&#39;, (event) =&gt; &#123;
 <p>由于光标太快会划出<code>element</code>，有时候<code>mousedown</code>事件会停止监听，改变策略把<code>mousemove</code>和<code>mouseup</code>监听对象改为<code>document</code>，即：<code> document.addEventListener()</code>。</p>
 <p>这里有个新问题：</p>
 <h5 id="Q-7如何在拖拽的同时不触发点击？"><a href="#Q-7如何在拖拽的同时不触发点击？" class="headerlink" title="Q.7如何在拖拽的同时不触发点击？"></a><strong>Q.7如何在拖拽的同时不触发点击？</strong></h5><blockquote>
-<h3 id="方法一：通过-mousemove-判断是否发生拖拽"><a href="#方法一：通过-mousemove-判断是否发生拖拽" class="headerlink" title="方法一：通过 mousemove 判断是否发生拖拽"></a>方法一：通过 <code>mousemove</code> 判断是否发生拖拽</h3><p>可以在 <code>mousedown</code> 和 <code>mousemove</code> 中记录鼠标的移动距离，并在 <code>mouseup</code> 时判断是否是一次有效的拖拽操作。如果移动的距离超过一定阈值，就认为是拖拽而非点击。</p>
+<p>方法一：通过 <code>mousemove</code> 判断是否发生拖拽</p>
+<p>可以在 <code>mousedown</code> 和 <code>mousemove</code> 中记录鼠标的移动距离，并在 <code>mouseup</code> 时判断是否是一次有效的拖拽操作。如果移动的距离超过一定阈值，就认为是拖拽而非点击。</p>
 <pre><code class="javascript">let isDragging = false;
 
 const element = document.querySelector(&quot;#draggable&quot;);
 
 element.addEventListener(&quot;mousedown&quot;, (e) =&gt; &#123;
-    isDragging = false; // 重置拖拽状态
-    const startX = e.clientX;
-    const startY = e.clientY;
+ isDragging = false; // 重置拖拽状态
+ const startX = e.clientX;
+ const startY = e.clientY;
 
-    const onMouseMove = (e) =&gt; &#123;
-        if (Math.abs(e.clientX - startX) &gt; 5 || Math.abs(e.clientY - startY) &gt; 5) &#123;
-            isDragging = true;
-        &#125;
-    &#125;;
+ const onMouseMove = (e) =&gt; &#123;
+     if (Math.abs(e.clientX - startX) &gt; 5 || Math.abs(e.clientY - startY) &gt; 5) &#123;
+         isDragging = true;
+     &#125;
+ &#125;;
 
-    const onMouseUp = () =&gt; &#123;
-        document.removeEventListener(&quot;mousemove&quot;, onMouseMove);
-        document.removeEventListener(&quot;mouseup&quot;, onMouseUp);
-    &#125;;
+ const onMouseUp = () =&gt; &#123;
+     document.removeEventListener(&quot;mousemove&quot;, onMouseMove);
+     document.removeEventListener(&quot;mouseup&quot;, onMouseUp);
+ &#125;;
 
-    document.addEventListener(&quot;mousemove&quot;, onMouseMove);
-    document.addEventListener(&quot;mouseup&quot;, onMouseUp);
+ document.addEventListener(&quot;mousemove&quot;, onMouseMove);
+ document.addEventListener(&quot;mouseup&quot;, onMouseUp);
 &#125;);
 
 element.addEventListener(&quot;click&quot;, (e) =&gt; &#123;
-    if (isDragging) &#123;
-        e.preventDefault(); // 如果是拖拽，不触发点击
-    &#125;
+ if (isDragging) &#123;
+     e.preventDefault(); // 如果是拖拽，不触发点击
+ &#125;
 &#125;);
 </code></pre>
-<h3 id="方法二：使用-drag-和-dragstart-事件"><a href="#方法二：使用-drag-和-dragstart-事件" class="headerlink" title="方法二：使用 drag 和 dragstart 事件"></a>方法二：使用 <code>drag</code> 和 <code>dragstart</code> 事件</h3><p>如果使用 HTML5 的拖放 API，可以利用 <code>drag</code> 和 <code>dragstart</code> 来区分拖拽和点击。</p>
+<p>方法二：使用 <code>drag</code> 和 <code>dragstart</code> 事件</p>
+<p>如果使用 HTML5 的拖放 API，可以利用 <code>drag</code> 和 <code>dragstart</code> 来区分拖拽和点击。</p>
 <pre><code class="javascript">let isDragging = false;
 
 const element = document.querySelector(&quot;#draggable&quot;);
 
 element.addEventListener(&quot;dragstart&quot;, () =&gt; &#123;
-    isDragging = true; // 标记为拖拽
+ isDragging = true; // 标记为拖拽
 &#125;);
 
 element.addEventListener(&quot;click&quot;, (e) =&gt; &#123;
-    if (isDragging) &#123;
-        e.preventDefault(); // 阻止点击事件
-        isDragging = false; // 重置状态
-    &#125;
+ if (isDragging) &#123;
+     e.preventDefault(); // 阻止点击事件
+     isDragging = false; // 重置状态
+ &#125;
 &#125;);
 </code></pre>
-<h3 id="方法三：直接在-click-中判断拖拽状态"><a href="#方法三：直接在-click-中判断拖拽状态" class="headerlink" title="方法三：直接在 click 中判断拖拽状态"></a>方法三：直接在 <code>click</code> 中判断拖拽状态</h3><p>如果你的拖拽实现中没有其他复杂的状态，也可以简单地在 <code>click</code> 事件中检查。</p>
+<p>方法三：直接在 <code>click</code> 中判断拖拽状态</p>
+<p>如果你的拖拽实现中没有其他复杂的状态，也可以简单地在 <code>click</code> 事件中检查。</p>
 <pre><code class="javascript">let isDragging = false;
 
 element.addEventListener(&quot;mousedown&quot;, () =&gt; &#123;
-    isDragging = false;
+ isDragging = false;
 &#125;);
 
 element.addEventListener(&quot;mousemove&quot;, () =&gt; &#123;
-    isDragging = true; // 如果发生移动，标记为拖拽
+ isDragging = true; // 如果发生移动，标记为拖拽
 &#125;);
 
 element.addEventListener(&quot;mouseup&quot;, () =&gt; &#123;
-    setTimeout(() =&gt; (isDragging = false), 0); // 延迟重置状态
+ setTimeout(() =&gt; (isDragging = false), 0); // 延迟重置状态
 &#125;);
 
 element.addEventListener(&quot;click&quot;, (e) =&gt; &#123;
-    if (isDragging) &#123;
-        e.preventDefault();
-    &#125;
+ if (isDragging) &#123;
+     e.preventDefault();
+ &#125;
 &#125;);
 </code></pre>
-<h3 id="方法四：CSS-pointer-events-阻止点击"><a href="#方法四：CSS-pointer-events-阻止点击" class="headerlink" title="方法四：CSS pointer-events 阻止点击"></a>方法四：CSS <code>pointer-events</code> 阻止点击</h3><p>如果拖拽操作是通过 CSS 结合 JavaScript 实现，可以在拖拽时临时禁用 <code>pointer-events</code>。</p>
+<p>方法四：CSS <code>pointer-events</code> 阻止点击</p>
+<p>如果拖拽操作是通过 CSS 结合 JavaScript 实现，可以在拖拽时临时禁用 <code>pointer-events</code>。</p>
 <pre><code class="javascript">const element = document.querySelector(&quot;#draggable&quot;);
 
 element.addEventListener(&quot;mousedown&quot;, () =&gt; &#123;
-    element.style.pointerEvents = &quot;none&quot;; // 禁止点击
+ element.style.pointerEvents = &quot;none&quot;; // 禁止点击
 &#125;);
 
 element.addEventListener(&quot;mouseup&quot;, () =&gt; &#123;
-    setTimeout(() =&gt; &#123;
-        element.style.pointerEvents = &quot;auto&quot;; // 恢复点击
-    &#125;, 0);
+ setTimeout(() =&gt; &#123;
+     element.style.pointerEvents = &quot;auto&quot;; // 恢复点击
+ &#125;, 0);
 &#125;);
 </code></pre>
-<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>最推荐的方法是 <strong>方法一</strong>，结合鼠标的移动距离判断是否是拖拽，因为它适用于大多数拖拽实现场景，且与 HTML5 拖放 API 或 CSS 的依赖性较低。</p>
+<p>总结</p>
+<p>最推荐的方法是 <strong>方法一</strong>，结合鼠标的移动距离判断是否是拖拽，因为它适用于大多数拖拽实现场景，且与 HTML5 拖放 API 或 CSS 的依赖性较低。</p>
 </blockquote>
 <p>这里采用方法四，而 mouseup 的监听对象一定为 document 才有效，最后将right改为更易操作的的left，封装后的函数如下：</p>
 <pre><code class="js">    function letWeDrag(dragDiv)&#123;
@@ -1605,9 +1626,9 @@ element.addEventListener(&quot;mouseup&quot;, () =&gt; &#123;
 </code></pre>
 <p>由于将right换用left，为了使图标继续在右侧，我们应该获取屏幕的宽度。</p>
 <h5 id="Q-8：如何获取屏幕的宽度？"><a href="#Q-8：如何获取屏幕的宽度？" class="headerlink" title="Q.8：如何获取屏幕的宽度？"></a>Q.8：如何获取屏幕的宽度？</h5><p>在 JavaScript 中，可以使用以下方法获取屏幕的 <strong>像素信息</strong>：</p>
-<hr>
 <blockquote>
-<h3 id="1-获取屏幕的宽度和高度（window-screen）"><a href="#1-获取屏幕的宽度和高度（window-screen）" class="headerlink" title="1. 获取屏幕的宽度和高度（window.screen）"></a><strong>1. 获取屏幕的宽度和高度（<code>window.screen</code>）</strong></h3><p>通过 <code>window.screen</code> 对象，可以获取屏幕的物理分辨率：</p>
+<p><strong>1. 获取屏幕的宽度和高度（<code>window.screen</code>）</strong></p>
+<p>通过 <code>window.screen</code> 对象，可以获取屏幕的物理分辨率：</p>
 <pre><code class="javascript">console.log(&quot;屏幕宽度：&quot; + window.screen.width + &quot;px&quot;);
 console.log(&quot;屏幕高度：&quot; + window.screen.height + &quot;px&quot;);
 </code></pre>
@@ -1615,18 +1636,18 @@ console.log(&quot;屏幕高度：&quot; + window.screen.height + &quot;px&quot;)
 <li><code>window.screen.width</code>：屏幕的宽度（像素）。</li>
 <li><code>window.screen.height</code>：屏幕的高度（像素）。</li>
 </ul>
-<hr>
-<h3 id="2-获取可用工作区域的尺寸"><a href="#2-获取可用工作区域的尺寸" class="headerlink" title="2. 获取可用工作区域的尺寸"></a><strong>2. 获取可用工作区域的尺寸</strong></h3><p><code>window.screen.availWidth</code> 和 <code>window.screen.availHeight</code> 用于获取屏幕除去任务栏或工具栏后的可用尺寸：</p>
+<p><strong>2. 获取可用工作区域的尺寸</strong></p>
+<p><code>window.screen.availWidth</code> 和 <code>window.screen.availHeight</code> 用于获取屏幕除去任务栏或工具栏后的可用尺寸：</p>
 <pre><code class="javascript">javascript复制代码console.log(&quot;可用宽度：&quot; + window.screen.availWidth + &quot;px&quot;);
 console.log(&quot;可用高度：&quot; + window.screen.availHeight + &quot;px&quot;);
 </code></pre>
-<hr>
-<h3 id="3-获取浏览器窗口的尺寸"><a href="#3-获取浏览器窗口的尺寸" class="headerlink" title="3. 获取浏览器窗口的尺寸"></a><strong>3. 获取浏览器窗口的尺寸</strong></h3><p>通过 <code>window.innerWidth</code> 和 <code>window.innerHeight</code> 可以获取浏览器窗口的内容区域大小（不包含工具栏或边框）：</p>
+<p><strong>3. 获取浏览器窗口的尺寸</strong></p>
+<p>通过 <code>window.innerWidth</code> 和 <code>window.innerHeight</code> 可以获取浏览器窗口的内容区域大小（不包含工具栏或边框）：</p>
 <pre><code class="javascript">javascript复制代码console.log(&quot;窗口宽度：&quot; + window.innerWidth + &quot;px&quot;);
 console.log(&quot;窗口高度：&quot; + window.innerHeight + &quot;px&quot;);
 </code></pre>
-<hr>
-<h3 id="4-获取设备像素比（devicePixelRatio）"><a href="#4-获取设备像素比（devicePixelRatio）" class="headerlink" title="4. 获取设备像素比（devicePixelRatio）"></a><strong>4. 获取设备像素比（<code>devicePixelRatio</code>）</strong></h3><p><code>window.devicePixelRatio</code> 返回设备像素比（DPR），表示物理像素与 CSS 像素的比值：</p>
+<p><strong>4. 获取设备像素比（<code>devicePixelRatio</code>）</strong></p>
+<p><code>window.devicePixelRatio</code> 返回设备像素比（DPR），表示物理像素与 CSS 像素的比值：</p>
 <pre><code class="javascript">console.log(&quot;设备像素比：&quot; + window.devicePixelRatio);
 </code></pre>
 <p>例如：</p>
@@ -1634,20 +1655,20 @@ console.log(&quot;窗口高度：&quot; + window.innerHeight + &quot;px&quot;);
 <li>如果 <code>devicePixelRatio = 2</code>，表示 1 个 CSS 像素对应 2 个物理像素。</li>
 <li>通常高分辨率设备（如 Retina 屏幕）会有较高的 DPR 值。</li>
 </ul>
-<hr>
-<h3 id="5-获取页面滚动的像素位置"><a href="#5-获取页面滚动的像素位置" class="headerlink" title="5. 获取页面滚动的像素位置"></a><strong>5. 获取页面滚动的像素位置</strong></h3><p>通过 <code>window.scrollX</code> 和 <code>window.scrollY</code> 可以获取页面的水平和垂直滚动位置：</p>
+<p><strong>5. 获取页面滚动的像素位置</strong></p>
+<p>通过 <code>window.scrollX</code> 和 <code>window.scrollY</code> 可以获取页面的水平和垂直滚动位置：</p>
 <pre><code class="javascript">console.log(&quot;水平滚动位置：&quot; + window.scrollX + &quot;px&quot;);
 console.log(&quot;垂直滚动位置：&quot; + window.scrollY + &quot;px&quot;);
 </code></pre>
-<hr>
-<h3 id="6-获取元素的大小和位置"><a href="#6-获取元素的大小和位置" class="headerlink" title="6. 获取元素的大小和位置"></a><strong>6. 获取元素的大小和位置</strong></h3><p>如果要获取某个 HTML 元素的宽度和高度，可以使用 <code>getBoundingClientRect()</code>：</p>
+<p><strong>6. 获取元素的大小和位置</strong></p>
+<p>如果要获取某个 HTML 元素的宽度和高度，可以使用 <code>getBoundingClientRect()</code>：</p>
 <pre><code class="javascript">const element = document.querySelector(&quot;#myElement&quot;);
 const rect = element.getBoundingClientRect();
 console.log(`元素宽度：$&#123;rect.width&#125;px, 高度：$&#123;rect.height&#125;px`);
 console.log(`元素位置：左=$&#123;rect.left&#125;px, 上=$&#123;rect.top&#125;px`);
 </code></pre>
-<hr>
-<h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a><strong>总结</strong></h3><ul>
+<p><strong>总结</strong></p>
+<ul>
 <li>屏幕尺寸：<code>window.screen.width</code> 和 <code>window.screen.height</code></li>
 <li>可用区域：<code>window.screen.availWidth</code> 和 <code>window.screen.availHeight</code></li>
 <li>浏览器窗口：<code>window.innerWidth</code> 和 <code>window.innerHeight</code></li>
@@ -1722,11 +1743,11 @@ document.head.appendChild(link);
 var script = document.createElement(&#39;script&#39;);
 script.src = &#39;https://unpkg.com/vditor/dist/index.min.js&#39;;
 script.onload = function () &#123;
- // 确保 Vditor 加载完成后再初始化
- new Vditor(&#39;editor&#39;, &#123;
-     height: 300,
-     placeholder: &#39;Write something...&#39;,
- &#125;);
+// 确保 Vditor 加载完成后再初始化
+new Vditor(&#39;editor&#39;, &#123;
+  height: 300,
+  placeholder: &#39;Write something...&#39;,
+&#125;);
 &#125;;
 document.head.appendChild(script);
 </code></pre>
@@ -1755,7 +1776,7 @@ document.head.appendChild(script);
 <p>接下来就是简单的调试一下！</p>
 <p>2024&#x2F;12&#x2F;13</p>
 <hr>
-<h3 id="9、调试与修复-CDN-被-CSP-拦截的问题-待解决"><a href="#9、调试与修复-CDN-被-CSP-拦截的问题-待解决" class="headerlink" title="9、调试与修复 CDN 被 CSP 拦截的问题(待解决)"></a>9、调试与修复 CDN 被 CSP 拦截的问题(待解决)</h3><p>发现无法在 Github 中初始化，询问AI后得到以下解答：</p>
+<h3 id="9、尝试与修复-CDN-被-CSP-拦截的问题-待解决"><a href="#9、尝试与修复-CDN-被-CSP-拦截的问题-待解决" class="headerlink" title="9、尝试与修复 CDN 被 CSP 拦截的问题(待解决)"></a>9、尝试与修复 CDN 被 CSP 拦截的问题(待解决)</h3><p>发现无法在 Github 中初始化，询问AI后得到以下解答：</p>
 <blockquote>
 <p>这个错误消息表示，浏览器拒绝加载样式表 <code>https://cdn.jsdelivr.net/npm/vditor/dist/index.css</code>，因为它违反了当前页面的内容安全策略（Content Security Policy，CSP）指令。具体来说，CSP 指令 <code>style-src &#39;unsafe-inline&#39; github.githubassets.com</code> 限制了可以加载样式表的来源，而 <code>jsdelivr.net</code> 不在允许的来源列表中。</p>
 <h3 id="可能导致该错误的原因"><a href="#可能导致该错误的原因" class="headerlink" title="可能导致该错误的原因"></a>可能导致该错误的原因</h3><ol>
@@ -1858,11 +1879,11 @@ import &quot;./JS/index.min.js&quot;;
 <p>并且不同的 JS 之间的相互依赖限制了运行顺序，运行顺序不当也会出现这种情况。</p>
 </blockquote>
 <h4 id="替代的解决方案"><a href="#替代的解决方案" class="headerlink" title="替代的解决方案"></a>替代的解决方案</h4><ol>
-<li>手动追踪所有的URL将他们修改并打包。缺点是耗时长且可维护性极低。</li>
+<li>手动追踪所有的URL将他们修改并打包。缺点是耗时长且可维护性极低。（不可行）</li>
 <li>使用拓展程序来手动禁用 CSP。</li>
 </ol>
 <h4 id="无法加载的其他未知原因与局限性分析"><a href="#无法加载的其他未知原因与局限性分析" class="headerlink" title="无法加载的其他未知原因与局限性分析"></a>无法加载的其他未知原因与局限性分析</h4><p>在某些页面不是因为 CSP 而无法初始化 Vditor (经过测试，所有搜索引擎的“搜索结果”页面都不能正常载入)原因暂时未知。</p>
-<p>这类问题暴露出了油猴作为脚本运行器的局限性，或许我们可以开发浏览器插件，而不是油猴脚本。</p>
+<p>这类问题暴露出了油猴作为脚本运行器的局限性，或许我们可以开发<strong>浏览器插件，而不是油猴脚本。</strong></p>
 <p>总结就是，关于这个问题：</p>
 <div class="poem">
 <p><span lang="ja"><big><big><big><big>失敗した失敗した失敗した失敗した失敗した<br>
@@ -1876,7 +1897,293 @@ import &quot;./JS/index.min.js&quot;;
 </p>
 </div>
 
+<p>2024&#x2F;12&#x2F;13</p>
+<hr>
+<h3 id="10、储存编辑的文本"><a href="#10、储存编辑的文本" class="headerlink" title="10、储存编辑的文本"></a>10、储存编辑的文本</h3><p>参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/html/html5-web-api-indexeddb.html">HTML5 Web IndexedDB 数据库 | 菜鸟教程</a></p>
+<p>Vditor 提供了把文件导出到本地的功能，但不能实现将笔记保存在当前网页的功能。</p>
+<p>由于浏览器的网页存在严格的沙箱机制，因此我们无法利用浏览器脚本操作本地文件，自然也就不能利用脚本把文件保存在本地。</p>
+<p>但是浏览器提供了 IndexedDB 这一机制，允许我们储大量结构化数据。它是异步的，可以存储较大的数据对象，适合需要存储大量数据或进行复杂查询的场景。因此我们甚至可以实现自动保存，历史版本管理的功能。</p>
+<h4 id="获取文本内容"><a href="#获取文本内容" class="headerlink" title="获取文本内容"></a>获取文本内容</h4><p>Vditor 提供的工具中为我们提供了获取文本内容的 API：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>exportJSON(markdown: string)</td>
+<td>根据 Markdown 获取对应 JSON</td>
+</tr>
+<tr>
+<td>getValue()</td>
+<td>获取 Markdown 内容</td>
+</tr>
+<tr>
+<td>getHTML()</td>
+<td>获取 HTML 内容</td>
+</tr>
+</tbody></table>
+<h4 id="创建-IndexedDB"><a href="#创建-IndexedDB" class="headerlink" title="创建 IndexedDB"></a>创建 IndexedDB</h4><pre><code class="js">const request = indexedDB.open(&quot;VditorHistoryDB&quot;, 1);//创建版本号为1的IndexedDB
+let db;
+</code></pre>
+<p>初始化：</p>
+<pre><code class="js">request.onupgradeneeded = e =&gt; &#123;
+    db = e.target.result;
+    //表示成功打开的数据库实例。
+    if (!db.objectStoreNames.contains(&quot;history&quot;)) &#123;
+        db.createObjectStore(&quot;history&quot;, &#123; keyPath: &quot;id&quot; &#125;);
+        //如果没有创建对象储存，则创建一个&quot;history&quot;对象储存。
+        //而每一条主字段的标识为id，也就是我们可以在之后给每个字段添加id，作为标识。IndexedDB 会根据这个属性对记录进行索引。
+    &#125;
+&#125;;
+</code></pre>
+<p>这里的<code>onupgradeneeded</code>代表数据库初次创建或版本号更新时执行函数。</p>
+<p>**<code>db.objectStoreNames</code>**：一个类似数组的对象，列出了当前数据库中所有已存在的对象存储（表）。</p>
+<p>而**<code>contains(&quot;history&quot;)</code>**：检查是否已存在名为 <code>&quot;history&quot;</code> 的对象存储。</p>
+<p>如果数据库已经创建了，则：</p>
+<pre><code class="JS">request.onsuccess = e =&gt; &#123;
+    db = e.target.result;
+&#125;;
+</code></pre>
+<p><code>onsuccess</code>表示成功加载执行函数。</p>
+<p><strong>出现的问题：<code>onsuccess</code>无法正确触发</strong></p>
+<p>既不出发<code>onsuccess</code>也不触发<code>onerror</code>，只能触发<code>onupgradeneeded</code>，且控制台没有输出，原因暂时未知，所以无法修复。</p>
+<p>这里采用替代方案每次进入都改变版本号来触发<code>onupgradeneeded</code>。</p>
+<h4 id="将内容保存至数据库"><a href="#将内容保存至数据库" class="headerlink" title="将内容保存至数据库"></a>将内容保存至数据库</h4><p>这里使用数据库实例的 <code>transaction()</code> 方法创建一个事务：</p>
+<pre><code class="JS">const transaction = db.transaction(storeNames, mode);
+</code></pre>
+<p>**<code>storeNames</code>**：</p>
+<ul>
+<li>可以是一个字符串（单个对象存储的名称）或数组（多个对象存储的名称）。</li>
+<li>决定事务可以操作哪些对象存储。例如，<code>&quot;history&quot;</code> 表示事务将操作名为 <code>&quot;history&quot;</code> 的存储。</li>
+</ul>
+<p>**<code>mode</code>**：</p>
+<ul>
+<li>事务的模式，定义了可以执行的操作：<ul>
+<li><code>&quot;readonly&quot;</code>：只读事务，只允许读取数据。</li>
+<li><code>&quot;readwrite&quot;</code>：读写事务，允许读取和修改数据。</li>
+</ul>
+</li>
+</ul>
+<p>通过 <code>transaction.objectStore()</code> 获取特定的存储，操作其中的数据。</p>
+<pre><code class="js">function saveContent() &#123;
+    const content = nicoVditor.getValue();//获取 Markdown 内容
+    const timestamp = Date.now(); // 时间戳作为 ID
+    const transaction = db.transaction(&quot;history&quot;, &quot;readwrite&quot;);//创建一个操作 &quot;history&quot; 存储的读写事务。
+    const store = transaction.objectStore(&quot;history&quot;);// 获取 &quot;history&quot; 对象存储
+    store.put(&#123; id: timestamp, content: content, savedAt: new Date().toLocaleString() &#125;);
+//向&quot;history&quot; 存储中放入一个id为时间戳，内容为 Markdown 内容，保存的时间为当前时间的内容。
+//savedAt 是一个字段，用于记录保存的时间。而new Date().toLocaleString() 是 JavaScript 的方法，返回当前时间的本地化格式（例如 2024/12/15 10:30:45）
+    transaction.oncomplete = () =&gt; &#123;
+        alert(&quot;内容已保存！&quot;);
+    &#125;;
+    transaction.onerror = (event) =&gt; &#123;
+        console.error(&quot;保存失败&quot;, event.target.error);
+    &#125;;
+&#125;
+</code></pre>
+<p>最后在工具栏插入一个按钮：</p>
+<pre><code class="js">&#123;
+ name: &#39;nicoSave&#39;,
+ tipPosition: &#39;s&#39;,
+ tip: &#39;保存到浏览器&#39;,
+ className: &#39;right&#39;,
+ icon: ``,
+ click () &#123;saveContent()&#125;,&#125;
+</code></pre>
+<p><strong>出现的问题：<code>getValue()</code>未定义（已解决）</strong></p>
+<p>原因是无法引入<code>method</code>脚本文件，引入后问题依旧存在，替代方案：</p>
+<pre><code class="js">document.querySelector(&quot;#nicoVditor &gt; div.vditor-content &gt; div.vditor-ir&quot;).innerHTML;//获取 HTML 内容
+</code></pre>
+<p><strong>出错原因：在 saveContent() 函数中 Vditor 未被定义</strong></p>
+<p><strong>解决方法：将  Vditor 作为参数传入函数中</strong></p>
+<h4 id="返回历史版本"><a href="#返回历史版本" class="headerlink" title="返回历史版本"></a>返回历史版本</h4><pre><code class="js">    function showHistory(ifFirst) &#123;
+        const transaction = db.transaction(&quot;history&quot;, &quot;readonly&quot;);//创建读取事务的实例
+        const store = transaction.objectStore(&quot;history&quot;);//获取对象储存的实例
+        const request = store.getAll(); 
+        request.onsuccess = (event) =&gt; &#123; 
+            const history = event.target.result; // 确保在请求成功后访问 result 属性 
+            &#125;;
+        history.sort((a, b) =&gt; b.id - a.id);// 按 ID（即时间戳）降序排序
+        if(ifFirst)&#123;document.querySelector(&quot;#nicoVditor &gt; div.vditor-content &gt; div.vditor-ir&quot;).innerHTML = history[0].content;ifFirst=true;&#125;
+        else&#123;return history;&#125;
+    &#125;
+</code></pre>
+<p><strong>这里直接使用修改<code>.innerHTML</code>导致返回保存后无法被继续编辑，改用<code>setValue()</code>重构代码</strong></p>
+<p>点击之后呼出弹窗</p>
+<pre><code class="JS">    function showHistoryDialog(history) &#123;
+        // 如果已有弹窗，先移除
+        //const existingDialog = document.querySelector(&quot;#history-dialog&quot;);
+        //if (existingDialog) existingDialog.remove();
 
+        // 创建弹窗容器
+        const dialog = document.createElement(&quot;div&quot;);
+        dialog.id = &quot;history-dialog&quot;;
+        dialog.style.position = &quot;fixed&quot;;
+        dialog.style.top = &quot;50%&quot;;
+        dialog.style.left = &quot;50%&quot;;
+        dialog.style.transform = &quot;translate(-50%, -50%)&quot;;
+        dialog.style.background = &quot;#fff&quot;;
+        dialog.style.border = &quot;1px solid #ddd&quot;;
+        dialog.style.padding = &quot;15px&quot;;
+        dialog.style.boxShadow = &quot;0px 2px 10px rgba(0, 0, 0, 0.3)&quot;;
+        dialog.style.zIndex = &quot;1000&quot;;
+        dialog.style.maxHeight = &quot;300px&quot;;
+        dialog.style.overflowY = &quot;auto&quot;;
+
+        // 弹窗标题
+        const title = document.createElement(&quot;h3&quot;);
+        title.innerText = &quot;历史记录&quot;;
+        title.style.marginTop = &quot;0&quot;;
+        dialog.appendChild(title);
+
+        // 遍历历史记录，添加按钮
+        history.forEach((item, index) =&gt; &#123;
+            const button = document.createElement(&quot;button&quot;);
+            button.innerText = `$&#123;index + 1&#125;. $&#123;item.savedAt&#125;`;
+            button.style.display = &quot;block&quot;;
+            button.style.marginBottom = &quot;10px&quot;;
+            button.style.width = &quot;100%&quot;;
+
+            // 点击按钮时写入内容
+            button.onclick = () =&gt; &#123;
+                document.querySelector(&quot;#nicoVditor &gt; div.vditor-content &gt; div.vditor-ir&quot;).innerHTML = item.content;
+                console.log(`已恢复历史记录: $&#123;item.savedAt&#125;`);
+                dialog.remove(); // 关闭弹窗
+            &#125;;
+
+            dialog.appendChild(button);
+        &#125;);
+
+        // 关闭按钮
+        const closeButton = document.createElement(&quot;button&quot;);
+        closeButton.innerText = &quot;关闭&quot;;
+        closeButton.style.marginTop = &quot;10px&quot;;
+        closeButton.style.width = &quot;100%&quot;;
+        closeButton.onclick = () =&gt; dialog.remove();
+        dialog.appendChild(closeButton);
+
+        // 将弹窗插入到页面
+        document.body.appendChild(dialog);
+    &#125;
+</code></pre>
+<p>但是因为 <code>showHistory</code> 函数是异步（允许它之后的代码先运行）的，而你在调用 <code>showHistory</code> 函数时期望立即获得结果。你需要确保在 <code>request.onsuccess</code> 事件处理程序中处理结果。</p>
+<h5 id="Q10-异步执行的函数如何获取返回值？"><a href="#Q10-异步执行的函数如何获取返回值？" class="headerlink" title="Q10.异步执行的函数如何获取返回值？"></a>Q10.异步执行的函数如何获取返回值？</h5><blockquote>
+<p>在 JavaScript 中，异步函数的返回值无法直接通过同步方式获取，因为异步操作（如网络请求、定时器等）需要时间完成。因此，需要通过以下几种方法来获取异步函数的返回值：</p>
+<ol>
+<li><strong><code>Promise</code> 和 <code>then()</code></strong></li>
+</ol>
+<p>当异步函数返回一个 <strong>Promise</strong> 对象时，可以通过 <code>.then()</code> 方法来处理返回值。</p>
+<p>示例代码</p>
+<pre><code class="javascript">function asyncFunction() &#123;
+    return new Promise((resolve) =&gt; &#123;
+        setTimeout(() =&gt; &#123;
+            resolve(&quot;异步返回值&quot;);
+        &#125;, 1000); // 模拟异步操作，1秒后返回
+    &#125;);
+&#125;
+
+// 使用 then() 获取返回值
+asyncFunction().then((result) =&gt; &#123;
+    console.log(&quot;获取到的返回值:&quot;, result);
+&#125;);
+</code></pre>
+<ol start="2">
+<li><strong><code>async/await</code></strong></li>
+</ol>
+<p><code>async/await</code> 是对 <code>Promise</code> 的语法糖，使得异步代码更像同步代码，更易于理解和编写。</p>
+<p>示例代码</p>
+<pre><code class="javascript">async function asyncFunction() &#123;
+    return new Promise((resolve) =&gt; &#123;
+        setTimeout(() =&gt; &#123;
+            resolve(&quot;异步返回值&quot;);
+        &#125;, 1000); // 模拟异步操作
+    &#125;);
+&#125;
+
+// 使用 async/await 获取返回值
+async function getValue() &#123;
+    const result = await asyncFunction();
+    console.log(&quot;获取到的返回值:&quot;, result);
+&#125;
+
+getValue();
+</code></pre>
+<p>注意：</p>
+<ul>
+<li><code>await</code> 只能在 <strong><code>async</code> 函数</strong> 中使用。</li>
+<li><code>await</code> 会暂停当前 <code>async</code> 函数的执行，直到异步操作完成。</li>
+</ul>
+<ol start="3">
+<li><strong>回调函数</strong></li>
+</ol>
+<p>将一个回调函数作为参数传入异步函数，在异步操作完成后调用该回调函数并传入返回值。</p>
+<p>示例代码</p>
+<pre><code class="javascript">function asyncFunction(callback) &#123;
+    setTimeout(() =&gt; &#123;
+        const value = &quot;异步返回值&quot;;
+        callback(value); // 调用回调函数，传入返回值
+    &#125;, 1000);
+&#125;
+
+// 使用回调函数获取返回值
+asyncFunction((result) =&gt; &#123;
+    console.log(&quot;获取到的返回值:&quot;, result);
+&#125;);
+</code></pre>
+<ol start="4">
+<li><strong>结合 <code>async/await</code> 和 <code>Promise</code> 的例子</strong></li>
+</ol>
+<p>当你调用一个异步函数，返回的是 <strong>Promise</strong>，你可以用 <code>async/await</code> 来等待它的完成。</p>
+<p>示例代码</p>
+<pre><code class="javascript">function fetchData() &#123;
+    return new Promise((resolve) =&gt; &#123;
+        setTimeout(() =&gt; resolve(&quot;返回数据成功&quot;), 1000);
+    &#125;);
+&#125;
+
+async function getData() &#123;
+    const result = await fetchData();
+    console.log(&quot;最终获取的数据:&quot;, result);
+&#125;
+
+getData();
+</code></pre>
+<ol start="5">
+<li><strong>立即执行异步函数 (IIFE)</strong></li>
+</ol>
+<p>有时你需要在代码块内立即调用 <code>async</code> 函数，可以使用 **立即执行函数表达式 (IIFE)**。</p>
+<p>示例代码</p>
+<pre><code class="javascript">(async () =&gt; &#123;
+    const result = await asyncFunction();
+    console.log(&quot;立即执行异步函数的返回值:&quot;, result);
+&#125;)();
+</code></pre>
+</blockquote>
+<h4 id="删除历史记录"><a href="#删除历史记录" class="headerlink" title="删除历史记录"></a>删除历史记录</h4><p>使用 delate 方法删除历史记录：</p>
+<pre><code class="js">const request = indexedDB.open(&quot;VditorHistoryDB&quot;, dbVersion);
+request.onsuccess = (event) =&gt; &#123;
+    const db = event.target.result;
+    const transaction = db.transaction(&quot;history&quot;, &quot;readwrite&quot;);
+    const store = transaction.objectStore(&quot;history&quot;);
+    const deleteRequest = store.delete(recordId); // 替换 recordId 为你要删除的记录的 ID
+
+    deleteRequest.onsuccess = () =&gt; &#123;
+        console.log(&quot;记录已删除&quot;);
+    &#125;;
+
+    deleteRequest.onerror = (event) =&gt; &#123;
+        console.error(&quot;删除记录失败&quot;, event.target.error);
+    &#125;;
+&#125;;
+</code></pre>
+<p>2024&#x2F;12&#x2F;19</p>
+<hr>
+<h2 id="三、完成"><a href="#三、完成" class="headerlink" title="三、完成"></a>三、完成</h2><p>大概耗时十天时间，我们从无到有完成了这个脚本的编写。</p>
+<p>事实上，我认为这次尝试，是利用 AI 进行学习的一种方式。</p>
+<p>过去人们大部分情况下只能从前到后，一步步到达想要的结果，但是 AI 让我们可以从后向前，并且在这个过程中一点点弄清楚这个东西的原理，这一点是以往人所达不到的。</p>
+<p>最后我希望我自己可以继续维护这个脚本，不断为其添加新的功能。</p>
 
 <link
     rel="stylesheet"
@@ -1897,6 +2204,7 @@ import &quot;./JS/index.min.js&quot;;
         'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_joy.png',
         'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_consider.png',
         'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_sob.png',
+
 
   ],
       emoji: [
@@ -2001,7 +2309,7 @@ import &quot;./JS/index.min.js&quot;;
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -2013,10 +2321,10 @@ import &quot;./JS/index.min.js&quot;;
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
